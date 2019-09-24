@@ -2,20 +2,30 @@
 
 namespace App\Http\Middleware;
 
-use Illuminate\Auth\Middleware\Authenticate as Middleware;
+use Closure;
+use Firebase\JWT\JWT;
+use Firebase\JWT\ExpiredException;
+use App\User;
 
-class Authenticate extends Middleware
+class Authenticate
 {
     /**
-     * Get the path the user should be redirected to when they are not authenticated.
+     * Handle an incoming request.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return string
+     * @param  \Closure  $next
+     * @return mixed
      */
-    protected function redirectTo($request)
+    public function handle($request, Closure $next)
     {
-        if (! $request->expectsJson()) {
-            return route('login');
+        try{
+            $decoded = JWT::decode($request->bearerToken(), "jwtToken", array('HS256'));
+            $user = User::findOrFail($decoded->id);
+            $request->user = $user;
+            return $next($request);            
+        }
+        catch(\Exception $e){
+            return response()->json(['status' => 0, 'message' => 'Unauthorized request.'], 401);            
         }
     }
 }

@@ -13,6 +13,10 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+Route::post('seller/sign-in', 'LoginController@signIn');
+Route::post('seller/generate-otp', 'LoginController@generateOtp');   
+Route::post('seller/sign-up', 'LoginController@signUp');
