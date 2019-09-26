@@ -43,6 +43,7 @@ class LoginController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required',
             'mobile' => 'required|unique:users',
+            'email'  => 'required|unique:users',
         ]);
 
         if ($validator->fails()) {
