@@ -38,6 +38,8 @@ class LoginService
        $res_user = new \StdClass();
        $res_user->id = $user->id;
        $res_user->name = $user->name;
+       $res_user->email = $user->email;
+       $res_user->mobile = $user->mobile;
 
        $expireDate=Carbon::now()->addDays(2)->timestamp;
        $res_user->exp = $expireDate;  

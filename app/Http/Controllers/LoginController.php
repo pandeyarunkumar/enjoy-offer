@@ -38,7 +38,7 @@ class LoginController extends Controller
             return $this->respondWithValidationError($validator);
         }
         $user = $this->loginService->signUp($request);
-        return $this->respondWithSuccess($user);
+        return $this->respondWithSuccessMessage("Your information has been saved successfuly and an otp has been sent to your mobile number");
         
     }
     public function generateOtp(Request $request){
@@ -53,7 +53,7 @@ class LoginController extends Controller
             return $this->respondWithError("Mobile number is not registered");                                    
         }
         else{
-            return $this->respondWithSuccess($user);  
+            return $this->respondWithSuccessMessage("Otp has been sent to your mobile number");  
         }
         
     }
