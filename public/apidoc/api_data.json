@@ -75,7 +75,7 @@
       "examples": [
         {
           "title": "Request:",
-          "content": "   HTTP/1.1 200 OK\n{\n \"name\":\"Arun\",\n \"gender\":\"male\",\n \"mobile\":\"7379273205\",\n \"email\":\"pandeyarunoct@gmail.com\"\n }",
+          "content": "   HTTP/1.1 200 OK\n{\n \"name\":\"Arun\",\n \"mobile\":\"7379273205\",\n \"email\":\"pandeyarunoct@gmail.com\"\n }",
           "type": "json"
         },
         {

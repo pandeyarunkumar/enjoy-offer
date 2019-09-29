@@ -41,7 +41,6 @@
  *     HTTP/1.1 200 OK
  *  {
  *   "name":"Arun",
- *   "gender":"male",
  *   "mobile":"7379273205",
  *   "email":"pandeyarunoct@gmail.com"
  *   }
