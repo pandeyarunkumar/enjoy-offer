@@ -1,5 +1,5 @@
 /**
- * @api {post}  seller/save-store to to save the seller's store.
+ * @api {post}  seller/save-store to save the seller's store.
  * @apiName saveStore
  * @apiGroup Store
  *

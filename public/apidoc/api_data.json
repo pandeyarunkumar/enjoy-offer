@@ -92,7 +92,7 @@
   {
     "type": "post",
     "url": "seller/save-store",
-    "title": "to to save the seller's store.",
+    "title": "to save the seller's store.",
     "name": "saveStore",
     "group": "Store",
     "success": {
@@ -121,5 +121,81 @@
     "version": "0.0.0",
     "filename": "apidoc/store.php",
     "groupTitle": "Store"
+  },
+  {
+    "type": "post",
+    "url": "save-category",
+    "title": "to save category",
+    "group": "superAdmin",
+    "name": "saveCategory",
+    "success": {
+      "examples": [
+        {
+          "title": "Request:",
+          "content": "    HTTP/1.1 200 OK\n{\n\t\"name\":\"Beverages\"\n  }",
+          "type": "json"
+        },
+        {
+          "title": "Request:",
+          "content": "  HTTP/1.1 200 OK\n{\n    \"name\":\"juice\",\n    \"parent_category_id\":1\n}",
+          "type": "json"
+        },
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n{\n  \"status\": 1,\n  \"message\": \"Category saved successfuly\"\n  }",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "   HTTP/1.1 200 ok\n{\n \"status\": 0,\n \"message\": \"The name has already been taken\"\n }",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "   HTTP/1.1 200 ok\n{\n \"status\": 0,\n \"message\": \"Gievn parent category not found\"\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "apidoc/admin.php",
+    "groupTitle": "superAdmin"
+  },
+  {
+    "type": "post",
+    "url": "admin/sign-in",
+    "title": "to sign in the super admin.",
+    "group": "superAdmin",
+    "name": "signIn",
+    "success": {
+      "examples": [
+        {
+          "title": "Request:",
+          "content": "    HTTP/1.1 200 OK\n {\n\t \"email\":\"superadmin@enjoyoffer.com\",\n\t \"password\":\"123456789\"\n  }",
+          "type": "json"
+        },
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n{\n \"status\": 1,\n  \"data\": {\n      \"id\": 1,\n      \"name\": \"Super Admin\",\n      \"email\": \"superadmin@enjoyoffer.com\",\n      \"mobile\": \"1234567891\",\n      \"exp\": 1569840998,\n      \"jwtToken\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NSwibmFtZSI6IlN1cGVyIEFkbWluIiwiZW1haWwiOiJzdXBlcmFkbWluQGVuam95b2ZmZXIuY29tIiwibW9iaWxlIjoiMTIzNDU2Nzg5MSIsImV4cCI6MTU2OTg0MDk5OH0.DtVFKBJm_Pt0tx_SS3aPFq5VS8lFyjPLMc-kWyg5GfA\"\n  }\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "   HTTP/1.1 200 ok\n{\n \"status\": 0,\n \"message\": \"invalid credentials\"\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "apidoc/admin.php",
+    "groupTitle": "superAdmin"
   }
 ]

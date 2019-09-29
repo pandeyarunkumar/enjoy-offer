@@ -1,0 +1,58 @@
+<?php
+
+namespace App\Services;
+
+use App\User;
+use App\Category;
+use Illuminate\Http\Request;
+use Firebase\JWT\JWT;
+use Carbon\Carbon;
+
+class AdminService 
+{
+    public function signIn(Request $request){
+        $email = $request->email;
+        $password = $request->password;
+
+        $admin = user::where('email', $email)->first();
+        if(!$admin){
+            return 0;                        
+        }
+
+        if(!\Hash::check($password, $admin->password)){
+            return 0;            
+        }
+
+        $res_admin = new \StdClass();
+        $res_admin->id = $admin->id;
+        $res_admin->name = $admin->name;
+        $res_admin->email = $admin->email;
+        $res_admin->mobile = $admin->mobile;
+
+        $expireDate=Carbon::now()->addHours(24)->timestamp;
+        $res_admin->exp = $expireDate;  
+
+        $jwt = JWT::encode($res_admin, "jwtToken");        
+        $res_admin->jwtToken = $jwt;
+
+        return $res_admin; 
+    }
+
+    public function saveCategory(Request $request){
+        $category = new Category();
+        $category->name = $request->name;
+        $category->slug = str_slug($request->name);
+
+        if($request->parent_category_id){
+            $parent = Category::find($request->parent_category_id);
+            if(!$parent){
+                return 0;
+            }
+        }
+        
+        $category->parent_category_id = $request->parent_category_id;
+
+        $category->save();
+        return $category;
+    }
+}
