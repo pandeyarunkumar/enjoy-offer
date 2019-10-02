@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Firebase\JWT\JWT;
 use Carbon\Carbon;
 
-class AdminService 
+class AdminService extends MasterService
 {
     public function signIn(Request $request){
         $email = $request->email;
@@ -43,6 +43,21 @@ class AdminService
         $category->name = $request->name;
         $category->slug = str_slug($request->name);
 
+        $icon = $request->icon;
+
+        if($request->icon){
+            $res_icon = $this->saveImage($icon);
+            $category->icon = $res_icon->id;
+        }
+        
+
+        $image = $request->image;
+        
+        if($image){
+            $res_image = $this->saveImage($image);
+            $category->image = $res_image->id;
+        }
+
         if($request->parent_category_id){
             $parent = Category::find($request->parent_category_id);
             if(!$parent){
@@ -54,5 +69,11 @@ class AdminService
 
         $category->save();
         return $category;
+    }
+
+    public function getCategories(){
+        $categories = Category::where('parent_category_id', null)->get();
+        return $categories;
+        
     }
 }

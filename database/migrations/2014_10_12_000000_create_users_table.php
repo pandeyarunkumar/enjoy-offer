@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('password')->nullable();
             $table->string('otp')->nullable();  
             $table->string('role')->default('seller');
+            $table->integer('profile_pic')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

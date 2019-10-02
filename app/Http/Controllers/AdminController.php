@@ -56,4 +56,11 @@ class AdminController extends Controller
             }
         }
     }
+
+    public function getCategories(){
+       
+        $categories = $this->adminService->getCategories();
+
+        return $this->respondWithSuccess($categories);            
+    } 
 }

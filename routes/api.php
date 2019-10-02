@@ -21,6 +21,7 @@ Route::post('seller/sign-in', 'LoginController@signIn');
 Route::post('seller/generate-otp', 'LoginController@generateOtp');   
 Route::post('seller/sign-up', 'LoginController@signUp');
 Route::post('admin/sign-in', 'AdminController@signIn');         
+Route::get('get-categories', 'AdminController@getcategories'); 
 
 Route::group(['middleware' => "authenticate"], function () {
     Route::post('seller/save-store', 'StoreController@saveStore');
@@ -29,3 +30,4 @@ Route::group(['middleware' => "authenticate"], function () {
 Route::group(['middleware' => "checkAdmin"], function () {
     Route::post('save-category', 'AdminController@saveCategory');
 });
+
