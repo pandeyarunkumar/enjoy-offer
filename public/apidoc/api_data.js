@@ -144,19 +144,19 @@ define({ "api": [
   {
     "type": "post",
     "url": "save-category",
-    "title": "to save category",
+    "title": "to save category or subcategory.",
     "group": "superAdmin",
     "name": "saveCategory",
     "success": {
       "examples": [
         {
           "title": "Request:",
-          "content": "    HTTP/1.1 200 OK\n{\n\t\"name\":\"Beverages\"\n  }",
+          "content": "    HTTP/1.1 200 OK\n{\n  \t \"name\":\"Car Sale\",\n      \"icon\":\"upload a image file(like jpg, png etc)\",\n      \"image\":\"upload a image file(like jpg, png etc)\",\n  }",
           "type": "json"
         },
         {
           "title": "Request:",
-          "content": "  HTTP/1.1 200 OK\n{\n    \"name\":\"juice\",\n    \"parent_category_id\":1\n}",
+          "content": "    HTTP/1.1 200 OK\n  {\n\t    \"name\":\"Car Sale\",\n     \"icon\":\"upload a image file(like jpg, png etc)\",\n     \"image\":\"upload a image file(like jpg, png etc)\",\n     \"parent_category_id\":1\n  }",
           "type": "json"
         },
         {

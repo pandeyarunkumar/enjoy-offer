@@ -32,20 +32,25 @@
  *   }
  */
 /**
- * @api {post}  save-category to save category
+ * @api {post}  save-category to save category or subcategory.
  * @apiGroup superAdmin
  * @apiName saveCategory
  *
  * @apiSuccessExample Request:
  *     HTTP/1.1 200 OK
  * {
- *	"name":"Beverages"
+ *   	 "name":"Car Sale",
+ *       "icon":"upload a image file(like jpg, png etc)",
+ *       "image":"upload a image file(like jpg, png etc)",
  *   }
+ *
  *   @apiSuccessExample Request:
  *     HTTP/1.1 200 OK
  *   {
- *       "name":"juice",
- *       "parent_category_id":1
+ *	    "name":"Car Sale",
+ *      "icon":"upload a image file(like jpg, png etc)",
+ *      "image":"upload a image file(like jpg, png etc)",
+ *      "parent_category_id":1
  *   }
  *
  * @apiSuccessExample Success-Response:
