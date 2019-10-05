@@ -40,8 +40,8 @@
  *     HTTP/1.1 200 OK
  * {
  *   	 "name":"Car Sale",
- *       "icon":"upload a image file(like jpg, png etc)",
- *       "image":"upload a image file(like jpg, png etc)",
+ *       "icon":"Send an image file(like jpg, png etc)",
+ *       "image":"Send an image file(like jpg, png etc)",
  *   }
  *
  *   @apiSuccessExample Request:

@@ -109,6 +109,25 @@
     "groupTitle": "Store"
   },
   {
+    "type": "get",
+    "url": "get-stores",
+    "title": "to get all stores.",
+    "name": "getStores",
+    "group": "Store",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "   HTTP/1.1 200 OK\n {\n\"status\": 1,\n\"data\": [\n    {\n         \"id\": 1,\n         \"name\": \"Test Store\",\n         \"postal_code\": \"TQ5 5BT\",\n         \"logo\": null,\n         \"cover_image\": null,\n         \"address\": \"17  Guildry Street, GALMPTON\",\n         \"lat\": 19.77187,\n         \"long\": 25.979581,\n         \"seller\": {\n             \"id\": 4,\n             \"name\": \"Arun\",\n             \"email\": \"pandeyarunoct@gmail.com\",\n             \"mobile\": \"7379273205\"\n         }\n     },\n     {\n         \"id\": 2,\n         \"name\": \"Test Store2\",\n         \"postal_code\": \"TQ5 5BT\",\n         \"logo\": null,\n         \"cover_image\": null,\n         \"address\": \"17  Guildry Street, GALMPTON\",\n         \"lat\": 19.77187,\n         \"long\": 25.979581,\n         \"seller\": {\n             \"id\": 4,\n             \"name\": \"Arun\",\n             \"email\": \"pandeyarunoct@gmail.com\",\n             \"mobile\": \"7379273205\"\n         }\n     },\n     {\n         \"id\": 3,\n         \"name\": \"Test Store3\",\n         \"postal_code\": \"TQ5 5BT\",\n         \"logo\": null,\n         \"cover_image\": null,\n         \"address\": \"17  Guildry Street, GALMPTON\",\n         \"lat\": 19.77187,\n         \"long\": 25.979581,\n         \"seller\": {\n             \"id\": 4,\n             \"name\": \"Arun\",\n             \"email\": \"pandeyarunoct@gmail.com\",\n             \"mobile\": \"7379273205\"\n         }\n     }\n ]\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "apidoc/store.php",
+    "groupTitle": "Store"
+  },
+  {
     "type": "post",
     "url": "seller/save-store",
     "title": "to save the seller's store.",
@@ -118,12 +137,12 @@
       "examples": [
         {
           "title": "Request:",
-          "content": "    HTTP/1.1 200 OK\n {\n\t\"name\":\"Test Store\",\n\t\"postal_code\" : \"TQ5 5BT\",\n\t\"address\": \"17  Guildry Street, GALMPTON\",\n\t\"lat\":19.77187,\n\t\"long\":25.979581\n  }",
+          "content": "    HTTP/1.1 200 OK\n {\n\t\"name\":\"Test Store\",\n\t\"postal_code\" : \"TQ5 5BT\",\n\t\"address\": \"17  Guildry Street, GALMPTON\",\n \"logo\":\"Send an image file(like jpg, png etc)\",\n \"cover_image\":\"Send an image file(like jpg, png etc)\",\n\t\"lat\":19.77187,\n\t\"long\":25.979581\n  }",
           "type": "json"
         },
         {
           "title": "Success-Response:",
-          "content": "    HTTP/1.1 200 OK\n{\n  \"status\": 1,\n  \"data\": {\n      \"user_id\": 4,\n      \"name\": \"Test Store\",\n      \"postal_code\": \"TQ5 5BT\",\n      \"address\": \"17  Guildry Street, GALMPTON\",\n      \"lat\": 19.77187,\n      \"long\": 25.979581,\n      \"updated_at\": \"2019-09-26 20:35:31\",\n      \"created_at\": \"2019-09-26 20:35:31\",\n      \"id\": 1\n  }\n}",
+          "content": "    HTTP/1.1 200 OK\n{\n  \"status\": 1,\n  \"data\": {\n      \"user_id\": 4,\n      \"name\": \"Test Store\",\n      \"postal_code\": \"TQ5 5BT\",\n      \"address\": \"17  Guildry Street, GALMPTON\",\n      \"lat\": 19.77187,\n      \"long\": 25.979581,\n      \"logo\": \"null\",\n      \"cover_image\": \"null\",\n      \"id\": 1\n  }\n}",
           "type": "json"
         }
       ]
@@ -151,7 +170,7 @@
       "examples": [
         {
           "title": "Request:",
-          "content": "    HTTP/1.1 200 OK\n{\n  \t \"name\":\"Car Sale\",\n      \"icon\":\"upload a image file(like jpg, png etc)\",\n      \"image\":\"upload a image file(like jpg, png etc)\",\n  }",
+          "content": "    HTTP/1.1 200 OK\n{\n  \t \"name\":\"Car Sale\",\n      \"icon\":\"Send an image file(like jpg, png etc)\",\n      \"image\":\"Send an image file(like jpg, png etc)\",\n  }",
           "type": "json"
         },
         {

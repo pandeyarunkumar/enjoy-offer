@@ -18,6 +18,8 @@ class CreateStoresTable extends Migration
             $table->integer('user_id');
             $table->string('name');
             $table->string('postal_code');
+            $table->integer('logo')->nullable();
+            $table->integer('cover_image')->nullable();
             $table->text('address')->nullable();
             $table->double('lat', 9, 6)->nullable();
             $table->double('long', 9, 6)->nullable();

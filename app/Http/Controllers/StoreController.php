@@ -27,4 +27,11 @@ class StoreController extends Controller
         return $this->respondWithSuccess($store);
         
     }
+
+    public function getStores(){
+       
+        $stores = $this->storeService->getStores();
+
+        return $this->respondWithSuccess($stores);            
+    } 
 }

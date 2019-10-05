@@ -9,6 +9,8 @@
  *	"name":"Test Store",
  *	"postal_code" : "TQ5 5BT",
  *	"address": "17  Guildry Street, GALMPTON",
+ *  "logo":"Send an image file(like jpg, png etc)",
+ *  "cover_image":"Send an image file(like jpg, png etc)",
  *	"lat":19.77187,
  *	"long":25.979581
  *   }
@@ -24,8 +26,8 @@
  *       "address": "17  Guildry Street, GALMPTON",
  *       "lat": 19.77187,
  *       "long": 25.979581,
- *       "updated_at": "2019-09-26 20:35:31",
- *       "created_at": "2019-09-26 20:35:31",
+ *       "logo": "null",
+ *       "cover_image": "null",
  *       "id": 1
  *   }
  * }
@@ -149,4 +151,65 @@
  *   ]
  *}
  *
+ */
+/**
+ * @api {get}  get-stores to get all stores.
+ * @apiName getStores
+ * @apiGroup Store
+ *
+ * @apiSuccessExample Success-Response:
+ *     HTTP/1.1 200 OK
+ *   {
+ *  "status": 1,
+ *  "data": [
+ *      {
+ *           "id": 1,
+ *           "name": "Test Store",
+ *           "postal_code": "TQ5 5BT",
+ *           "logo": null,
+ *           "cover_image": null,
+ *           "address": "17  Guildry Street, GALMPTON",
+ *           "lat": 19.77187,
+ *           "long": 25.979581,
+ *           "seller": {
+ *               "id": 4,
+ *               "name": "Arun",
+ *               "email": "pandeyarunoct@gmail.com",
+ *               "mobile": "7379273205"
+ *           }
+ *       },
+ *       {
+ *           "id": 2,
+ *           "name": "Test Store2",
+ *           "postal_code": "TQ5 5BT",
+ *           "logo": null,
+ *           "cover_image": null,
+ *           "address": "17  Guildry Street, GALMPTON",
+ *           "lat": 19.77187,
+ *           "long": 25.979581,
+ *           "seller": {
+ *               "id": 4,
+ *               "name": "Arun",
+ *               "email": "pandeyarunoct@gmail.com",
+ *               "mobile": "7379273205"
+ *           }
+ *       },
+ *       {
+ *           "id": 3,
+ *           "name": "Test Store3",
+ *           "postal_code": "TQ5 5BT",
+ *           "logo": null,
+ *           "cover_image": null,
+ *           "address": "17  Guildry Street, GALMPTON",
+ *           "lat": 19.77187,
+ *           "long": 25.979581,
+ *           "seller": {
+ *               "id": 4,
+ *               "name": "Arun",
+ *               "email": "pandeyarunoct@gmail.com",
+ *               "mobile": "7379273205"
+ *           }
+ *       }
+ *   ]
+ *   }
  */
