@@ -23,6 +23,7 @@ class CreateStoresTable extends Migration
             $table->text('address')->nullable();
             $table->double('lat', 9, 6)->nullable();
             $table->double('long', 9, 6)->nullable();
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
     }

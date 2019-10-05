@@ -171,6 +171,7 @@
  *           "address": "17  Guildry Street, GALMPTON",
  *           "lat": 19.77187,
  *           "long": 25.979581,
+ *           "is_active": 1,
  *           "seller": {
  *               "id": 4,
  *               "name": "Arun",
@@ -187,6 +188,7 @@
  *           "address": "17  Guildry Street, GALMPTON",
  *           "lat": 19.77187,
  *           "long": 25.979581,
+ *           "is_active": 1,
  *           "seller": {
  *               "id": 4,
  *               "name": "Arun",
@@ -203,6 +205,7 @@
  *           "address": "17  Guildry Street, GALMPTON",
  *           "lat": 19.77187,
  *           "long": 25.979581,
+ *           "is_active": 1,
  *           "seller": {
  *               "id": 4,
  *               "name": "Arun",
