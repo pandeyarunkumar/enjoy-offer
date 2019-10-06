@@ -161,7 +161,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request:",
-          "content": "    HTTP/1.1 200 OK\n {\n\t\"category_id\":13,\n\t\"store_id\" : 9,\n\t\"name\": \"test\",\n \"short_description\":\"this is a short description\",\n \"description\":\"dnwhgmdhjk\",\n\t\"cost_price\":12.00,\n\t\"selling_price\":14.00,\n\t\"compare_price\":24.00,\n\t\"compare_text\":flat 10 rs off,\n\t\"is_featured\":1,\n\t\"is_published\":1,\n \"featured_image_file\":\"send an image file\",\n \"image_files\":\"send an array of image files\",\n \"featured_image_id\":51,\n \"image_ids\":['52', '53'],\n  }",
+          "content": "    HTTP/1.1 200 OK\n {\n\t\"category_id\":13,\n\t\"store_id\" : 9,\n\t\"name\": \"test\",\n \"short_description\":\"this is a short description\",\n \"description\":\"dnwhgmdhjk\",\n\t\"cost_price\":12.00,\n\t\"selling_price\":14.00,\n\t\"compare_price\":24.00,\n\t\"compare_text\":\"flat 10 rs off\",\n\t\"is_featured\":1,\n\t\"is_published\":1,\n \"featured_image_file\":\"send an image file\",\n \"image_files\":\"send an array of image files\",\n \"featured_image_id\":51,\n \"image_ids\":['52', '53'],\n  }",
           "type": "json"
         },
         {

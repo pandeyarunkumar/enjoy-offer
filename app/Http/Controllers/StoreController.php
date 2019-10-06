@@ -50,7 +50,7 @@ class StoreController extends Controller
             return $this->respondWithSuccessMessage("Product saved successfuly");                                       
         }
         else{
-            return $this->respondWithError("Name of the product alredy has taken");  
+            return $this->respondWithError("Name of the product alredy has been taken");  
         }
 
         

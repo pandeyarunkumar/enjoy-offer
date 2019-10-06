@@ -232,7 +232,7 @@
  *	"cost_price":12.00,
  *	"selling_price":14.00,
  *	"compare_price":24.00,
- *	"compare_text":flat 10 rs off,
+ *	"compare_text":"flat 10 rs off",
  *	"is_featured":1,
  *	"is_published":1,
  *  "featured_image_file":"send an image file",
