@@ -47,13 +47,28 @@ class StoreController extends Controller
         $store = $this->storeService->saveProduct($request);
 
         if($store){
-            return $this->respondWithSuccess($store);
+            return $this->respondWithSuccessMessage("Product saved successfuly");                                       
         }
         else{
-            return $this->respondWithSuccessMessage("Name of the product alredy has taken");  
+            return $this->respondWithError("Name of the product alredy has taken");  
         }
 
         
     }
+
+    public function getProducts(Request $request){
+
+        $validator = Validator::make($request->all(), [
+            'store_id' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return $this->respondWithValidationError($validator);
+        }
+       
+        $Products = $this->storeService->getProducts($request);
+
+        return $this->respondWithSuccess($Products);            
+    } 
 
 }

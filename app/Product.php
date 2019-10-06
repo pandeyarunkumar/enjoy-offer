@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
+    protected $hidden = ['store_id', 'category_id'];
+    
     public function getfeaturedImageAttribute($value)
     {
         $image = Image::find($value);
@@ -19,10 +21,11 @@ class Product extends Model
     }
 
     public function category(){
-        return $this->belongsTo(category::class);
+        return $this->belongsTo(Category::class);
     }
 
     public function store(){
         return $this->belongsTo(Store::class);
     }
+
 }

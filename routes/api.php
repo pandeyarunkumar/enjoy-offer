@@ -23,6 +23,7 @@ Route::post('seller/sign-up', 'LoginController@signUp');
 Route::post('admin/sign-in', 'AdminController@signIn');         
 Route::get('get-categories', 'AdminController@getcategories'); 
 Route::get('get-stores', 'StoreController@getStores'); 
+Route::get('get-products', 'StoreController@getProducts'); 
 
 Route::group(['middleware' => "authenticate"], function () {
     Route::post('seller/save-store', 'StoreController@saveStore');

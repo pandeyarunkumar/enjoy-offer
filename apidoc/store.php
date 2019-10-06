@@ -216,3 +216,141 @@
  *   ]
  *   }
  */
+/**
+ * @api {post}  seller/save-product to save the product.
+ * @apiName saveProduct
+ * @apiGroup Store
+ *
+ * @apiSuccessExample Request:
+ *     HTTP/1.1 200 OK
+ *  {
+ *	"category_id":13,
+ *	"store_id" : 9,
+ *	"name": "test",
+ *  "short_description":"this is a short description",
+ *  "description":"dnwhgmdhjk",
+ *	"cost_price":12.00,
+ *	"selling_price":14.00,
+ *	"compare_price":24.00,
+ *	"compare_text":flat 10 rs off,
+ *	"is_featured":1,
+ *	"is_published":1,
+ *  "featured_image_file":"send an image file",
+ *  "image_files":"send an array of image files",
+ *  "featured_image_id":51,
+ *  "image_ids":['52', '53'],
+ *   }
+ *
+ * @apiSuccessExample Success-Response:
+ *     HTTP/1.1 200 OK
+ * {
+ *   "status": 1,
+ *   "message": "Product saved successfuly"
+ *   }
+ *
+ * @apiErrorExample Error-Response:
+ *     HTTP/1.1 200 ok
+ *  {
+ *   "status": 0,
+ *   "message": "Name of the product alredy has been taken"
+ *  }
+ */
+/**
+ * @api {get} get-products to get all the products of the perticular store.
+ * @apiName getProducts
+ * @apiGroup Store
+ *
+ * @apiSuccessExample Request:
+ *     HTTP/1.1 200 OK
+ *  {
+ *	"store_id" : 9,
+ *   }
+ *
+ * @apiSuccessExample Success-Response:
+ *     HTTP/1.1 200 OK
+ * {
+ *   "status": 1,
+ *   "data": [
+ *       {
+ *           "id": 1,
+ *           "name": "test",
+ *           "slug": "test",
+ *           "short_description": "this is a short description",
+ *           "description": "dnwhgmdhjk",
+ *           "cost_price": 12,
+ *           "selling_price": 14,
+ *           "compare_price": 24,
+ *           "compare_text": "flat 10 rs off",
+ *           "is_featured": 1,
+ *           "featured_image": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-06 16:30:25-5d9a16a10666d.png",
+ *           "is_published": 1,
+ *           "published_at": "2019-10-06 16:30:25",
+ *           "created_at": "2019-10-06 16:30:25",
+ *           "updated_at": "2019-10-06 16:30:25",
+ *           "category": {
+ *               "id": 13,
+ *               "slug": "car-sale",
+ *               "name": "Car Sale",
+ *               "icon": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 08:27:34-5d9853f65e4fc.png",
+ *               "image": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 08:27:34-5d9853f6c9f61.png",
+ *               "created_at": "2019-10-05 08:27:34",
+ *               "updated_at": "2019-10-05 08:27:34"
+ *           },
+ *           "images": [
+ *               {
+ *                   "id": 69,
+ *                   "url": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-06 16:30:25-5d9a16a1356b3.png"
+ *               },
+ *               {
+ *                   "id": 70,
+ *                   "url": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-06 16:30:25-5d9a16a141559.png"
+ *               },
+ *               {
+ *                   "id": 52,
+ *                   "url": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-06 12:50:01-5d99e2f913cee.png"
+ *               },
+ *               {
+ *                   "id": 53,
+ *                   "url": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-06 12:50:55-5d99e32f3c60c.jpeg"
+ *               }
+ *           ]
+ *       },
+ *       {
+ *           "id": 2,
+ *           "name": "test2",
+ *           "slug": "test2",
+ *           "short_description": "this is a short description",
+ *           "description": "dnwhgmdhjk",
+ *           "cost_price": 12,
+ *           "selling_price": 14,
+ *           "compare_price": 24,
+ *           "compare_text": "flat 10 rs off",
+ *           "is_featured": 1,
+ *           "featured_image": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-06 16:42:37-5d9a197db3ba3.png",
+ *           "is_published": 1,
+ *           "published_at": "2019-10-06 16:42:37",
+ *           "created_at": "2019-10-06 16:42:37",
+ *           "updated_at": "2019-10-06 16:42:37",
+ *           "category": {
+ *               "id": 13,
+ *               "slug": "car-sale",
+ *               "name": "Car Sale",
+ *               "icon": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 08:27:34-5d9853f65e4fc.png",
+ *               "image": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 08:27:34-5d9853f6c9f61.png",
+ *               "created_at": "2019-10-05 08:27:34",
+ *               "updated_at": "2019-10-05 08:27:34"
+ *           },
+ *           "images": [
+ *               {
+ *                   "id": 72,
+ *                   "url": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-06 16:42:37-5d9a197dd7ee1.png"
+ *               },
+ *               {
+ *                   "id": 73,
+ *                   "url": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-06 16:42:37-5d9a197df256c.png"
+ *               }
+ *           ]
+ *       }
+ *   ]
+ * }
+ */

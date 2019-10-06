@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Store;
 use App\Product;
+use App\Category;
 use Illuminate\Http\Request;
 use Firebase\JWT\JWT;
 use Carbon\Carbon;
@@ -93,10 +94,15 @@ class StoreService extends MasterService
         }
 
         if($request->image_ids && count($request->image_ids)){
-            $product->images()->attach($image_ids);
+            $product->images()->attach($request->image_ids);
         }
 
         return $product;
 
+    }
+
+    public function getProducts($request){
+        $products = Product::where('store_id', $request->store_id)->with('category')->with('images')->get();
+        return $products; 
     }
 }
