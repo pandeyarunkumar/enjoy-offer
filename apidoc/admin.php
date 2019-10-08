@@ -32,7 +32,7 @@
  *   }
  */
 /**
- * @api {post}  save-category to save category or subcategory.
+ * @api {post}  admin/save-category to save category or subcategory.
  * @apiGroup superAdmin
  * @apiName saveCategory
  *

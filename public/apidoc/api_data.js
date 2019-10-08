@@ -219,7 +219,7 @@ define({ "api": [
   },
   {
     "type": "post",
-    "url": "save-category",
+    "url": "admin/save-category",
     "title": "to save category or subcategory.",
     "group": "superAdmin",
     "name": "saveCategory",

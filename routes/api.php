@@ -31,6 +31,6 @@ Route::group(['middleware' => "authenticate"], function () {
 });
 
 Route::group(['middleware' => "checkAdmin"], function () {
-    Route::post('save-category', 'AdminController@saveCategory');
+    Route::post('admin/save-category', 'AdminController@saveCategory');
 });
 
