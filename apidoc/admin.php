@@ -72,3 +72,21 @@
  *   "message": "Gievn parent category not found"
  *   }
  */
+/**
+ * @api {post}  admin/save-product-images to save product images.
+ * @apiGroup superAdmin
+ * @apiName saveProductImages
+ *
+ * @apiSuccessExample Request:
+ *     HTTP/1.1 200 OK
+ * {
+ *   	 "images":"Send an array of image file",
+ *   }
+ *
+ * @apiSuccessExample Success-Response:
+ *     HTTP/1.1 200 OK
+ * {
+ *   "status": 1,
+ *   "message": "Images saved successfuly"
+ *   }
+ */

@@ -354,3 +354,28 @@
  *   ]
  * }
  */
+ /**
+ * @api {get} seller/get-images to get all product images uploaded by admin.
+ * @apiName getProductImages
+ * @apiGroup Store
+ *
+ * @apiSuccessExample Success-Response:
+ *     HTTP/1.1 200 OK
+ *   {
+ *   "status": 1,
+ *   "data": [
+ *       {
+ *           "id": 74,
+ *           "url": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-08 13:04:12-5d9c894c36d29.png"
+ *       },
+ *       {
+ *           "id": 75,
+ *           "url": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-08 13:04:12-5d9c894c61efb.png"
+ *       },
+ *       {
+ *           "id": 76,
+ *           "url": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-08 13:04:12-5d9c894c731ae.png"
+ *       }
+ *   ]
+ * }
+ */

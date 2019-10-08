@@ -71,4 +71,9 @@ class StoreController extends Controller
         return $this->respondWithSuccess($Products);            
     } 
 
+    public function getImages(){
+        $images = $this->storeService->getImages();
+        return $this->respondWithSuccess($images);            
+    } 
+
 }

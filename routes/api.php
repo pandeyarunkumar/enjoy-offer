@@ -26,11 +26,13 @@ Route::get('get-stores', 'StoreController@getStores');
 Route::get('get-products', 'StoreController@getProducts'); 
 
 Route::group(['middleware' => "authenticate"], function () {
+    Route::get('seller/get-images', 'StoreController@getImages'); 
     Route::post('seller/save-store', 'StoreController@saveStore');
     Route::post('seller/save-product', 'StoreController@saveProduct');
 });
 
 Route::group(['middleware' => "checkAdmin"], function () {
     Route::post('admin/save-category', 'AdminController@saveCategory');
+    Route::post('admin/save-product-images', 'AdminController@saveProductImages');
 });
 

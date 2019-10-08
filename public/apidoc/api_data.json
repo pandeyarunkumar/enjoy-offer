@@ -110,6 +110,25 @@
   },
   {
     "type": "get",
+    "url": "seller/get-images",
+    "title": "to get all product images uploaded by admin.",
+    "name": "getProductImages",
+    "group": "Store",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n  {\n  \"status\": 1,\n  \"data\": [\n      {\n          \"id\": 74,\n          \"url\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-08 13:04:12-5d9c894c36d29.png\"\n      },\n      {\n          \"id\": 75,\n          \"url\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-08 13:04:12-5d9c894c61efb.png\"\n      },\n      {\n          \"id\": 76,\n          \"url\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-08 13:04:12-5d9c894c731ae.png\"\n      }\n  ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "apidoc/store.php",
+    "groupTitle": "Store"
+  },
+  {
+    "type": "get",
     "url": "get-products",
     "title": "to get all the products of the particular store.",
     "name": "getProducts",
@@ -252,6 +271,30 @@
         {
           "title": "Error-Response:",
           "content": "   HTTP/1.1 200 ok\n{\n \"status\": 0,\n \"message\": \"Gievn parent category not found\"\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "apidoc/admin.php",
+    "groupTitle": "superAdmin"
+  },
+  {
+    "type": "post",
+    "url": "admin/save-product-images",
+    "title": "to save product images.",
+    "group": "superAdmin",
+    "name": "saveProductImages",
+    "success": {
+      "examples": [
+        {
+          "title": "Request:",
+          "content": "    HTTP/1.1 200 OK\n{\n  \t \"images\":\"Send an array of image file\",\n  }",
+          "type": "json"
+        },
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n{\n  \"status\": 1,\n  \"message\": \"Images saved successfuly\"\n  }",
           "type": "json"
         }
       ]

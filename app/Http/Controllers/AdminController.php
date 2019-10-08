@@ -63,4 +63,23 @@ class AdminController extends Controller
 
         return $this->respondWithSuccess($categories);            
     } 
+
+    public function saveProductImages(Request $request){
+        $validator = Validator::make($request->all(), [
+            'images' => 'required'
+        ]);
+
+        if ($validator->fails()) {
+            return $this->respondWithValidationError($validator);
+        }
+        else{
+            $status = $this->adminService->saveProductImages($request);
+            if($status){
+                return $this->respondWithSuccessMessage("Images saved successfuly");                           
+            } 
+            else{
+                return $this->respondNotFound("Something went wrong");                           
+            }
+        }
+    }
 }
