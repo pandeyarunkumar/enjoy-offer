@@ -256,7 +256,7 @@
  *  }
  */
 /**
- * @api {get} get-products to get all the products of the perticular store.
+ * @api {get} get-products to get all the products of the particular store.
  * @apiName getProducts
  * @apiGroup Store
  *

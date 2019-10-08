@@ -111,7 +111,7 @@ define({ "api": [
   {
     "type": "get",
     "url": "get-products",
-    "title": "to get all the products of the perticular store.",
+    "title": "to get all the products of the particular store.",
     "name": "getProducts",
     "group": "Store",
     "success": {
