@@ -8,7 +8,6 @@ use Validator;
 class StoreController extends Controller
 {
     protected $storeService;
-
 	public function __construct(StoreService $storeService) {
 		
 		$this->storeService = $storeService;
@@ -31,6 +30,13 @@ class StoreController extends Controller
     public function getStores(){
        
         $stores = $this->storeService->getStores();
+
+        return $this->respondWithSuccess($stores);            
+    } 
+
+    public function getSellerStores(Request $request){
+       
+        $stores = $this->storeService->getSellerStores($request);
 
         return $this->respondWithSuccess($stores);            
     } 

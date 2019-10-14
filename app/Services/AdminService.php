@@ -82,15 +82,32 @@ class AdminService extends MasterService
 
         if($request->images && count($request->images)){
 
-            foreach($request->images as $image){
+            foreach($request->images as $data){
 
-                $ext = $image->guessExtension();
-                $file_name    =    "enjoy-offer-image-".Carbon::now()."-".uniqid().".{$ext}";
-                $file_url    =    "storage/images/";
-                $image->move($file_url, $file_name);
+                if (preg_match('/^data:image\/(\w+);base64,/', $data, $type)) {
+                    $data = substr($data, strpos($data, ',') + 1);
+                    $type = strtolower($type[1]); // jpg, png, gif
+                
+                    if (!in_array($type, [ 'jpg', 'jpeg', 'gif', 'png' ])) {
+                        throw new \Exception('invalid image type');
+                    }
+                
+                    $data = base64_decode($data);
+                
+                    if ($data === false) {
+                        throw new \Exception('base64_decode failed');
+                    }
+                } else {
+                    throw new \Exception('did not match data URI with image data');
+                }
+        
+                $url = "storage/images/enjoy-offer-image".Carbon::now().uniqid(). "." . $type;
+                
+                file_put_contents($url, $data);
+        
         
                 $img = new Image();
-                $img->url = $file_url.$file_name;
+                $img->url = $url;
                 $img->uploaded_by_admin = 1;
                 $img->save();
 

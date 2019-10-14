@@ -46,6 +46,11 @@ class StoreService extends MasterService
         $stores = Store::with('seller')->get();
         return $stores; 
     }
+
+    public function getSellerStores($request){
+        $stores = $request->user->stores;
+        return $stores; 
+    }
     
     public function saveProduct(Request $request){
 

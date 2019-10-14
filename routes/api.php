@@ -29,6 +29,7 @@ Route::group(['middleware' => "authenticate"], function () {
     Route::get('seller/get-images', 'StoreController@getImages'); 
     Route::post('seller/save-store', 'StoreController@saveStore');
     Route::post('seller/save-product', 'StoreController@saveProduct');
+    Route::get('seller/get-stores', 'StoreController@getSellerStores'); 
 });
 
 Route::group(['middleware' => "checkAdmin"], function () {

@@ -9,29 +9,31 @@ use Carbon\Carbon;
 class MasterService
 {
    
-    public function saveImage($image)
+    public function saveImage($data)
     {
-     
-    // $base64 = $image;
-    // $image = str_replace('data:image/png;base64,', '', $base64);
-    // $image = str_replace(' ', '+', $image);
+        if (preg_match('/^data:image\/(\w+);base64,/', $data, $type)) {
+            $data = substr($data, strpos($data, ',') + 1);
+            $type = strtolower($type[1]); // jpg, png, gif
+        
+            if (!in_array($type, [ 'jpg', 'jpeg', 'gif', 'png' ])) {
+                throw new \Exception('invalid image type');
+            }
+        
+            $data = base64_decode($data);
+        
+            if ($data === false) {
+                throw new \Exception('base64_decode failed');
+            }
+        } else {
+            throw new \Exception('did not match data URI with image data');
+        }
 
-    // $pos  = strpos($base64, ';');
-    // $ext = explode(':', substr($base64, 0, $pos))[1];
-    // $ext = explode('/', substr($ext, 0, $pos))[1];
-
-    // $imageName    =    "enjoy-offer-image-".Carbon::now()."-".uniqid().".{$ext}";
-    // $file_url    =    "storage/images/";
-
-    // \File::put($file_url . $imageName, base64_decode($base64)); 
-    
-        $ext = $image->guessExtension();
-        $file_name    =    "enjoy-offer-image-".Carbon::now()."-".uniqid().".{$ext}";
-        $file_url    =    "storage/images/";
-        $image->move($file_url, $file_name);
-
+        $url = "storage/images/enjoy-offer-image".Carbon::now().uniqid(). "." . $type;
+        
+        file_put_contents($url, $data);
+         
         $img = new Image();
-        $img->url = $file_url.$file_name;
+        $img->url = $url;
         $img->save();
         return $img;
     }
