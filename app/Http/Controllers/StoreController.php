@@ -77,9 +77,37 @@ class StoreController extends Controller
         return $this->respondWithSuccess($Products);            
     } 
 
+    public function getSellerProducts(Request $request){
+       
+        $Products = $this->storeService->getSellerProducts($request);
+
+        return $this->respondWithSuccess($Products);            
+    } 
+
     public function getImages(){
         $images = $this->storeService->getImages();
         return $this->respondWithSuccess($images);            
     } 
+
+    public function deleteProduct(Request $request){
+
+        $validator = Validator::make($request->all(), [
+            'product_id' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return $this->respondWithValidationError($validator);
+        }
+
+        $product = $this->storeService->deleteProduct($request);
+
+        if($product){
+            return $this->respondWithSuccessMessage("Product deleted successfuly");                                       
+        }
+        else{
+            return $this->respondWithError("You can not delete this product");  
+        }
+
+    }
 
 }

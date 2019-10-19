@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    protected $hidden = ['store_id', 'category_id'];
+    protected $hidden = ['store_id', 'category_id', 'user_id'];
     
     public function getfeaturedImageAttribute($value)
     {
@@ -26,6 +26,10 @@ class Product extends Model
 
     public function store(){
         return $this->belongsTo(Store::class);
+    }
+
+    public function seller(){
+        return $this->belongsTo(User::class, 'user_id');
     }
 
 }

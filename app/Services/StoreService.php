@@ -63,6 +63,7 @@ class StoreService extends MasterService
         $product = new Product();
         $product->category_id = $request->category_id;
         $product->store_id = $request->store_id;
+        $product->user_id = $request->user->id;
         $product->name = $request->name;
         $product->slug = str_slug($request->name);
         $product->short_description = $request->short_description;
@@ -112,8 +113,28 @@ class StoreService extends MasterService
         return $products; 
     }
 
+    public function getSellerProducts($request){
+        $products = Product::where('user_id', $request->user->id)->with('category', 'images', 'seller', 'store')->get();
+        return $products; 
+    }
+
     public function getImages(){
         $images = Image::where('uploaded_by_admin', 1)->get();
         return $images; 
+    }
+
+    public function deleteProduct($request){
+
+        $product = Product::findOrFail($request->product_id);
+
+        if($product->user_id != $request->user->id){
+            return 0;
+        }
+
+        $product->images()->sync([]);
+
+        $res = Product::where('id',$product->id)->delete();
+
+        return $res;
     }
 }

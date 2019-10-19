@@ -90,6 +90,30 @@
     "groupTitle": "Login"
   },
   {
+    "type": "post",
+    "url": "seller/delete-product",
+    "title": "to delete the product.",
+    "name": "deleteProduct",
+    "group": "Store",
+    "success": {
+      "examples": [
+        {
+          "title": "Request:",
+          "content": "    HTTP/1.1 200 OK\n {\n\t\"store_id\" : 4,\n  }",
+          "type": "json"
+        },
+        {
+          "title": "Success-Response:",
+          "content": "  HTTP/1.1 200 OK\n{\n    \"status\": 1,\n    \"message\": \"Product deleted successfuly\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "apidoc/store.php",
+    "groupTitle": "Store"
+  },
+  {
     "type": "get",
     "url": "get-categories",
     "title": "to get all categories.",
@@ -153,6 +177,25 @@
   },
   {
     "type": "get",
+    "url": "seller/get-products",
+    "title": "to get the seller's products.",
+    "name": "getSellerProducts",
+    "group": "Store",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "   HTTP/1.1 200 OK\n{\n \"status\": 1,\n \"data\": [\n     {\n         \"id\": 1,\n         \"name\": \"test\",\n         \"slug\": \"test\",\n         \"short_description\": \"this is a short description\",\n         \"description\": \"dnwhgmdhjk\",\n         \"cost_price\": 12,\n         \"selling_price\": 14,\n         \"compare_price\": 24,\n         \"compare_text\": \"flat 10 rs off\",\n         \"is_featured\": 1,\n         \"featured_image\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-06 16:30:25-5d9a16a10666d.png\",\n         \"is_published\": 1,\n         \"published_at\": \"2019-10-06 16:30:25\",\n         \"created_at\": \"2019-10-06 16:30:25\",\n         \"updated_at\": \"2019-10-06 16:30:25\",\n         \"category\": {\n             \"id\": 13,\n             \"slug\": \"car-sale\",\n             \"name\": \"Car Sale\",\n             \"icon\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 08:27:34-5d9853f65e4fc.png\",\n             \"image\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 08:27:34-5d9853f6c9f61.png\",\n             \"created_at\": \"2019-10-05 08:27:34\",\n             \"updated_at\": \"2019-10-05 08:27:34\"\n         },\n         \"images\": [\n             {\n                 \"id\": 69,\n                 \"url\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-06 16:30:25-5d9a16a1356b3.png\"\n             },\n             {\n                 \"id\": 70,\n                 \"url\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-06 16:30:25-5d9a16a141559.png\"\n             },\n             {\n                 \"id\": 52,\n                 \"url\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-06 12:50:01-5d99e2f913cee.png\"\n             },\n             {\n                 \"id\": 53,\n                 \"url\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-06 12:50:55-5d99e32f3c60c.jpeg\"\n             }\n         ],\n         \"seller\": {\n             \"id\": 5,\n             \"name\": \"Super Admin\",\n             \"email\": \"superadmin@enjoyoffer.com\",\n             \"mobile\": \"1234567891\"\n         },\n         \"store\": {\n             \"id\": 9,\n             \"name\": \"Test123456\",\n             \"postal_code\": \"TQ5 5BT\",\n             \"logo\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 14:51:12-5d98ade02f3fa.jpeg\",\n             \"cover_image\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 14:51:12-5d98ade043dc6.png\",\n             \"address\": \"17  Guildry Street, GALMPTON\",\n             \"lat\": 19.77187,\n             \"long\": 19.77187,\n             \"is_active\": 1\n         }\n     },\n     {\n         \"id\": 2,\n         \"name\": \"test2\",\n         \"slug\": \"test2\",\n         \"short_description\": \"this is a short description\",\n         \"description\": \"dnwhgmdhjk\",\n         \"cost_price\": 12,\n         \"selling_price\": 14,\n         \"compare_price\": 24,\n         \"compare_text\": \"flat 10 rs off\",\n         \"is_featured\": 1,\n         \"featured_image\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-06 16:42:37-5d9a197db3ba3.png\",\n         \"is_published\": 1,\n         \"published_at\": \"2019-10-06 16:42:37\",\n         \"created_at\": \"2019-10-06 16:42:37\",\n         \"updated_at\": \"2019-10-06 16:42:37\",\n         \"category\": {\n             \"id\": 13,\n             \"slug\": \"car-sale\",\n             \"name\": \"Car Sale\",\n             \"icon\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 08:27:34-5d9853f65e4fc.png\",\n             \"image\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 08:27:34-5d9853f6c9f61.png\",\n             \"created_at\": \"2019-10-05 08:27:34\",\n             \"updated_at\": \"2019-10-05 08:27:34\"\n         },\n         \"images\": [\n             {\n                 \"id\": 72,\n                 \"url\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-06 16:42:37-5d9a197dd7ee1.png\"\n             },\n             {\n                 \"id\": 73,\n                 \"url\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-06 16:42:37-5d9a197df256c.png\"\n             }\n         ],\n         \"seller\": {\n             \"id\": 5,\n             \"name\": \"Super Admin\",\n             \"email\": \"superadmin@enjoyoffer.com\",\n             \"mobile\": \"1234567891\"\n         },\n         \"store\": {\n             \"id\": 9,\n             \"name\": \"Test123456\",\n             \"postal_code\": \"TQ5 5BT\",\n             \"logo\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 14:51:12-5d98ade02f3fa.jpeg\",\n             \"cover_image\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 14:51:12-5d98ade043dc6.png\",\n             \"address\": \"17  Guildry Street, GALMPTON\",\n             \"lat\": 19.77187,\n             \"long\": 19.77187,\n             \"is_active\": 1\n         }\n     }\n ]\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "apidoc/store.php",
+    "groupTitle": "Store"
+  },
+  {
+    "type": "get",
     "url": "seller/get-stores",
     "title": "to get the seller's store.",
     "name": "getSellerStore",
@@ -161,7 +204,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "    HTTP/1.1 200 OK\n  {\n    \"status\": 1,\n    \"data\": [\n        {\n            \"id\": 9,\n            \"name\": \"Test1\",\n            \"postal_code\": \"TQ5 5BT\",\n            \"logo\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 14:51:12-5d98ade02f3fa.jpeg\",\n            \"cover_image\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 14:51:12-5d98ade043dc6.png\",\n            \"address\": \"17  Guildry Street, GALMPTON\",\n            \"lat\": 19.77187,\n            \"long\": 19.77187,\n            \"is_active\": 1\n        },\n        {\n            \"id\": 12,\n            \"name\": \"Test2\",\n            \"postal_code\": \"TQ5 5BT\",\n            \"logo\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 18:22:48-5d98df7848886.jpeg\",\n            \"cover_image\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 18:22:48-5d98df786ca10.png\",\n            \"address\": \"17  Guildry Street, GALMPTON\",\n            \"lat\": 19.77187,\n            \"long\": 19.77187,\n            \"is_active\": 1\n        }\n    ]\n}",
+          "content": "  HTTP/1.1 200 OK\n{\n\"status\": 1,\n\"data\": [\n    {\n        \"id\": 9,\n        \"name\": \"Test1\",\n        \"postal_code\": \"TQ5 5BT\",\n        \"logo\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 14:51:12-5d98ade02f3fa.jpeg\",\n        \"cover_image\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 14:51:12-5d98ade043dc6.png\",\n        \"address\": \"17  Guildry Street, GALMPTON\",\n        \"lat\": 19.77187,\n        \"long\": 19.77187,\n        \"is_active\": 1\n    },\n    {\n        \"id\": 12,\n        \"name\": \"Test2\",\n        \"postal_code\": \"TQ5 5BT\",\n        \"logo\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 18:22:48-5d98df7848886.jpeg\",\n        \"cover_image\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 18:22:48-5d98df786ca10.png\",\n        \"address\": \"17  Guildry Street, GALMPTON\",\n        \"lat\": 19.77187,\n        \"long\": 19.77187,\n        \"is_active\": 1\n    }\n]\n}",
           "type": "json"
         }
       ]

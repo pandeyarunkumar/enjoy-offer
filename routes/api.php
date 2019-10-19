@@ -30,6 +30,8 @@ Route::group(['middleware' => "authenticate"], function () {
     Route::post('seller/save-store', 'StoreController@saveStore');
     Route::post('seller/save-product', 'StoreController@saveProduct');
     Route::get('seller/get-stores', 'StoreController@getSellerStores'); 
+    Route::get('seller/get-products', 'StoreController@getSellerProducts'); 
+    Route::post('seller/delete-product', 'StoreController@deleteProduct'); 
 });
 
 Route::group(['middleware' => "checkAdmin"], function () {
