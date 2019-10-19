@@ -549,7 +549,7 @@
  * @apiSuccessExample Request:
  *     HTTP/1.1 200 OK
  *  {
- *	"store_id" : 4,
+ *	"product_id" : 4,
  *   }
  *
  * @apiSuccessExample Success-Response:

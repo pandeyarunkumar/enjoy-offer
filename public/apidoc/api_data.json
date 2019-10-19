@@ -99,7 +99,7 @@
       "examples": [
         {
           "title": "Request:",
-          "content": "    HTTP/1.1 200 OK\n {\n\t\"store_id\" : 4,\n  }",
+          "content": "    HTTP/1.1 200 OK\n {\n\t\"product_id\" : 4,\n  }",
           "type": "json"
         },
         {
