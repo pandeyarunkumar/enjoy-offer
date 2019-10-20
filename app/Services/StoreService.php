@@ -142,6 +142,10 @@ class StoreService extends MasterService
 
         $search_item = $request->search_item;
 
+        if(!$search_item){
+           return Product::where('user_id', $request->user->id)->with('category', 'images', 'seller', 'store')->orderBy('id', 'DESC')->get();
+        }
+
         $productByName =  Product::where('user_id', $request->user->id)->where('name', 'like', "%".$search_item."%")->with('category', 'images', 'seller', 'store')->orderBy('id', 'DESC')->get();
 
         $productByCategory =  Product::where('user_id', $request->user->id)->with('category', 'images', 'seller', 'store')

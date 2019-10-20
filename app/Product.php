@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    protected $hidden = ['store_id', 'category_id', 'user_id'];
+    protected $hidden = ['store_id', 'category_id', 'user_id', 'created_at', 'updated_at'];
     
     public function getfeaturedImageAttribute($value)
     {

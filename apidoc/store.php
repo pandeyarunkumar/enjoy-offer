@@ -414,7 +414,7 @@
  *   ]
  *   }
  */
-/**
+<!-- /**
  * @api {get} seller/get-products to get the seller's products.
  * @apiName getSellerProducts
  * @apiGroup Store
@@ -540,7 +540,7 @@
  *       }
  *   ]
  *   }
- */
+ */ -->
 /**
  * @api {post} seller/delete-product to delete the product.
  * @apiName deleteProduct
