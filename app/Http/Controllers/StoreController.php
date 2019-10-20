@@ -110,4 +110,14 @@ class StoreController extends Controller
 
     }
 
+    public function searchProducts(Request $request){
+        $validator = Validator::make($request->all(), [
+            'search_item' => 'required',
+        ]);
+
+        $Products = $this->storeService->searchProducts($request);
+
+        return $this->respondWithSuccess($Products);   
+    }
+
 }

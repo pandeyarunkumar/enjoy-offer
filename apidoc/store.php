@@ -559,3 +559,121 @@
  *       "message": "Product deleted successfuly"
  *   }
  */ 
+/**
+ * @api {get} seller/search-products?search_item=test to search the products by name, category name and store name.
+ * @apiName searchProducts
+ * @apiGroup Store
+ *
+ * @apiSuccessExample Success-Response:
+ *     HTTP/1.1 200 OK
+ *  {
+ *   "status": 1,
+ *   "data": [
+ *       {
+ *           "id": 2,
+ *           "name": "test2",
+ *           "slug": "test2",
+ *           "short_description": "this is a short description",
+ *           "description": "dnwhgmdhjk",
+ *           "cost_price": 12,
+ *           "selling_price": 14,
+ *           "compare_price": 24,
+ *           "compare_text": "flat 10 rs off",
+ *           "is_featured": 1,
+ *           "featured_image": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-06 16:30:25-5d9a16a10666d.png",
+ *           "is_published": 1,
+ *           "published_at": "2019-10-06 16:30:25",
+ *           "created_at": "2019-10-06 16:30:25",
+ *           "updated_at": "2019-10-06 16:30:25",
+ *           "category": {
+ *               "id": 13,
+ *               "slug": "car-sale",
+ *               "name": "Car Sale",
+ *               "icon": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 08:27:34-5d9853f65e4fc.png",
+ *               "image": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 08:27:34-5d9853f6c9f61.png",
+ *               "created_at": "2019-10-05 08:27:34",
+ *               "updated_at": "2019-10-05 08:27:34"
+ *           },
+ *           "images": [],
+ *           "seller": {
+ *               "id": 5,
+ *               "name": "Super Admin",
+ *               "email": "superadmin@enjoyoffer.com",
+ *               "mobile": "1234567891"
+ *           },
+ *           "store": {
+ *               "id": 9,
+ *               "name": "Test123456",
+ *               "postal_code": "TQ5 5BT",
+ *               "logo": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 14:51:12-5d98ade02f3fa.jpeg",
+ *               "cover_image": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 14:51:12-5d98ade043dc6.png",
+ *               "address": "17  Guildry Street, GALMPTON",
+ *               "lat": 19.77187,
+ *               "long": 19.77187,
+ *               "is_active": 1
+ *           }
+ *       },
+ *       {
+ *           "id": 1,
+ *           "name": "test",
+ *           "slug": "test",
+ *           "short_description": "this is a short description",
+ *           "description": "dnwhgmdhjk",
+ *           "cost_price": 12,
+ *           "selling_price": 14,
+ *           "compare_price": 24,
+ *           "compare_text": "flat 10 rs off",
+ *           "is_featured": 1,
+ *           "featured_image": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-06 16:30:25-5d9a16a10666d.png",
+ *           "is_published": 1,
+ *           "published_at": "2019-10-06 16:30:25",
+ *           "created_at": "2019-10-06 16:30:25",
+ *           "updated_at": "2019-10-06 16:30:25",
+ *           "category": {
+ *               "id": 13,
+ *               "slug": "car-sale",
+ *               "name": "Car Sale",
+ *               "icon": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 08:27:34-5d9853f65e4fc.png",
+ *               "image": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 08:27:34-5d9853f6c9f61.png",
+ *               "created_at": "2019-10-05 08:27:34",
+ *               "updated_at": "2019-10-05 08:27:34"
+ *           },
+ *           "images": [
+ *               {
+ *                   "id": 69,
+ *                   "url": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-06 16:30:25-5d9a16a1356b3.png"
+ *               },
+ *               {
+ *                   "id": 70,
+ *                   "url": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-06 16:30:25-5d9a16a141559.png"
+ *               },
+ *               {
+ *                   "id": 52,
+ *                   "url": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-06 12:50:01-5d99e2f913cee.png"
+ *               },
+ *               {
+ *                   "id": 53,
+ *                   "url": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-06 12:50:55-5d99e32f3c60c.jpeg"
+ *               }
+ *           ],
+ *           "seller": {
+ *               "id": 5,
+ *               "name": "Super Admin",
+ *               "email": "superadmin@enjoyoffer.com",
+ *               "mobile": "1234567891"
+ *           },
+ *           "store": {
+ *               "id": 9,
+ *               "name": "Test123456",
+ *               "postal_code": "TQ5 5BT",
+ *               "logo": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 14:51:12-5d98ade02f3fa.jpeg",
+ *               "cover_image": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 14:51:12-5d98ade043dc6.png",
+ *               "address": "17  Guildry Street, GALMPTON",
+ *               "lat": 19.77187,
+ *               "long": 19.77187,
+ *               "is_active": 1
+ *           }
+ *       }
+ *   ]
+ *   }
+ */ 

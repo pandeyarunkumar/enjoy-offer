@@ -109,12 +109,12 @@ class StoreService extends MasterService
     }
 
     public function getProducts($request){
-        $products = Product::where('store_id', $request->store_id)->with('category')->with('images')->get();
+        $products = Product::where('store_id', $request->store_id)->with('category')->with('images')->orderBy('id', 'DESC')->get();
         return $products; 
     }
 
     public function getSellerProducts($request){
-        $products = Product::where('user_id', $request->user->id)->with('category', 'images', 'seller', 'store')->get();
+        $products = Product::where('user_id', $request->user->id)->with('category', 'images', 'seller', 'store')->orderBy('id', 'DESC')->get();
         return $products; 
     }
 
@@ -136,5 +136,28 @@ class StoreService extends MasterService
         $res = Product::where('id',$product->id)->delete();
 
         return $res;
+    }
+
+    public function searchProducts($request){
+
+        $search_item = $request->search_item;
+
+        $productByName =  Product::where('user_id', $request->user->id)->where('name', 'like', "%".$search_item."%")->with('category', 'images', 'seller', 'store')->orderBy('id', 'DESC')->get();
+
+        $productByCategory =  Product::where('user_id', $request->user->id)->with('category', 'images', 'seller', 'store')
+        ->whereHas('category', function ($q) use ($search_item) {
+            $q->where('name', 'like', "%{$search_item}%");
+        })->orderBy('id', 'DESC')->get();
+
+        $productByStore =  Product::where('user_id', $request->user->id)->with('category', 'images', 'seller', 'store')
+        ->whereHas('store', function ($q) use ($search_item) {
+            $q->where('name', 'like', "%{$search_item}%")->orderBy('id', 'DESC');
+        })->get();
+
+        $res = $productByName->merge($productByCategory);
+        $res2 = $res->merge($productByStore)->unique();
+        
+        return $res2;
+
     }
 }
