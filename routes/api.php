@@ -24,11 +24,16 @@ Route::post('admin/sign-in', 'AdminController@signIn');
 Route::get('get-categories', 'AdminController@getcategories'); 
 Route::get('get-stores', 'StoreController@getStores'); 
 Route::get('get-products', 'StoreController@getProducts'); 
+Route::get('get-store-reviews', 'StoreController@getReviews'); 
+Route::get('get-store-rating', 'StoreController@getRating'); 
 
 Route::group(['middleware' => "authenticate"], function () {
     Route::get('seller/get-images', 'StoreController@getImages'); 
     Route::post('seller/save-store', 'StoreController@saveStore');
+    Route::post('seller/update-store', 'StoreController@updateStore');
+    Route::post('seller/disable-store', 'StoreController@disableStore');
     Route::post('seller/save-product', 'StoreController@saveProduct');
+    Route::post('seller/update-product', 'StoreController@updateProduct');
     Route::get('seller/get-stores', 'StoreController@getSellerStores'); 
     Route::get('seller/get-products', 'StoreController@getSellerProducts'); 
     Route::post('seller/delete-product', 'StoreController@deleteProduct'); 

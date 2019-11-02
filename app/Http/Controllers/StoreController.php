@@ -22,10 +22,51 @@ class StoreController extends Controller
         if ($validator->fails()) {
             return $this->respondWithValidationError($validator);
         }
-        $store = $this->storeService->saveStore($request);
+        $store = $this->storeService->updateStore($request);
         return $this->respondWithSuccess($store);
         
     }
+
+    public function updateStore(Request $request){
+        $validator = Validator::make($request->all(), [
+            'postal_code'  => 'required',
+            'store_id'     => 'required'
+        ]);
+
+        if ($validator->fails()) {
+            return $this->respondWithValidationError($validator);
+        }
+        $store = $this->storeService->updateStore($request);
+
+        if($store){
+            return $this->respondWithSuccessMessage("store updated successfuly");                                       
+        }
+        else{
+            return $this->respondWithError("Invalid store");  
+        }
+    }
+
+    public function disableStore(Request $request){
+        $validator = Validator::make($request->all(), [
+            'store_id'  => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return $this->respondWithValidationError($validator);
+        }
+
+        $store = $this->storeService->disableStore($request);
+
+        if($store){
+            return $this->respondWithSuccessMessage("store disabled successfuly");                                       
+        }
+        else{
+            return $this->respondWithError("Invalid store");  
+        }
+        
+    }
+
+
 
     public function getStores(){
        
@@ -60,6 +101,27 @@ class StoreController extends Controller
         }
 
         
+    }
+
+    public function updateProduct(Request $request){
+        $validator = Validator::make($request->all(), [
+            'store_id' => 'required',
+            'category_id'  => 'required',
+            'product_id' => 'required'
+        ]);
+
+        if ($validator->fails()) {
+            return $this->respondWithValidationError($validator);
+        }
+        $product = $this->storeService->updateProduct($request);
+
+        if($product){
+            return $this->respondWithSuccessMessage("Product updated successfuly");                                       
+        }
+        else{
+            return $this->respondWithError("Invalid product");  
+        }
+
     }
 
     public function getProducts(Request $request){
@@ -119,5 +181,36 @@ class StoreController extends Controller
 
         return $this->respondWithSuccess($Products);   
     }
+
+    public function getReviews(Request $request){
+
+        $validator = Validator::make($request->all(), [
+            'store_id' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return $this->respondWithValidationError($validator);
+        }
+       
+        $reviews = $this->storeService->getReviews($request);
+
+        return $this->respondWithSuccess($reviews);            
+    } 
+
+    public function getRating(Request $request){
+
+        $validator = Validator::make($request->all(), [
+            'store_id' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return $this->respondWithValidationError($validator);
+        }
+       
+        $rating = $this->storeService->getRating($request);
+
+        return $this->respondWithSuccess($rating);            
+    } 
+
 
 }
