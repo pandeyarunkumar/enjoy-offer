@@ -10,15 +10,15 @@
  *   "data": [
  *       {
  *           "id": 1,
- *           "image": "http://localhost:8000/storage/images/enjoy-offer-image2019-11-03 15:22:445dbef0c4c3acd.png"
+ *           "image": "http://54.218.78.66/enjoy-offer/public/storage/images/enjoy-offer-image2019-11-03 16:44:005dbf03d0ddd46.png"
  *       },
  *       {
  *           "id": 2,
- *           "image": "http://localhost:8000/storage/images/enjoy-offer-image2019-11-03 15:25:495dbef17d8d353.png"
+ *           "image": "http://54.218.78.66/enjoy-offer/public/storage/images/enjoy-offer-image2019-11-03 16:44:005dbf03d0df9ce.png"
  *       },
  *       {
  *           "id": 3,
- *           "image": "http://localhost:8000/storage/images/enjoy-offer-image2019-11-03 15:26:215dbef19d3bd11.png"
+ *           "image": "http://54.218.78.66/enjoy-offer/public/storage/images/enjoy-offer-image2019-11-03 16:44:005dbf03d0e23e2.png"
  *       }
  *   ]
  *   }

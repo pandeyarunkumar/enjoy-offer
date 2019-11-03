@@ -9,7 +9,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "   HTTP/1.1 200 OK\n{\n \"status\": 1,\n \"data\": [\n     {\n         \"id\": 1,\n         \"image\": \"http://localhost:8000/storage/images/enjoy-offer-image2019-11-03 15:22:445dbef0c4c3acd.png\"\n     },\n     {\n         \"id\": 2,\n         \"image\": \"http://localhost:8000/storage/images/enjoy-offer-image2019-11-03 15:25:495dbef17d8d353.png\"\n     },\n     {\n         \"id\": 3,\n         \"image\": \"http://localhost:8000/storage/images/enjoy-offer-image2019-11-03 15:26:215dbef19d3bd11.png\"\n     }\n ]\n }",
+          "content": "   HTTP/1.1 200 OK\n{\n \"status\": 1,\n \"data\": [\n     {\n         \"id\": 1,\n         \"image\": \"http://54.218.78.66/enjoy-offer/public/storage/images/enjoy-offer-image2019-11-03 16:44:005dbf03d0ddd46.png\"\n     },\n     {\n         \"id\": 2,\n         \"image\": \"http://54.218.78.66/enjoy-offer/public/storage/images/enjoy-offer-image2019-11-03 16:44:005dbf03d0df9ce.png\"\n     },\n     {\n         \"id\": 3,\n         \"image\": \"http://54.218.78.66/enjoy-offer/public/storage/images/enjoy-offer-image2019-11-03 16:44:005dbf03d0e23e2.png\"\n     }\n ]\n }",
           "type": "json"
         }
       ]
