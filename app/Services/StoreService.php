@@ -19,7 +19,8 @@ class StoreService extends MasterService
        $store->user_id = $request->user->id;
        $store->name = $request->name;
        $store->postal_code = $request->postal_code;
-       $store->address = $request->address;       
+       $store->address = $request->address; 
+       $store->business_email = $request->business_email;       
        $store->lat =  $request->lat;
        $store->long =  $request->long;
 
@@ -53,7 +54,8 @@ class StoreService extends MasterService
         }
 
         $store->postal_code = $request->postal_code;
-        $store->address = $request->address;       
+        $store->address = $request->address;  
+        $store->business_email = $request->business_email;       
         $store->lat =  $request->lat;
         $store->long =  $request->long;
  
