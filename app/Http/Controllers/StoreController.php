@@ -210,6 +210,13 @@ class StoreController extends Controller
         $rating = $this->storeService->getRating($request);
 
         return $this->respondWithSuccess($rating);            
+    }
+    
+    public function getBanners(){
+       
+        $banners = $this->storeService->getBanners();
+
+        return $this->respondWithSuccess($banners);            
     } 
 
 

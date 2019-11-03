@@ -57,4 +57,19 @@ class LoginController extends Controller
         }
         
     }
+
+    public function updateProfile(Request $request){
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return $this->respondWithValidationError($validator);
+        }
+
+        $user = $this->loginService->updateProfile($request);
+
+        return $this->respondWithSuccessMessage("profile updated successfully");
+        
+    }
 }

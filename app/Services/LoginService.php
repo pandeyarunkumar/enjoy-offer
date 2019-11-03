@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Firebase\JWT\JWT;
 use Carbon\Carbon;
 
-class LoginService 
+class LoginService extends MasterService
 {
     public function signUp(Request $request){
        $user = new User();
@@ -40,6 +40,7 @@ class LoginService
        $res_user->name = $user->name;
        $res_user->email = $user->email;
        $res_user->mobile = $user->mobile;
+       $res_user->profile_pic = $user->profile_pic;
 
        $expireDate=Carbon::now()->addDays(2)->timestamp;
        $res_user->exp = $expireDate;  
@@ -65,5 +66,23 @@ class LoginService
        //$this->sendSms($user->mobile, $message);       
      
        return $user; 
+    }
+
+    public function updateProfile(Request $request){
+
+       $user = $request->user;
+
+       $user->name = $request->name;
+
+       $image = $request->profile_pic;
+        
+       if($image){
+           $res_image = $this->saveImage($image);
+           $user->profile_pic = $res_image->id;
+       }
+
+       $user->save();
+       
+       return $user;
     }
 }

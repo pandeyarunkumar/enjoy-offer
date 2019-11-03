@@ -16,11 +16,13 @@ class CreateStoresTable extends Migration
         Schema::create('stores', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('user_id');
+            $table->integer('package_id')->nullable();
             $table->string('name');
             $table->string('postal_code');
             $table->integer('logo')->nullable();
             $table->integer('cover_image')->nullable();
             $table->text('address')->nullable();
+            $table->string('business_email')->nullable();
             $table->double('lat', 9, 6)->nullable();
             $table->double('long', 9, 6)->nullable();
             $table->boolean('is_active')->default(true);

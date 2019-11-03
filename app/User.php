@@ -45,4 +45,12 @@ class User extends Authenticatable
     public function stores(){
         return $this->hasMany(Store::Class);
     }
+
+    public function getprofilePicAttribute($value)
+    {
+        $image = Image::find($value);
+        if($image){
+            return asset($image->url);
+        }
+    }
 }

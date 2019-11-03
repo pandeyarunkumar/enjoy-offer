@@ -12,6 +12,10 @@ class Store extends Model
         return $this->belongsTo(User::class, 'user_id'); 
     }
 
+    public function package(){
+        return $this->belongsTo(Package::class, 'package_id'); 
+    }
+
     public function getlogoAttribute($value)
     {
         $image = Image::find($value);

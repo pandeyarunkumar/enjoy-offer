@@ -7,6 +7,7 @@ use App\Product;
 use App\Category;
 use App\Image;
 use App\Review;
+use App\Banner;
 use Illuminate\Http\Request;
 use Firebase\JWT\JWT;
 use Carbon\Carbon;
@@ -272,5 +273,10 @@ class StoreService extends MasterService
     public function getRating(Request $request){
         $rating = Review::where('store_id', $request->store_id)->with('user')->avg('rating');
         return $rating;
+    }
+
+    public function getBanners(){
+        $banners = Banner::all();
+        return $banners; 
     }
 }

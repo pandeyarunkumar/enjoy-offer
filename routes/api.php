@@ -20,12 +20,18 @@ use Illuminate\Http\Request;
 Route::post('seller/sign-in', 'LoginController@signIn');
 Route::post('seller/generate-otp', 'LoginController@generateOtp');   
 Route::post('seller/sign-up', 'LoginController@signUp');
-Route::post('admin/sign-in', 'AdminController@signIn');         
+Route::post('admin/sign-in', 'AdminController@signIn');    
+
 Route::get('get-categories', 'AdminController@getcategories'); 
 Route::get('get-stores', 'StoreController@getStores'); 
 Route::get('get-products', 'StoreController@getProducts'); 
 Route::get('get-store-reviews', 'StoreController@getReviews'); 
 Route::get('get-store-rating', 'StoreController@getRating'); 
+Route::get('get-banners', 'StoreController@getBanners'); 
+
+Route::group(['middleware' => "authenticate"], function () {
+    Route::post('seller/update-profile', 'LoginController@updateProfile');   
+});
 
 Route::group(['middleware' => "authenticate"], function () {
     Route::get('seller/get-images', 'StoreController@getImages'); 
