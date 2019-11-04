@@ -57,8 +57,11 @@ class StoreController extends Controller
 
         $store = $this->storeService->disableStore($request);
 
-        if($store){
+        if($store && $store->is_active==0){
             return $this->respondWithSuccessMessage("store disabled successfuly");                                       
+        }
+        if($store && $store->is_active==1){
+            return $this->respondWithSuccessMessage("store enabled successfuly");                                       
         }
         else{
             return $this->respondWithError("Invalid store");  

@@ -88,7 +88,7 @@ class StoreService extends MasterService
             return 0;
         }
 
-        $store->is_active = 0;
+        $store->is_active = !($store->is_active);
         $store->save();
         return $store;
  
