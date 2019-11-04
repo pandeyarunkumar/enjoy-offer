@@ -68,14 +68,30 @@ class StoreController extends Controller
 
 
 
-    public function getStores(){
+    public function getStores(Request $request){
+
+        $validator = Validator::make($request->all(), [
+            'search_item' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return $this->respondWithValidationError($validator);
+        }
        
-        $stores = $this->storeService->getStores();
+        $stores = $this->storeService->getStores($request);
 
         return $this->respondWithSuccess($stores);            
     } 
 
     public function getSellerStores(Request $request){
+
+        $validator = Validator::make($request->all(), [
+            'search_item' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return $this->respondWithValidationError($validator);
+        }
        
         $stores = $this->storeService->getSellerStores($request);
 
@@ -128,6 +144,7 @@ class StoreController extends Controller
 
         $validator = Validator::make($request->all(), [
             'store_id' => 'required',
+            'search_item' => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -176,6 +193,10 @@ class StoreController extends Controller
         $validator = Validator::make($request->all(), [
             'search_item' => 'required',
         ]);
+
+        if ($validator->fails()) {
+            return $this->respondWithValidationError($validator);
+        }
 
         $Products = $this->storeService->searchProducts($request);
 

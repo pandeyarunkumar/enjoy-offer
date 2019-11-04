@@ -229,17 +229,12 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "get-products",
+    "url": "get-products?store_id=9&search_item=test",
     "title": "to get all the products of the particular store.",
     "name": "getProducts",
     "group": "Store",
     "success": {
       "examples": [
-        {
-          "title": "Request:",
-          "content": "    HTTP/1.1 200 OK\n {\n\t\"store_id\" : 9,\n  }",
-          "type": "json"
-        },
         {
           "title": "Success-Response:",
           "content": "    HTTP/1.1 200 OK\n{\n  \"status\": 1,\n  \"data\": [\n      {\n          \"id\": 1,\n          \"name\": \"test\",\n          \"slug\": \"test\",\n          \"short_description\": \"this is a short description\",\n          \"description\": \"dnwhgmdhjk\",\n          \"cost_price\": 12,\n          \"selling_price\": 14,\n          \"compare_price\": 24,\n          \"compare_text\": \"flat 10 rs off\",\n          \"is_featured\": 1,\n          \"featured_image\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-06 16:30:25-5d9a16a10666d.png\",\n          \"is_published\": 1,\n          \"published_at\": \"2019-10-06 16:30:25\",\n          \"created_at\": \"2019-10-06 16:30:25\",\n          \"updated_at\": \"2019-10-06 16:30:25\",\n          \"category\": {\n              \"id\": 13,\n              \"slug\": \"car-sale\",\n              \"name\": \"Car Sale\",\n              \"icon\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 08:27:34-5d9853f65e4fc.png\",\n              \"image\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 08:27:34-5d9853f6c9f61.png\",\n              \"created_at\": \"2019-10-05 08:27:34\",\n              \"updated_at\": \"2019-10-05 08:27:34\"\n          },\n          \"images\": [\n              {\n                  \"id\": 69,\n                  \"url\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-06 16:30:25-5d9a16a1356b3.png\"\n              },\n              {\n                  \"id\": 70,\n                  \"url\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-06 16:30:25-5d9a16a141559.png\"\n              },\n              {\n                  \"id\": 52,\n                  \"url\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-06 12:50:01-5d99e2f913cee.png\"\n              },\n              {\n                  \"id\": 53,\n                  \"url\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-06 12:50:55-5d99e32f3c60c.jpeg\"\n              }\n          ]\n      },\n      {\n          \"id\": 2,\n          \"name\": \"test2\",\n          \"slug\": \"test2\",\n          \"short_description\": \"this is a short description\",\n          \"description\": \"dnwhgmdhjk\",\n          \"cost_price\": 12,\n          \"selling_price\": 14,\n          \"compare_price\": 24,\n          \"compare_text\": \"flat 10 rs off\",\n          \"is_featured\": 1,\n          \"featured_image\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-06 16:42:37-5d9a197db3ba3.png\",\n          \"is_published\": 1,\n          \"published_at\": \"2019-10-06 16:42:37\",\n          \"created_at\": \"2019-10-06 16:42:37\",\n          \"updated_at\": \"2019-10-06 16:42:37\",\n          \"category\": {\n              \"id\": 13,\n              \"slug\": \"car-sale\",\n              \"name\": \"Car Sale\",\n              \"icon\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 08:27:34-5d9853f65e4fc.png\",\n              \"image\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 08:27:34-5d9853f6c9f61.png\",\n              \"created_at\": \"2019-10-05 08:27:34\",\n              \"updated_at\": \"2019-10-05 08:27:34\"\n          },\n          \"images\": [\n              {\n                  \"id\": 72,\n                  \"url\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-06 16:42:37-5d9a197dd7ee1.png\"\n              },\n              {\n                  \"id\": 73,\n                  \"url\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-06 16:42:37-5d9a197df256c.png\"\n              }\n          ]\n      }\n  ]\n}",
@@ -310,7 +305,7 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "seller/get-stores",
+    "url": "seller/get-stores?search_item=test",
     "title": "to get the seller's store.",
     "name": "getSellerStore",
     "group": "Store",
@@ -329,7 +324,7 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "get-stores",
+    "url": "get-stores?search_item=test",
     "title": "to get all stores.",
     "name": "getStores",
     "group": "Store",

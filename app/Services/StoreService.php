@@ -96,14 +96,28 @@ class StoreService extends MasterService
 
  
 
-    public function getStores(){
-        $stores = Store::with('seller')->get();
-        return $stores; 
+    public function getStores($request){
+
+        $search_item = $request->search_item;
+
+        if(!$search_item){
+           return Store::with('seller')->orderBy('id', 'DESC')->get();
+        }
+
+        return Store::where('name', 'like', "%".$search_item."%")->with('seller')->orderBy('id', 'DESC')->get();
     }
 
     public function getSellerStores($request){
-        $stores = $request->user->stores;
-        return $stores; 
+        // $stores = $request->user->stores;
+        // return $stores; 
+
+        $search_item = $request->search_item;
+
+        if(!$search_item){
+           return Store::where('user_id', $request->user->id)->orderBy('id', 'DESC')->get();
+        }
+
+        return Store::where('user_id', $request->user->id)->where('name', 'like', "%".$search_item."%")->orderBy('id', 'DESC')->get();
     }
     
     public function saveProduct(Request $request){
@@ -211,8 +225,26 @@ class StoreService extends MasterService
 
 
     public function getProducts($request){
-        $products = Product::where('store_id', $request->store_id)->with('category')->with('images')->orderBy('id', 'DESC')->get();
-        return $products; 
+
+        $search_item = $request->search_item;
+
+        if(!$search_item){
+           return Product::where('store_id', $request->store_id)->with('category', 'images', 'seller')->orderBy('id', 'DESC')->get();
+        }
+
+        $productByName =  Product::where('store_id', $request->store_id)->where('name', 'like', "%".$search_item."%")->with('category', 'images', 'seller', 'store')->orderBy('id', 'DESC')->get();
+
+        $productByCategory =  Product::where('store_id', $request->store_id)->with('category', 'images', 'seller')
+        ->whereHas('category', function ($q) use ($search_item) {
+            $q->where('name', 'like', "%{$search_item}%");
+        })->orderBy('id', 'DESC')->get();
+
+        $res = $productByName->merge($productByCategory)->unique();
+        
+        return $res;
+
+        // $products = Product::where('store_id', $request->store_id)->with('category')->with('images')->orderBy('id', 'DESC')->get();
+        // return $products; 
     }
 
     public function getSellerProducts($request){

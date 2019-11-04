@@ -211,7 +211,7 @@
  *
  */
 /**
- * @api {get}  get-stores to get all stores.
+ * @api {get}  get-stores?search_item=test to get all stores.
  * @apiName getStores
  * @apiGroup Store
  *
@@ -351,15 +351,9 @@
  *  }
  */
 /**
- * @api {get} get-products to get all the products of the particular store.
+ * @api {get} get-products?store_id=9&search_item=test to get all the products of the particular store.
  * @apiName getProducts
  * @apiGroup Store
- *
- * @apiSuccessExample Request:
- *     HTTP/1.1 200 OK
- *  {
- *	"store_id" : 9,
- *   }
  *
  * @apiSuccessExample Success-Response:
  *     HTTP/1.1 200 OK
@@ -475,7 +469,7 @@
  * }
  */
 /**
- * @api {get} seller/get-stores to get the seller's store.
+ * @api {get} seller/get-stores?search_item=test to get the seller's store.
  * @apiName getSellerStore
  * @apiGroup Store
  *
