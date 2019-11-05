@@ -20,19 +20,8 @@
  *     HTTP/1.1 200 OK
  * {
  *   "status": 1,
- *   "data": {
- *       "user_id": 4,
- *       "name": "Test Store",
- *       "postal_code": "TQ5 5BT",
- *       "address": "17  Guildry Street, GALMPTON",
- *        "business_email":"test123@gmail.com"
- *       "lat": 19.77187,
- *       "long": 25.979581,
- *       "logo": "null",
- *       "cover_image": "null",
- *       "id": 1
+ *   "message": "store added successfuly"
  *   }
- * }
  *
  * @apiErrorExample Error-Response:
  *     HTTP/1.1 200 ok

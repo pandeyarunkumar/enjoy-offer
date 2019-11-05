@@ -389,7 +389,7 @@ define({ "api": [
         },
         {
           "title": "Success-Response:",
-          "content": "    HTTP/1.1 200 OK\n{\n  \"status\": 1,\n  \"data\": {\n      \"user_id\": 4,\n      \"name\": \"Test Store\",\n      \"postal_code\": \"TQ5 5BT\",\n      \"address\": \"17  Guildry Street, GALMPTON\",\n       \"business_email\":\"test123@gmail.com\"\n      \"lat\": 19.77187,\n      \"long\": 25.979581,\n      \"logo\": \"null\",\n      \"cover_image\": \"null\",\n      \"id\": 1\n  }\n}",
+          "content": "    HTTP/1.1 200 OK\n{\n  \"status\": 1,\n  \"message\": \"store added successfuly\"\n  }",
           "type": "json"
         }
       ]

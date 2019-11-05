@@ -22,8 +22,11 @@ class StoreController extends Controller
         if ($validator->fails()) {
             return $this->respondWithValidationError($validator);
         }
-        $store = $this->storeService->updateStore($request);
-        return $this->respondWithSuccess($store);
+        $store = $this->storeService->saveStore($request);
+
+        if($store){
+            return $this->respondWithSuccessMessage("store added successfuly");                                       
+        }
         
     }
 
@@ -73,13 +76,13 @@ class StoreController extends Controller
 
     public function getStores(Request $request){
 
-        $validator = Validator::make($request->all(), [
-            'search_item' => 'required',
-        ]);
+        // $validator = Validator::make($request->all(), [
+        //     'search_item' => 'required',
+        // ]);
 
-        if ($validator->fails()) {
-            return $this->respondWithValidationError($validator);
-        }
+        // if ($validator->fails()) {
+        //     return $this->respondWithValidationError($validator);
+        // }
        
         $stores = $this->storeService->getStores($request);
 
@@ -88,13 +91,13 @@ class StoreController extends Controller
 
     public function getSellerStores(Request $request){
 
-        $validator = Validator::make($request->all(), [
-            'search_item' => 'required',
-        ]);
+        // $validator = Validator::make($request->all(), [
+        //     'search_item' => 'required',
+        // ]);
 
-        if ($validator->fails()) {
-            return $this->respondWithValidationError($validator);
-        }
+        // if ($validator->fails()) {
+        //     return $this->respondWithValidationError($validator);
+        // }
        
         $stores = $this->storeService->getSellerStores($request);
 
@@ -147,7 +150,7 @@ class StoreController extends Controller
 
         $validator = Validator::make($request->all(), [
             'store_id' => 'required',
-            'search_item' => 'required',
+            //'search_item' => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -193,13 +196,13 @@ class StoreController extends Controller
     }
 
     public function searchProducts(Request $request){
-        $validator = Validator::make($request->all(), [
-            'search_item' => 'required',
-        ]);
+        // $validator = Validator::make($request->all(), [
+        //     'search_item' => 'required',
+        // ]);
 
-        if ($validator->fails()) {
-            return $this->respondWithValidationError($validator);
-        }
+        // if ($validator->fails()) {
+        //     return $this->respondWithValidationError($validator);
+        // }
 
         $Products = $this->storeService->searchProducts($request);
 
