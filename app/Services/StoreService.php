@@ -313,4 +313,58 @@ class StoreService extends MasterService
         $banners = Banner::all();
         return $banners; 
     }
+
+    public function saveProductContent(Request $request){
+
+        $product=Product::where('store_id', $request->store_id)->where('name', $request->name)->first();
+
+        if($product){
+            return 0;
+        }
+
+        $product = new Product();
+        $product->category_id = $request->category_id;
+        $product->store_id = $request->store_id;
+        $product->user_id = $request->user->id;
+        $product->name = $request->name;
+        $product->slug = str_slug($request->name);
+        $product->short_description = $request->short_description;
+        $product->description = $request->description;
+        $product->cost_price = $request->cost_price;
+        $product->selling_price = $request->selling_price;
+        $product->compare_price = $request->compare_price;
+        $product->compare_text = $request->compare_text;
+        $product->is_featured = $request->is_featured;
+        $product->is_published = $request->is_published;
+
+        $product->save();
+
+        return $product;
+    }
+
+    public function saveProductImages(Request $request){
+
+        $product=Product::where('product_id', $request->product_id)->first();
+
+        if(!$product){
+            return 0;
+        }
+
+        if($request->image_files && count($request->image_files)){
+            $image_ids = [];
+            foreach($request->image_files as $image){
+                $res_image = $this->saveImage($image);
+                $image_ids[] = $res_image->id; 
+            }
+
+            $product->images()->attach($image_ids);
+        }
+
+        if($request->image_ids && count($request->image_ids)){
+            $product->images()->attach($request->image_ids);
+        }
+
+        return $product;
+    }
+
 }

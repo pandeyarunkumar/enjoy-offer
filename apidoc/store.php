@@ -804,7 +804,7 @@
  */
 /**
  * @api {get}  get-subCategories?category_id=4 to get subCategories.
- * @apiName getCategories
+ * @apiName getSubCategories
  * @apiGroup Store
  *
  * @apiSuccessExample Success-Response:

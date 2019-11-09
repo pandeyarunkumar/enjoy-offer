@@ -275,6 +275,7 @@ class StoreController extends Controller
     public function saveProductImages(Request $request){
         $validator = Validator::make($request->all(), [
             'product_id' => 'required',
+            'images' => 'required'
         ]);
         if ($validator->fails()) {
             return $this->respondWithValidationError($validator);

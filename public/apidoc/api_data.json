@@ -191,25 +191,6 @@
   },
   {
     "type": "get",
-    "url": "get-subCategories?category_id=4",
-    "title": "to get subCategories.",
-    "name": "getCategories",
-    "group": "Store",
-    "success": {
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "   HTTP/1.1 200 OK\n{\n \"status\": 1,\n \"data\": [\n     {\n         \"id\": 12,\n         \"slug\": \"tvs-audio-video\",\n         \"name\": \"TVs, Audio & Video\",\n         \"icon\": null,\n         \"image\": null\n     },\n     {\n         \"id\": 13,\n         \"slug\": \"computers-peripherals\",\n         \"name\": \"Computers & Peripherals\",\n         \"icon\": null,\n         \"image\": null\n     }\n ]\n }",
-          "type": "json"
-        }
-      ]
-    },
-    "version": "0.0.0",
-    "filename": "apidoc/store.php",
-    "groupTitle": "Store"
-  },
-  {
-    "type": "get",
     "url": "get-categories",
     "title": "to get all categories.",
     "name": "getCategories",
@@ -352,6 +333,25 @@
         {
           "title": "Success-Response:",
           "content": "   HTTP/1.1 200 OK\n {\n\"status\": 1,\n\"data\": [\n    {\n         \"id\": 1,\n         \"name\": \"Test Store\",\n         \"postal_code\": \"TQ5 5BT\",\n         \"logo\": null,\n         \"cover_image\": null,\n         \"address\": \"17  Guildry Street, GALMPTON\",\n         \"lat\": 19.77187,\n         \"long\": 25.979581,\n         \"is_active\": 1,\n         \"seller\": {\n             \"id\": 4,\n             \"name\": \"Arun\",\n             \"email\": \"pandeyarunoct@gmail.com\",\n             \"mobile\": \"7379273205\"\n         }\n     },\n     {\n         \"id\": 2,\n         \"name\": \"Test Store2\",\n         \"postal_code\": \"TQ5 5BT\",\n         \"logo\": null,\n         \"cover_image\": null,\n         \"address\": \"17  Guildry Street, GALMPTON\",\n         \"lat\": 19.77187,\n         \"long\": 25.979581,\n         \"is_active\": 1,\n         \"seller\": {\n             \"id\": 4,\n             \"name\": \"Arun\",\n             \"email\": \"pandeyarunoct@gmail.com\",\n             \"mobile\": \"7379273205\"\n         }\n     },\n     {\n         \"id\": 3,\n         \"name\": \"Test Store3\",\n         \"postal_code\": \"TQ5 5BT\",\n         \"logo\": null,\n         \"cover_image\": null,\n         \"address\": \"17  Guildry Street, GALMPTON\",\n         \"lat\": 19.77187,\n         \"long\": 25.979581,\n         \"is_active\": 1,\n         \"seller\": {\n             \"id\": 4,\n             \"name\": \"Arun\",\n             \"email\": \"pandeyarunoct@gmail.com\",\n             \"mobile\": \"7379273205\"\n         }\n     }\n ]\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "apidoc/store.php",
+    "groupTitle": "Store"
+  },
+  {
+    "type": "get",
+    "url": "get-subCategories?category_id=4",
+    "title": "to get subCategories.",
+    "name": "getSubCategories",
+    "group": "Store",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "   HTTP/1.1 200 OK\n{\n \"status\": 1,\n \"data\": [\n     {\n         \"id\": 12,\n         \"slug\": \"tvs-audio-video\",\n         \"name\": \"TVs, Audio & Video\",\n         \"icon\": null,\n         \"image\": null\n     },\n     {\n         \"id\": 13,\n         \"slug\": \"computers-peripherals\",\n         \"name\": \"Computers & Peripherals\",\n         \"icon\": null,\n         \"image\": null\n     }\n ]\n }",
           "type": "json"
         }
       ]
