@@ -169,8 +169,17 @@ class StoreController extends Controller
         return $this->respondWithSuccess($Products);            
     } 
 
-    public function getImages(){
-        $images = $this->storeService->getImages();
+    public function getImages(Request $request){
+
+        $validator = Validator::make($request->all(), [
+            'category_id' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return $this->respondWithValidationError($validator);
+        }
+
+        $images = $this->storeService->getImages($request);
         return $this->respondWithSuccess($images);            
     } 
 
@@ -244,7 +253,37 @@ class StoreController extends Controller
         $banners = $this->storeService->getBanners();
 
         return $this->respondWithSuccess($banners);            
-    } 
+    }
+    
+    public function saveProductContent(Request $request){
+        $validator = Validator::make($request->all(), [
+            'store_id' => 'required',
+            'category_id'  => 'required',
+            'name' => 'required',
+        ]);
+        if ($validator->fails()) {
+            return $this->respondWithValidationError($validator);
+        }
+        $store = $this->storeService->saveProductContent($request);
 
+        if($store){
+            return $this->respondWithSuccessMessage("store added successfuly");                                       
+        }
+        
+    }
+
+    public function saveProductImages(Request $request){
+        $validator = Validator::make($request->all(), [
+            'product_id' => 'required',
+        ]);
+        if ($validator->fails()) {
+            return $this->respondWithValidationError($validator);
+        }
+        $store = $this->storeService->saveProductImages($request);
+
+        if($store){
+            return $this->respondWithSuccessMessage("store added successfuly");                                       
+        }   
+    }
 
 }

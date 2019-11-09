@@ -191,6 +191,25 @@
   },
   {
     "type": "get",
+    "url": "get-subCategories?category_id=4",
+    "title": "to get subCategories.",
+    "name": "getCategories",
+    "group": "Store",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "   HTTP/1.1 200 OK\n{\n \"status\": 1,\n \"data\": [\n     {\n         \"id\": 12,\n         \"slug\": \"tvs-audio-video\",\n         \"name\": \"TVs, Audio & Video\",\n         \"icon\": null,\n         \"image\": null\n     },\n     {\n         \"id\": 13,\n         \"slug\": \"computers-peripherals\",\n         \"name\": \"Computers & Peripherals\",\n         \"icon\": null,\n         \"image\": null\n     }\n ]\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "apidoc/store.php",
+    "groupTitle": "Store"
+  },
+  {
+    "type": "get",
     "url": "get-categories",
     "title": "to get all categories.",
     "name": "getCategories",
@@ -210,9 +229,9 @@
   },
   {
     "type": "get",
-    "url": "seller/get-images",
-    "title": "to get all product images uploaded by admin.",
-    "name": "getProductImages",
+    "url": "seller/get-images?category_id=4",
+    "title": "to get category images uploaded by admin.",
+    "name": "getCategoryImages",
     "group": "Store",
     "success": {
       "examples": [

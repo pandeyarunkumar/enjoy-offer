@@ -120,4 +120,9 @@ class AdminService extends MasterService
         }
 
     }
+
+    public function getSubCategories($request){
+        $categories = Category::where('parent_category_id', $request->category_id)->get();
+        return $categories; 
+    }
 }

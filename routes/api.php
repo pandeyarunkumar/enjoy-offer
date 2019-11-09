@@ -23,6 +23,7 @@ Route::post('seller/sign-up', 'LoginController@signUp');
 Route::post('admin/sign-in', 'AdminController@signIn');    
 
 Route::get('get-categories', 'AdminController@getcategories'); 
+Route::get('get-subCategories', 'AdminController@getSubcategories'); 
 Route::get('get-stores', 'StoreController@getStores'); 
 Route::get('get-products', 'StoreController@getProducts'); 
 Route::get('get-store-reviews', 'StoreController@getReviews'); 
@@ -39,6 +40,8 @@ Route::group(['middleware' => "authenticate"], function () {
     Route::post('seller/update-store', 'StoreController@updateStore');
     Route::post('seller/disable-store', 'StoreController@disableStore');
     Route::post('seller/save-product', 'StoreController@saveProduct');
+    Route::post('seller/save-product-content', 'StoreController@saveProductContent');
+    Route::post('seller/save-product-images', 'StoreController@saveProductImages');
     Route::post('seller/update-product', 'StoreController@updateProduct');
     Route::get('seller/get-stores', 'StoreController@getSellerStores'); 
     Route::get('seller/get-products', 'StoreController@getSellerProducts'); 

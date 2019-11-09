@@ -17,6 +17,7 @@ class CreateImagesTable extends Migration
             $table->bigIncrements('id');
             $table->string('url');
             $table->boolean('uploaded_by_admin')->default(false);
+            $table->integer('category_id')->default(0);
             $table->timestamps();
         });
     }

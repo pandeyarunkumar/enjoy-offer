@@ -82,4 +82,19 @@ class AdminController extends Controller
             }
         }
     }
+
+    public function getSubCategories(Request $request){
+
+        $validator = Validator::make($request->all(), [
+            'category_id' => 'required'
+        ]);
+
+        if ($validator->fails()) {
+            return $this->respondWithValidationError($validator);
+        }
+       
+        $categories = $this->adminService->getSubCategories($request);
+
+        return $this->respondWithSuccess($categories);            
+    } 
 }

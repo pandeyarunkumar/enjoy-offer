@@ -252,8 +252,8 @@ class StoreService extends MasterService
         return $products; 
     }
 
-    public function getImages(){
-        $images = Image::where('uploaded_by_admin', 1)->get();
+    public function getImages($request){
+        $images = Image::where('category_id', $request->category_id)->get();
         return $images; 
     }
 

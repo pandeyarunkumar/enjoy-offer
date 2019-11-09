@@ -433,8 +433,8 @@
  * }
  */
  /**
- * @api {get} seller/get-images to get all product images uploaded by admin.
- * @apiName getProductImages
+ * @api {get} seller/get-images?category_id=4 to get category images uploaded by admin.
+ * @apiName getCategoryImages
  * @apiGroup Store
  *
  * @apiSuccessExample Success-Response:
@@ -801,4 +801,32 @@
  *   "status": 1,
  *   "data": 4.5
  *   }
+ */
+/**
+ * @api {get}  get-subCategories?category_id=4 to get subCategories.
+ * @apiName getCategories
+ * @apiGroup Store
+ *
+ * @apiSuccessExample Success-Response:
+ *     HTTP/1.1 200 OK
+ *  {
+ *   "status": 1,
+ *   "data": [
+ *       {
+ *           "id": 12,
+ *           "slug": "tvs-audio-video",
+ *           "name": "TVs, Audio & Video",
+ *           "icon": null,
+ *           "image": null
+ *       },
+ *       {
+ *           "id": 13,
+ *           "slug": "computers-peripherals",
+ *           "name": "Computers & Peripherals",
+ *           "icon": null,
+ *           "image": null
+ *       }
+ *   ]
+ *   }
+ *
  */
