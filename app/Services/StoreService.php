@@ -344,7 +344,7 @@ class StoreService extends MasterService
 
     public function saveProductImages(Request $request){
 
-        $product=Product::where('product_id', $request->product_id)->first();
+        $product=Product::where('id', $request->product_id)->first();
 
         if(!$product){
             return 0;

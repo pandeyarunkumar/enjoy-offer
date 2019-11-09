@@ -264,10 +264,14 @@ class StoreController extends Controller
         if ($validator->fails()) {
             return $this->respondWithValidationError($validator);
         }
-        $store = $this->storeService->saveProductContent($request);
+        $product = $this->storeService->saveProductContent($request);
 
-        if($store){
-            return $this->respondWithSuccessMessage("store added successfuly");                                       
+        if($product){
+            return $this->respondWithSuccessMessage("product added successfuly");                                       
+        }
+
+        else{
+            return $this->respondWithError("Name of the product alredy has been taken");  
         }
         
     }
@@ -275,15 +279,16 @@ class StoreController extends Controller
     public function saveProductImages(Request $request){
         $validator = Validator::make($request->all(), [
             'product_id' => 'required',
-            'images' => 'required'
+            'image_files' => 'required_without:image_ids',
+            'image_ids' => 'required_without:image_files'
         ]);
         if ($validator->fails()) {
             return $this->respondWithValidationError($validator);
         }
-        $store = $this->storeService->saveProductImages($request);
+        $product = $this->storeService->saveProductImages($request);
 
-        if($store){
-            return $this->respondWithSuccessMessage("store added successfuly");                                       
+        if($product){
+            return $this->respondWithSuccessMessage("image added successfuly");                                       
         }   
     }
 
