@@ -123,7 +123,7 @@ define({ "api": [
         },
         {
           "title": "Success-Response:",
-          "content": "   HTTP/1.1 200 OK\n{\n \"status\": 1,\n \"message\": \"profile updated successfully\"\n }",
+          "content": "  HTTP/1.1 200 OK\n{\n\"status\": 1,\n\"data\": {\n    \"id\": 4,\n    \"name\": \"Arun Kumar Pandey\",\n    \"email\": \"pandeyarunoct@gmail.com\",\n    \"mobile\": \"7379273205\",\n    \"profile_pic\": \"http://localhost:8000/storage/images/enjoy-offer-image2019-11-09 07:29:265dc66ad673510.png\",\n    \"exp\": 1573457366,\n    \"jwtToken\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NCwibmFtZSI6IkFydW4gS3VtYXIgUGFuZGV5IiwiZW1haWwiOiJwYW5kZXlhcnVub2N0QGdtYWlsLmNvbSIsIm1vYmlsZSI6Ij*czNzkyNzMyMDUiLCJwcm9maWxlX3BpYyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4MDAwXC9zdG9yYWdlXC9pbWFnZXNcL2Vuam95LW9mZmVyLWltYWdlMjAxOS0xMS0wOSAwNzoyOToyNjVkYz*Y2YWQ2NzM1MTAucG5nIiwiZXhwIjoxNTczNDU3MzY2fQ.B91641BHyH1AzUrMhzLkqhFKHjPrA7BLwHTvGHqGht0\"\n}\n}",
           "type": "json"
         }
       ]

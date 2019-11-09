@@ -69,7 +69,7 @@ class LoginController extends Controller
 
         $user = $this->loginService->updateProfile($request);
 
-        return $this->respondWithSuccessMessage("profile updated successfully");
+        return $this->respondWithSuccess($user);                    
         
     }
 }

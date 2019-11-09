@@ -83,6 +83,19 @@ class LoginService extends MasterService
 
        $user->save();
        
-       return $user;
+       $res_user = new \StdClass();
+       $res_user->id = $user->id;
+       $res_user->name = $user->name;
+       $res_user->email = $user->email;
+       $res_user->mobile = $user->mobile;
+       $res_user->profile_pic = $user->profile_pic;
+
+       $expireDate=Carbon::now()->addDays(2)->timestamp;
+       $res_user->exp = $expireDate;  
+
+       $jwt = JWT::encode($res_user, "jwtToken");        
+       $res_user->jwtToken = $jwt;
+       
+       return $res_user;
     }
 }
