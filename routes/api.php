@@ -55,7 +55,7 @@ Route::post('buyer/sign-in', 'BuyerController@signIn');
 Route::post('buyer/generate-otp', 'BuyerController@generateOtp');   
 Route::post('buyer/sign-up', 'BuyerController@signUp');
 Route::group(['middleware' => "checkBuyer"], function () {
-    Route::post('buyer/update-profile', 'LoginController@updateProfile');      
+    Route::post('buyer/update-profile', 'BuyerController@updateProfile');      
 });
 
 Route::post('admin/sign-in', 'AdminController@signIn');    

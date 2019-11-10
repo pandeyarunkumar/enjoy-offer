@@ -70,9 +70,31 @@ class LoginService extends MasterService
 
     public function updateProfile(Request $request){
 
-       $user = $request->user;
+      $user = $request->user;
 
-       $user->name = $request->name;
+       if($request->mobile){
+         $seller = User::where('mobile', $request->mobile)->first();
+         if($seller){
+            return 0;
+         }
+         else{
+         $user->mobile = $request->mobile;
+         }
+       }
+
+      if($request->email){
+         $seller = User::where('email', $request->email)->first();
+         if($seller){
+            return 0;
+         }
+         else{
+         $user->email = $request->email;
+         }
+      }
+
+      if($request->name){
+         $user->name = $request->name;
+      }
 
        $image = $request->profile_pic;
         

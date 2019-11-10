@@ -62,17 +62,14 @@ class BuyerController extends Controller
     }
 
     public function updateProfile(Request $request){
-        $validator = Validator::make($request->all(), [
-            'name' => 'required',
-        ]);
-
-        if ($validator->fails()) {
-            return $this->respondWithValidationError($validator);
-        }
 
         $user = $this->buyerService->updateProfile($request);
-
-        return $this->respondWithSuccess($user);                    
         
+        if($user){
+            return $this->respondWithSuccess($user);                    
+        }
+        else{
+            return $this->respondWithError("Mobile number or email has already been taken");                                    
+        }
     }
 }

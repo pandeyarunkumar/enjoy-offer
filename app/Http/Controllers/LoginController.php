@@ -59,17 +59,24 @@ class LoginController extends Controller
     }
 
     public function updateProfile(Request $request){
-        $validator = Validator::make($request->all(), [
-            'name' => 'required',
-        ]);
+        // $validator = Validator::make($request->all(), [
+        //     'name' => 'required',
+        // ]);
 
-        if ($validator->fails()) {
-            return $this->respondWithValidationError($validator);
-        }
+        // if ($validator->fails()) {
+        //     return $this->respondWithValidationError($validator);
+        // }
 
         $user = $this->loginService->updateProfile($request);
+        
+        if($user){
+            return $this->respondWithSuccess($user);                    
+        }
+        else{
+            return $this->respondWithError("Mobile number or email has already been taken");                                    
+        }
 
-        return $this->respondWithSuccess($user);                    
+
         
     }
 }
