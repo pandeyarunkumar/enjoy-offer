@@ -55,6 +55,14 @@ class StoreService extends MasterService
             return 0;
         }
 
+        if($request->name){
+            $Checkstore = Store::where('name', $request->name)->first();
+            if($Checkstore && ($Checkstore->id != $store->id)){
+                return 0;
+            }
+            $store->name = $request->name;
+        }
+
         $store->postal_code = $request->postal_code;
         $store->address = $request->address;  
         $store->business_email = $request->business_email;       

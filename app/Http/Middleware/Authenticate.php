@@ -21,6 +21,9 @@ class Authenticate
         try{
             $decoded = JWT::decode($request->bearerToken(), "jwtToken", array('HS256'));
             $user = User::findOrFail($decoded->id);
+            if($user->role != "seller"){
+                return response()->json(['status' => 0, 'message' => 'Unauthorized request.'], 401);              
+            }
             $request->user = $user;
             return $next($request);            
         }

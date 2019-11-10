@@ -75,7 +75,7 @@ class BuyerService extends MasterService
 
        if($request->mobile){
          $seller = User::where('mobile', $request->mobile)->first();
-         if($seller){
+         if($seller && ($seller->id != $user->id)){
             return 0;
          }
          else{
@@ -85,7 +85,7 @@ class BuyerService extends MasterService
 
       if($request->email){
          $seller = User::where('email', $request->email)->first();
-         if($seller){
+         if($seller && ($seller->id != $user->id)){
             return 0;
          }
          else{

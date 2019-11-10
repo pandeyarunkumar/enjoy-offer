@@ -39,6 +39,7 @@
  *     HTTP/1.1 200 OK
  *  {
  *	"store_id":10,
+ *   "name":"The name has changed",
  *	"postal_code" : "TQ5 5Bk",
  *	"address": "18  Guildry Street, GALMPTON",
  *  "business_email":"test123@gmail.com"
