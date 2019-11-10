@@ -7,6 +7,8 @@ use App\Product;
 use App\Category;
 use App\Image;
 use App\Review;
+use App\Package;
+use App\Payment;
 use App\Banner;
 use Illuminate\Http\Request;
 use Firebase\JWT\JWT;
@@ -101,10 +103,10 @@ class StoreService extends MasterService
         $search_item = $request->search_item;
 
         if(!$search_item){
-           return Store::with('seller')->orderBy('id', 'DESC')->get();
+           return Store::with('seller')->with('package')->orderBy('id', 'DESC')->get();
         }
 
-        return Store::where('name', 'like', "%".$search_item."%")->with('seller')->orderBy('id', 'DESC')->get();
+        return Store::where('name', 'like', "%".$search_item."%")->with('seller')->with('package')->orderBy('id', 'DESC')->get();
     }
 
     public function getSellerStores($request){
@@ -114,10 +116,10 @@ class StoreService extends MasterService
         $search_item = $request->search_item;
 
         if(!$search_item){
-           return Store::where('user_id', $request->user->id)->orderBy('id', 'DESC')->get();
+           return Store::where('user_id', $request->user->id)->orderBy('id', 'DESC')->with('package')->get();
         }
 
-        return Store::where('user_id', $request->user->id)->where('name', 'like', "%".$search_item."%")->orderBy('id', 'DESC')->get();
+        return Store::where('user_id', $request->user->id)->where('name', 'like', "%".$search_item."%")->with('package')->orderBy('id', 'DESC')->get();
     }
     
     public function saveProduct(Request $request){
@@ -365,6 +367,14 @@ class StoreService extends MasterService
         }
 
         return $product;
+    }
+
+    public function getPackages(){
+        return Package::all();
+    }
+
+    public function getPayments(){
+        return Payment::all();
     }
 
 }

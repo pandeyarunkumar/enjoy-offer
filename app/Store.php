@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Store extends Model
 {
-    protected $hidden = ['user_id', 'created_at', 'updated_at'];
+    protected $hidden = ['user_id', 'created_at', 'updated_at', 'package_id'];
 
     public function seller(){
         return $this->belongsTo(User::class, 'user_id'); 

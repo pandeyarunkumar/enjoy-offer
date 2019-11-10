@@ -224,6 +224,12 @@
  *               "name": "Arun",
  *               "email": "pandeyarunoct@gmail.com",
  *               "mobile": "7379273205"
+ *           },
+ *           "package": {
+ *               "id": 1,
+ *               "name": "Basic",
+ *               "price": 1000,
+ *               "detail": "Basic package"
  *           }
  *       },
  *       {
@@ -241,6 +247,12 @@
  *               "name": "Arun",
  *               "email": "pandeyarunoct@gmail.com",
  *               "mobile": "7379273205"
+ *           },
+ *           "package": {
+ *               "id": 1,
+ *               "name": "Basic",
+ *               "price": 1000,
+ *               "detail": "Basic package"
  *           }
  *       },
  *       {
@@ -258,6 +270,12 @@
  *               "name": "Arun",
  *               "email": "pandeyarunoct@gmail.com",
  *               "mobile": "7379273205"
+ *           },
+ *           "package": {
+ *               "id": 1,
+ *               "name": "Basic",
+ *               "price": 1000,
+ *               "detail": "Basic package"
  *           }
  *       }
  *   ]
@@ -476,7 +494,13 @@
  *           "address": "17  Guildry Street, GALMPTON",
  *           "lat": 19.77187,
  *           "long": 19.77187,
- *           "is_active": 1
+ *           "is_active": 1,
+ *           "package": {
+ *               "id": 1,
+ *               "name": "Basic",
+ *               "price": 1000,
+ *               "detail": "Basic package"
+ *           }
  *       },
  *       {
  *           "id": 12,
@@ -487,7 +511,13 @@
  *           "address": "17  Guildry Street, GALMPTON",
  *           "lat": 19.77187,
  *           "long": 19.77187,
- *           "is_active": 1
+ *           "is_active": 1,
+ *           "package": {
+ *               "id": 1,
+ *               "name": "Basic",
+ *               "price": 1000,
+ *               "detail": "Basic package"
+ *           }
  *       }
  *   ]
  *   }
@@ -884,4 +914,54 @@
  *       "message": "images added successfuly"
  *   }
  */
+/**
+ * @api {get} seller/get-packages to get the available packages.
+ * @apiName getAvailablePackages
+ * @apiGroup Store
+ *
+ * @apiSuccessExample Success-Response:
+ *     HTTP/1.1 200 OK
+ *  {
+ *   "status": 1,
+ *   "data": [
+ *       {
+ *           "id": 1,
+ *           "name": "Basic",
+ *           "price": 1000,
+ *           "detail": "Basic package"
+ *       },
+ *       {
+ *           "id": 2,
+ *           "name": "Standard ",
+ *           "price": 2000,
+ *           "detail": "standard package"
+ *       },
+ *       {
+ *           "id": 3,
+ *           "name": "Diamond",
+ *           "price": 3000,
+ *           "detail": "Diamond package"
+ *       }
+ *   ]
+ *  }
+ */ 
+/**
+ * @api {get} seller/get-payments to get the seller's payments.
+ * @apiName getPayments
+ * @apiGroup Store
+ *
+ * @apiSuccessExample Success-Response:
+ *     HTTP/1.1 200 OK
+ *  {
+ *  "status": 1,
+ *   "data": [
+ *       {
+ *           "id": 1,
+ *           "transaction_id": "ACRAF23DB3C4",
+ *           "amount": 1000,
+ *           "selected_package": "basic"
+ *       }
+ *   ]
+ *   }
+ */ 
 

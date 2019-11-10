@@ -191,6 +191,25 @@
   },
   {
     "type": "get",
+    "url": "seller/get-packages",
+    "title": "to get the available packages.",
+    "name": "getAvailablePackages",
+    "group": "Store",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "   HTTP/1.1 200 OK\n{\n \"status\": 1,\n \"data\": [\n     {\n         \"id\": 1,\n         \"name\": \"Basic\",\n         \"price\": 1000,\n         \"detail\": \"Basic package\"\n     },\n     {\n         \"id\": 2,\n         \"name\": \"Standard \",\n         \"price\": 2000,\n         \"detail\": \"standard package\"\n     },\n     {\n         \"id\": 3,\n         \"name\": \"Diamond\",\n         \"price\": 3000,\n         \"detail\": \"Diamond package\"\n     }\n ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "apidoc/store.php",
+    "groupTitle": "Store"
+  },
+  {
+    "type": "get",
     "url": "get-categories",
     "title": "to get all categories.",
     "name": "getCategories",
@@ -219,6 +238,25 @@
         {
           "title": "Success-Response:",
           "content": "    HTTP/1.1 200 OK\n  {\n  \"status\": 1,\n  \"data\": [\n      {\n          \"id\": 74,\n          \"url\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-08 13:04:12-5d9c894c36d29.png\"\n      },\n      {\n          \"id\": 75,\n          \"url\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-08 13:04:12-5d9c894c61efb.png\"\n      },\n      {\n          \"id\": 76,\n          \"url\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-08 13:04:12-5d9c894c731ae.png\"\n      }\n  ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "apidoc/store.php",
+    "groupTitle": "Store"
+  },
+  {
+    "type": "get",
+    "url": "seller/get-payments",
+    "title": "to get the seller's payments.",
+    "name": "getPayments",
+    "group": "Store",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "   HTTP/1.1 200 OK\n{\n\"status\": 1,\n \"data\": [\n     {\n         \"id\": 1,\n         \"transaction_id\": \"ACRAF23DB3C4\",\n         \"amount\": 1000,\n         \"selected_package\": \"basic\"\n     }\n ]\n }",
           "type": "json"
         }
       ]
@@ -313,7 +351,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "  HTTP/1.1 200 OK\n{\n\"status\": 1,\n\"data\": [\n    {\n        \"id\": 9,\n        \"name\": \"Test1\",\n        \"postal_code\": \"TQ5 5BT\",\n        \"logo\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 14:51:12-5d98ade02f3fa.jpeg\",\n        \"cover_image\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 14:51:12-5d98ade043dc6.png\",\n        \"address\": \"17  Guildry Street, GALMPTON\",\n        \"lat\": 19.77187,\n        \"long\": 19.77187,\n        \"is_active\": 1\n    },\n    {\n        \"id\": 12,\n        \"name\": \"Test2\",\n        \"postal_code\": \"TQ5 5BT\",\n        \"logo\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 18:22:48-5d98df7848886.jpeg\",\n        \"cover_image\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 18:22:48-5d98df786ca10.png\",\n        \"address\": \"17  Guildry Street, GALMPTON\",\n        \"lat\": 19.77187,\n        \"long\": 19.77187,\n        \"is_active\": 1\n    }\n]\n}",
+          "content": "  HTTP/1.1 200 OK\n{\n\"status\": 1,\n\"data\": [\n    {\n        \"id\": 9,\n        \"name\": \"Test1\",\n        \"postal_code\": \"TQ5 5BT\",\n        \"logo\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 14:51:12-5d98ade02f3fa.jpeg\",\n        \"cover_image\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 14:51:12-5d98ade043dc6.png\",\n        \"address\": \"17  Guildry Street, GALMPTON\",\n        \"lat\": 19.77187,\n        \"long\": 19.77187,\n        \"is_active\": 1,\n        \"package\": {\n            \"id\": 1,\n            \"name\": \"Basic\",\n            \"price\": 1000,\n            \"detail\": \"Basic package\"\n        }\n    },\n    {\n        \"id\": 12,\n        \"name\": \"Test2\",\n        \"postal_code\": \"TQ5 5BT\",\n        \"logo\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 18:22:48-5d98df7848886.jpeg\",\n        \"cover_image\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 18:22:48-5d98df786ca10.png\",\n        \"address\": \"17  Guildry Street, GALMPTON\",\n        \"lat\": 19.77187,\n        \"long\": 19.77187,\n        \"is_active\": 1,\n        \"package\": {\n            \"id\": 1,\n            \"name\": \"Basic\",\n            \"price\": 1000,\n            \"detail\": \"Basic package\"\n        }\n    }\n]\n}",
           "type": "json"
         }
       ]
@@ -332,7 +370,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "   HTTP/1.1 200 OK\n {\n\"status\": 1,\n\"data\": [\n    {\n         \"id\": 1,\n         \"name\": \"Test Store\",\n         \"postal_code\": \"TQ5 5BT\",\n         \"logo\": null,\n         \"cover_image\": null,\n         \"address\": \"17  Guildry Street, GALMPTON\",\n         \"lat\": 19.77187,\n         \"long\": 25.979581,\n         \"is_active\": 1,\n         \"seller\": {\n             \"id\": 4,\n             \"name\": \"Arun\",\n             \"email\": \"pandeyarunoct@gmail.com\",\n             \"mobile\": \"7379273205\"\n         }\n     },\n     {\n         \"id\": 2,\n         \"name\": \"Test Store2\",\n         \"postal_code\": \"TQ5 5BT\",\n         \"logo\": null,\n         \"cover_image\": null,\n         \"address\": \"17  Guildry Street, GALMPTON\",\n         \"lat\": 19.77187,\n         \"long\": 25.979581,\n         \"is_active\": 1,\n         \"seller\": {\n             \"id\": 4,\n             \"name\": \"Arun\",\n             \"email\": \"pandeyarunoct@gmail.com\",\n             \"mobile\": \"7379273205\"\n         }\n     },\n     {\n         \"id\": 3,\n         \"name\": \"Test Store3\",\n         \"postal_code\": \"TQ5 5BT\",\n         \"logo\": null,\n         \"cover_image\": null,\n         \"address\": \"17  Guildry Street, GALMPTON\",\n         \"lat\": 19.77187,\n         \"long\": 25.979581,\n         \"is_active\": 1,\n         \"seller\": {\n             \"id\": 4,\n             \"name\": \"Arun\",\n             \"email\": \"pandeyarunoct@gmail.com\",\n             \"mobile\": \"7379273205\"\n         }\n     }\n ]\n }",
+          "content": "   HTTP/1.1 200 OK\n {\n\"status\": 1,\n\"data\": [\n    {\n         \"id\": 1,\n         \"name\": \"Test Store\",\n         \"postal_code\": \"TQ5 5BT\",\n         \"logo\": null,\n         \"cover_image\": null,\n         \"address\": \"17  Guildry Street, GALMPTON\",\n         \"lat\": 19.77187,\n         \"long\": 25.979581,\n         \"is_active\": 1,\n         \"seller\": {\n             \"id\": 4,\n             \"name\": \"Arun\",\n             \"email\": \"pandeyarunoct@gmail.com\",\n             \"mobile\": \"7379273205\"\n         },\n         \"package\": {\n             \"id\": 1,\n             \"name\": \"Basic\",\n             \"price\": 1000,\n             \"detail\": \"Basic package\"\n         }\n     },\n     {\n         \"id\": 2,\n         \"name\": \"Test Store2\",\n         \"postal_code\": \"TQ5 5BT\",\n         \"logo\": null,\n         \"cover_image\": null,\n         \"address\": \"17  Guildry Street, GALMPTON\",\n         \"lat\": 19.77187,\n         \"long\": 25.979581,\n         \"is_active\": 1,\n         \"seller\": {\n             \"id\": 4,\n             \"name\": \"Arun\",\n             \"email\": \"pandeyarunoct@gmail.com\",\n             \"mobile\": \"7379273205\"\n         },\n         \"package\": {\n             \"id\": 1,\n             \"name\": \"Basic\",\n             \"price\": 1000,\n             \"detail\": \"Basic package\"\n         }\n     },\n     {\n         \"id\": 3,\n         \"name\": \"Test Store3\",\n         \"postal_code\": \"TQ5 5BT\",\n         \"logo\": null,\n         \"cover_image\": null,\n         \"address\": \"17  Guildry Street, GALMPTON\",\n         \"lat\": 19.77187,\n         \"long\": 25.979581,\n         \"is_active\": 1,\n         \"seller\": {\n             \"id\": 4,\n             \"name\": \"Arun\",\n             \"email\": \"pandeyarunoct@gmail.com\",\n             \"mobile\": \"7379273205\"\n         },\n         \"package\": {\n             \"id\": 1,\n             \"name\": \"Basic\",\n             \"price\": 1000,\n             \"detail\": \"Basic package\"\n         }\n     }\n ]\n }",
           "type": "json"
         }
       ]

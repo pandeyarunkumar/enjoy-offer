@@ -292,4 +292,18 @@ class StoreController extends Controller
         }   
     }
 
+    public function getPackages(){
+
+        $packages = $this->storeService->getPackages();
+
+        return $this->respondWithSuccess($packages);
+    }
+
+    public function getPayments(){
+
+        $payments = $this->storeService->getPayments();
+
+        return $this->respondWithSuccess($payments);
+    }
+
 }
