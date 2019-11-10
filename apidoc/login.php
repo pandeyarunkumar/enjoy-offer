@@ -1,7 +1,7 @@
 /**
  * @api {post}  seller/sign-in to login user.
  * @apiName signIn
- * @apiGroup Login
+ * @apiGroup SellerLogin
  *
  * @apiSuccessExample Request:
  *     HTTP/1.1 200 OK
@@ -35,7 +35,7 @@
  /**
  * @api {post}  seller/sign-up to signup user.
  * @apiName signUp
- * @apiGroup Login
+ * @apiGroup SellerLogin
  *
  * @apiSuccessExample Request:
  *     HTTP/1.1 200 OK
@@ -55,7 +55,7 @@
  /**
  * @api {post}  seller/generate-otp to generate otp.
  * @apiName generateOtp
- * @apiGroup Login
+ * @apiGroup SellerLogin
  *
  * @apiSuccessExample Request:
  *     HTTP/1.1 200 OK
@@ -81,7 +81,7 @@
 /**
  * @api {post}  seller/update-profile to update profile.
  * @apiName updateProfile
- * @apiGroup Login
+ * @apiGroup SellerLogin
  *
  * @apiSuccessExample Request:
  *     HTTP/1.1 200 OK

@@ -17,10 +17,9 @@ use Illuminate\Http\Request;
 //     return $request->user();
 // });
 
-Route::post('seller/sign-in', 'LoginController@signIn');
-Route::post('seller/generate-otp', 'LoginController@generateOtp');   
-Route::post('seller/sign-up', 'LoginController@signUp');
-Route::post('admin/sign-in', 'AdminController@signIn');    
+
+
+
 
 Route::get('get-categories', 'AdminController@getcategories'); 
 Route::get('get-subCategories', 'AdminController@getSubcategories'); 
@@ -30,11 +29,12 @@ Route::get('get-store-reviews', 'StoreController@getReviews');
 Route::get('get-store-rating', 'StoreController@getRating'); 
 Route::get('get-banners', 'StoreController@getBanners'); 
 
+
+Route::post('seller/sign-in', 'LoginController@signIn');
+Route::post('seller/generate-otp', 'LoginController@generateOtp');   
+Route::post('seller/sign-up', 'LoginController@signUp');
 Route::group(['middleware' => "authenticate"], function () {
     Route::post('seller/update-profile', 'LoginController@updateProfile');   
-});
-
-Route::group(['middleware' => "authenticate"], function () {
     Route::get('seller/get-images', 'StoreController@getImages'); 
     Route::post('seller/save-store', 'StoreController@saveStore');
     Route::post('seller/update-store', 'StoreController@updateStore');
@@ -51,8 +51,18 @@ Route::group(['middleware' => "authenticate"], function () {
     Route::get('seller/get-payments', 'StoreController@getPayments'); 
 });
 
+Route::post('buyer/sign-in', 'BuyerController@signIn');
+Route::post('buyer/generate-otp', 'BuyerController@generateOtp');   
+Route::post('buyer/sign-up', 'BuyerController@signUp');
+Route::group(['middleware' => "checkBuyer"], function () {
+    Route::post('buyer/update-profile', 'LoginController@updateProfile');      
+});
+
+Route::post('admin/sign-in', 'AdminController@signIn');    
 Route::group(['middleware' => "checkAdmin"], function () {
     Route::post('admin/save-category', 'AdminController@saveCategory');
     Route::post('admin/save-product-images', 'AdminController@saveProductImages');
 });
+
+
 
