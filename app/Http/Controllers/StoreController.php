@@ -267,7 +267,7 @@ class StoreController extends Controller
         $product = $this->storeService->saveProductContent($request);
 
         if($product){
-            return $this->respondWithSuccessMessage("product added successfuly");                                       
+            return $this->respondWithSuccess($product);                                       
         }
 
         else{

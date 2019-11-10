@@ -341,7 +341,11 @@ class StoreService extends MasterService
 
         $product->save();
 
-        return $product;
+        $res_product = new \StdClass();
+        $res_product->product_id = $product->id;
+        $res_product->Categoryimages = $this->getImages($request);
+
+        return $res_product;
     }
 
     public function saveProductImages(Request $request){
