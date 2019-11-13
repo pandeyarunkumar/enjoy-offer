@@ -88,4 +88,11 @@ class BuyerController extends Controller
             return $this->respondWithSuccess($products);                    
         }
     }
+
+    public function getBanners(){
+       
+        $banners = $this->buyerService->getBanners();
+
+        return $this->respondWithSuccess($banners);            
+    }
 }

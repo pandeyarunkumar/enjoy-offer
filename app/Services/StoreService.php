@@ -320,7 +320,7 @@ class StoreService extends MasterService
     }
 
     public function getBanners(){
-        $banners = Banner::all();
+        $banners = Banner::where('type', 'seller')->get();
         return $banners; 
     }
 

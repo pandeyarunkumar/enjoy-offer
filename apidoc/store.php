@@ -207,24 +207,27 @@
  *
  * @apiSuccessExample Success-Response:
  *     HTTP/1.1 200 OK
- *   {
- *  "status": 1,
- *  "data": [
- *      {
- *           "id": 1,
- *           "name": "Test Store",
+ *  {
+ *   "status": 1,
+ *   "data": [
+ *       {
+ *           "id": 13,
+ *           "name": "Test12345679455",
  *           "postal_code": "TQ5 5BT",
  *           "logo": null,
  *           "cover_image": null,
  *           "address": "17  Guildry Street, GALMPTON",
- *           "lat": 19.77187,
- *           "long": 25.979581,
+ *           "business_email": null,
+ *           "lat": 28.535517,
+ *           "long": 77.391029,
  *           "is_active": 1,
+ *           "avg_rating": 4.5,
  *           "seller": {
- *               "id": 4,
- *               "name": "Arun",
- *               "email": "pandeyarunoct@gmail.com",
- *               "mobile": "7379273205"
+ *               "id": 5,
+ *               "name": "Super Admin",
+ *               "email": "superadmin@enjoyoffer.com",
+ *               "mobile": "1234567891",
+ *               "profile_pic": null
  *           },
  *           "package": {
  *               "id": 1,
@@ -234,20 +237,101 @@
  *           }
  *       },
  *       {
- *           "id": 2,
- *           "name": "Test Store2",
+ *           "id": 12,
+ *           "name": "Test12345679",
  *           "postal_code": "TQ5 5BT",
- *           "logo": null,
- *           "cover_image": null,
+ *           "logo": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 18:22:48-5d98df7848886.jpeg",
+ *           "cover_image": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 18:22:48-5d98df786ca10.png",
  *           "address": "17  Guildry Street, GALMPTON",
- *           "lat": 19.77187,
- *           "long": 25.979581,
+ *           "business_email": null,
+ *           "lat": 28.535517,
+ *           "long": 77.391029,
  *           "is_active": 1,
+ *           "avg_rating": null,
  *           "seller": {
- *               "id": 4,
- *               "name": "Arun",
- *               "email": "pandeyarunoct@gmail.com",
- *               "mobile": "7379273205"
+ *               "id": 5,
+ *               "name": "Super Admin",
+ *               "email": "superadmin@enjoyoffer.com",
+ *               "mobile": "1234567891",
+ *               "profile_pic": null
+ *           },
+ *           "package": {
+ *               "id": 1,
+ *               "name": "Basic",
+ *               "price": 1000,
+ *               "detail": "Basic package"
+ *           }
+ *       },
+ *       {
+ *           "id": 11,
+ *           "name": "Test12345678",
+ *           "postal_code": "TQ5 5BT",
+ *           "logo": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 18:21:51-5d98df3f06eee.jpeg",
+ *           "cover_image": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 18:21:51-5d98df3f2a91c.png",
+ *           "address": "17  Guildry Street, GALMPTON",
+ *           "business_email": null,
+ *           "lat": 28.535517,
+ *           "long": 77.391029,
+ *           "is_active": 1,
+ *           "avg_rating": null,
+ *           "seller": {
+ *               "id": 5,
+ *               "name": "Super Admin",
+ *               "email": "superadmin@enjoyoffer.com",
+ *               "mobile": "1234567891",
+ *               "profile_pic": null
+ *           },
+ *           "package": {
+ *               "id": 1,
+ *               "name": "Basic",
+ *               "price": 1000,
+ *               "detail": "Basic package"
+ *           }
+ *       },
+ *       {
+ *           "id": 10,
+ *           "name": "Test1234567",
+ *           "postal_code": "TQ5 5Bl",
+ *           "logo": "http://localhost:8000/storage/images/enjoy-offer-image2019-11-02 10:48:535dbd5f1599766.png",
+ *           "cover_image": "http://localhost:8000/storage/images/enjoy-offer-image2019-11-02 10:48:545dbd5f1605e1e.png",
+ *           "address": "18  Guildry Street, GALMPTON",
+ *           "business_email": null,
+ *           "lat": 28.535517,
+ *           "long": 77.391029,
+ *           "is_active": 1,
+ *           "avg_rating": null,
+ *           "seller": {
+ *               "id": 5,
+ *               "name": "Super Admin",
+ *               "email": "superadmin@enjoyoffer.com",
+ *               "mobile": "1234567891",
+ *               "profile_pic": null
+ *           },
+ *           "package": {
+ *               "id": 1,
+ *               "name": "Basic",
+ *               "price": 1000,
+ *               "detail": "Basic package"
+ *           }
+ *       },
+ *       {
+ *           "id": 9,
+ *           "name": "Test123456",
+ *           "postal_code": "TQ5 5BT",
+ *           "logo": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 14:51:12-5d98ade02f3fa.jpeg",
+ *           "cover_image": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 14:51:12-5d98ade043dc6.png",
+ *           "address": "17  Guildry Street, GALMPTON",
+ *           "business_email": null,
+ *           "lat": 28.535517,
+ *           "long": 77.391029,
+ *           "is_active": 1,
+ *           "avg_rating": null,
+ *           "seller": {
+ *               "id": 5,
+ *               "name": "Super Admin",
+ *               "email": "superadmin@enjoyoffer.com",
+ *               "mobile": "1234567891",
+ *               "profile_pic": null
  *           },
  *           "package": {
  *               "id": 1,
@@ -263,14 +347,17 @@
  *           "logo": null,
  *           "cover_image": null,
  *           "address": "17  Guildry Street, GALMPTON",
- *           "lat": 19.77187,
- *           "long": 25.979581,
+ *           "business_email": null,
+ *           "lat": 28.535517,
+ *           "long": 77.391029,
  *           "is_active": 1,
+ *           "avg_rating": null,
  *           "seller": {
  *               "id": 4,
- *               "name": "Arun",
+ *               "name": "Arun Kumar Pandey",
  *               "email": "pandeyarunoct@gmail.com",
- *               "mobile": "7379273205"
+ *               "mobile": "7379273205",
+ *               "profile_pic": "http://localhost:8000/storage/images/enjoy-offer-image2019-11-09 07:29:265dc66ad673510.png"
  *           },
  *           "package": {
  *               "id": 1,
@@ -280,7 +367,7 @@
  *           }
  *       }
  *   ]
- *   }
+ *}
  */
 /**
  * @api {post}  seller/save-product to save the product.

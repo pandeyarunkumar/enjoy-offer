@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\User;
 use App\Store;
+use App\Banner;
 use App\Product;
 use Illuminate\Http\Request;
 use Firebase\JWT\JWT;
@@ -137,4 +138,9 @@ class BuyerService extends MasterService
 
       dd($stores);
     }
+
+    public function getBanners(){
+      $banners = Banner::where('type', 'buyer')->get();
+      return $banners; 
+  }
 }
