@@ -3,9 +3,12 @@
 namespace App\Services;
 
 use App\User;
+use App\Store;
+use App\Product;
 use Illuminate\Http\Request;
 use Firebase\JWT\JWT;
 use Carbon\Carbon;
+use DB;
 
 class BuyerService extends MasterService
 {
@@ -120,5 +123,18 @@ class BuyerService extends MasterService
        $res_user->jwtToken = $jwt;
        
        return $res_user;
+    }
+
+    public function productsNearBYMe(Request $request){
+
+      $latitude = $request->lat;
+      $longitude = $request->long;
+
+      $stores = Store::selectRaw('*, ( 6367 * acos( cos( radians( ? ) ) * cos( radians( lat ) ) * cos( radians( long ) - radians( ? ) ) + sin( radians( ? ) ) * sin( radians( lat ) ) ) ) AS distance', [$latitude, $longitude, $latitude])
+      ->having('distance', '<', 10)
+      ->orderBy('distance')
+      ->get();
+
+      dd($stores);
     }
 }

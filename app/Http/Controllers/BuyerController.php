@@ -72,4 +72,20 @@ class BuyerController extends Controller
             return $this->respondWithError("Mobile number or email has already been taken");                                    
         }
     }
+
+    public function productsNearBYMe(Request $request){
+        $validator = Validator::make($request->all(), [
+            'lat' => 'required',
+            'long' => 'required',
+        ]);
+        if ($validator->fails()) {
+            return $this->respondWithValidationError($validator);
+        }
+
+        $products = $this->buyerService->productsNearBYMe($request);
+        
+        if($products){
+            return $this->respondWithSuccess($products);                    
+        }
+    }
 }
