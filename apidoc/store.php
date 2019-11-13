@@ -570,19 +570,21 @@
  *
  * @apiSuccessExample Success-Response:
  *     HTTP/1.1 200 OK
- *   {
+ *  {
  *   "status": 1,
  *   "data": [
  *       {
- *           "id": 9,
- *           "name": "Test1",
+ *           "id": 3,
+ *           "name": "Test Store3",
  *           "postal_code": "TQ5 5BT",
- *           "logo": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 14:51:12-5d98ade02f3fa.jpeg",
- *           "cover_image": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 14:51:12-5d98ade043dc6.png",
+ *           "logo": null,
+ *           "cover_image": null,
  *           "address": "17  Guildry Street, GALMPTON",
- *           "lat": 19.77187,
- *           "long": 19.77187,
+ *           "business_email": null,
+ *           "lat": 28.535517,
+ *           "long": 77.391029,
  *           "is_active": 1,
+ *           "avg_rating": null,
  *           "package": {
  *               "id": 1,
  *               "name": "Basic",
@@ -591,15 +593,36 @@
  *           }
  *       },
  *       {
- *           "id": 12,
- *           "name": "Test2",
- *           "postal_code": "TQ5 5BT",
- *           "logo": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 18:22:48-5d98df7848886.jpeg",
- *           "cover_image": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 18:22:48-5d98df786ca10.png",
- *           "address": "17  Guildry Street, GALMPTON",
- *           "lat": 19.77187,
- *           "long": 19.77187,
+ *           "id": 2,
+ *           "name": "The name has changed",
+ *           "postal_code": "TQ5 5Bl",
+ *           "logo": "http://localhost:8000/storage/images/enjoy-offer-image2019-11-13 19:00:095dcc52b992fda.png",
+ *           "cover_image": "http://localhost:8000/storage/images/enjoy-offer-image2019-11-13 19:00:105dcc52ba14fd4.png",
+ *           "address": "18  Guildry Street, GALMPTON",
+ *           "business_email": null,
+ *           "lat": 19.77188,
+ *           "long": 25.979582,
  *           "is_active": 1,
+ *           "avg_rating": null,
+ *           "package": {
+ *               "id": 1,
+ *               "name": "Basic",
+ *               "price": 1000,
+ *               "detail": "Basic package"
+ *           }
+ *       },
+ *       {
+ *           "id": 1,
+ *           "name": "name changed",
+ *           "postal_code": "TQ5 5Bl",
+ *           "logo": "http://localhost:8000/storage/images/enjoy-offer-image2019-11-10 11:51:235dc7f9bb4df11.png",
+ *           "cover_image": "http://localhost:8000/storage/images/enjoy-offer-image2019-11-10 11:51:235dc7f9bb71c02.png",
+ *           "address": "18  Guildry Street, GALMPTON",
+ *           "business_email": null,
+ *           "lat": 28.535517,
+ *           "long": 77.391029,
+ *           "is_active": 1,
+ *           "avg_rating": null,
  *           "package": {
  *               "id": 1,
  *               "name": "Basic",
@@ -608,7 +631,7 @@
  *           }
  *       }
  *   ]
- *   }
+ *}
  */
 <!-- /**
  * @api {get} seller/get-products to get the seller's products.
