@@ -23,28 +23,3 @@
  *   ]
  *   }
  */
-/**
- * @api {get}  get-banners-for-buyer to get banners for buyer
- * @apiName getBannersForBuyer
- * @apiGroup Home
- *
- * @apiSuccessExample Success-Response:
- *     HTTP/1.1 200 OK
- *  {
- *   "status": 1,
- *   "data": [
- *       {
- *           "id": 4,
- *           "image": "http://54.218.78.66/enjoy-offer/public/storage/images/enjoy-offer-image2019-11-03 16:44:005dbf03d0ddd46.png"
- *       },
- *       {
- *           "id": 5,
- *           "image": "http://54.218.78.66/enjoy-offer/public/storage/images/enjoy-offer-image2019-11-03 16:44:005dbf03d0df9ce.png"
- *       },
- *       {
- *           "id": 6,
- *           "image": "http://54.218.78.66/enjoy-offer/public/storage/images/enjoy-offer-image2019-11-03 16:44:005dbf03d0e23e2.png"
- *       }
- *   ]
- *   }
- */

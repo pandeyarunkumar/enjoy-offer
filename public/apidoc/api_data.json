@@ -4,7 +4,7 @@
     "url": "buyer/generate-otp",
     "title": "to generate otp.",
     "name": "generateOtp",
-    "group": "BuyerLogin",
+    "group": "Buyer",
     "success": {
       "examples": [
         {
@@ -30,14 +30,33 @@
     },
     "version": "0.0.0",
     "filename": "apidoc/buyer.php",
-    "groupTitle": "BuyerLogin"
+    "groupTitle": "Buyer"
+  },
+  {
+    "type": "get",
+    "url": "get-banners-for-buyer",
+    "title": "to get banners for buyer",
+    "name": "getBannersForBuyer",
+    "group": "Buyer",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "   HTTP/1.1 200 OK\n{\n \"status\": 1,\n \"data\": [\n     {\n         \"id\": 4,\n         \"image\": \"http://54.218.78.66/enjoy-offer/public/storage/images/enjoy-offer-image2019-11-03 16:44:005dbf03d0ddd46.png\"\n     },\n     {\n         \"id\": 5,\n         \"image\": \"http://54.218.78.66/enjoy-offer/public/storage/images/enjoy-offer-image2019-11-03 16:44:005dbf03d0df9ce.png\"\n     },\n     {\n         \"id\": 6,\n         \"image\": \"http://54.218.78.66/enjoy-offer/public/storage/images/enjoy-offer-image2019-11-03 16:44:005dbf03d0e23e2.png\"\n     }\n ]\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "apidoc/buyer.php",
+    "groupTitle": "Buyer"
   },
   {
     "type": "post",
     "url": "buyer/sign-in",
     "title": "to login buyer.",
     "name": "signIn",
-    "group": "BuyerLogin",
+    "group": "Buyer",
     "success": {
       "examples": [
         {
@@ -63,14 +82,14 @@
     },
     "version": "0.0.0",
     "filename": "apidoc/buyer.php",
-    "groupTitle": "BuyerLogin"
+    "groupTitle": "Buyer"
   },
   {
     "type": "post",
     "url": "buyer/sign-up",
     "title": "to signup buyer.",
     "name": "signUp",
-    "group": "BuyerLogin",
+    "group": "Buyer",
     "success": {
       "examples": [
         {
@@ -87,14 +106,14 @@
     },
     "version": "0.0.0",
     "filename": "apidoc/buyer.php",
-    "groupTitle": "BuyerLogin"
+    "groupTitle": "Buyer"
   },
   {
     "type": "post",
     "url": "buyer/update-profile",
     "title": "to update profile.",
     "name": "updateProfile",
-    "group": "BuyerLogin",
+    "group": "Buyer",
     "success": {
       "examples": [
         {
@@ -111,7 +130,7 @@
     },
     "version": "0.0.0",
     "filename": "apidoc/buyer.php",
-    "groupTitle": "BuyerLogin"
+    "groupTitle": "Buyer"
   },
   {
     "type": "get",
@@ -124,25 +143,6 @@
         {
           "title": "Success-Response:",
           "content": "   HTTP/1.1 200 OK\n{\n \"status\": 1,\n \"data\": [\n     {\n         \"id\": 1,\n         \"image\": \"http://54.218.78.66/enjoy-offer/public/storage/images/enjoy-offer-image2019-11-03 16:44:005dbf03d0ddd46.png\"\n     },\n     {\n         \"id\": 2,\n         \"image\": \"http://54.218.78.66/enjoy-offer/public/storage/images/enjoy-offer-image2019-11-03 16:44:005dbf03d0df9ce.png\"\n     },\n     {\n         \"id\": 3,\n         \"image\": \"http://54.218.78.66/enjoy-offer/public/storage/images/enjoy-offer-image2019-11-03 16:44:005dbf03d0e23e2.png\"\n     }\n ]\n }",
-          "type": "json"
-        }
-      ]
-    },
-    "version": "0.0.0",
-    "filename": "apidoc/home.php",
-    "groupTitle": "Home"
-  },
-  {
-    "type": "get",
-    "url": "get-banners-for-buyer",
-    "title": "to get banners for buyer",
-    "name": "getBannersForBuyer",
-    "group": "Home",
-    "success": {
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "   HTTP/1.1 200 OK\n{\n \"status\": 1,\n \"data\": [\n     {\n         \"id\": 4,\n         \"image\": \"http://54.218.78.66/enjoy-offer/public/storage/images/enjoy-offer-image2019-11-03 16:44:005dbf03d0ddd46.png\"\n     },\n     {\n         \"id\": 5,\n         \"image\": \"http://54.218.78.66/enjoy-offer/public/storage/images/enjoy-offer-image2019-11-03 16:44:005dbf03d0df9ce.png\"\n     },\n     {\n         \"id\": 6,\n         \"image\": \"http://54.218.78.66/enjoy-offer/public/storage/images/enjoy-offer-image2019-11-03 16:44:005dbf03d0e23e2.png\"\n     }\n ]\n }",
           "type": "json"
         }
       ]
@@ -566,7 +566,7 @@
   },
   {
     "type": "post",
-    "url": "seller/save-product",
+    "url": "seller/save-product-content",
     "title": "to save the product content without images.",
     "name": "saveProductContent",
     "group": "Store",

@@ -972,7 +972,7 @@
  *
  */
 /**
- * @api {post}  seller/save-product to save the product content without images.
+ * @api {post}  seller/save-product-content to save the product content without images.
  * @apiName saveProductContent
  * @apiGroup Store
  *

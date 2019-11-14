@@ -1,7 +1,7 @@
 /**
  * @api {post}  buyer/sign-in to login buyer.
  * @apiName signIn
- * @apiGroup BuyerLogin
+ * @apiGroup Buyer
  *
  * @apiSuccessExample Request:
  *     HTTP/1.1 200 OK
@@ -35,7 +35,7 @@
  /**
  * @api {post}  buyer/sign-up to signup buyer.
  * @apiName signUp
- * @apiGroup BuyerLogin
+ * @apiGroup Buyer
  *
  * @apiSuccessExample Request:
  *     HTTP/1.1 200 OK
@@ -55,7 +55,7 @@
  /**
  * @api {post}  buyer/generate-otp to generate otp.
  * @apiName generateOtp
- * @apiGroup BuyerLogin
+ * @apiGroup Buyer
  *
  * @apiSuccessExample Request:
  *     HTTP/1.1 200 OK
@@ -81,7 +81,7 @@
 /**
  * @api {post}  buyer/update-profile to update profile.
  * @apiName updateProfile
- * @apiGroup BuyerLogin
+ * @apiGroup Buyer
  *
  * @apiSuccessExample Request:
  *     HTTP/1.1 200 OK
@@ -105,5 +105,30 @@
  *       "exp": 1573457366,
  *       "jwtToken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NCwibmFtZSI6IkFydW4gS3VtYXIgUGFuZGV5IiwiZW1haWwiOiJwYW5kZXlhcnVub2N0QGdtYWlsLmNvbSIsIm1vYmlsZSI6Ij*czNzkyNzMyMDUiLCJwcm9maWxlX3BpYyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4MDAwXC9zdG9yYWdlXC9pbWFnZXNcL2Vuam95LW9mZmVyLWltYWdlMjAxOS0xMS0wOSAwNzoyOToyNjVkYz*Y2YWQ2NzM1MTAucG5nIiwiZXhwIjoxNTczNDU3MzY2fQ.B91641BHyH1AzUrMhzLkqhFKHjPrA7BLwHTvGHqGht0"
  *   }
+ *   }
+ */
+/**
+ * @api {get}  get-banners-for-buyer to get banners for buyer
+ * @apiName getBannersForBuyer
+ * @apiGroup Buyer
+ *
+ * @apiSuccessExample Success-Response:
+ *     HTTP/1.1 200 OK
+ *  {
+ *   "status": 1,
+ *   "data": [
+ *       {
+ *           "id": 4,
+ *           "image": "http://54.218.78.66/enjoy-offer/public/storage/images/enjoy-offer-image2019-11-03 16:44:005dbf03d0ddd46.png"
+ *       },
+ *       {
+ *           "id": 5,
+ *           "image": "http://54.218.78.66/enjoy-offer/public/storage/images/enjoy-offer-image2019-11-03 16:44:005dbf03d0df9ce.png"
+ *       },
+ *       {
+ *           "id": 6,
+ *           "image": "http://54.218.78.66/enjoy-offer/public/storage/images/enjoy-offer-image2019-11-03 16:44:005dbf03d0e23e2.png"
+ *       }
+ *   ]
  *   }
  */
