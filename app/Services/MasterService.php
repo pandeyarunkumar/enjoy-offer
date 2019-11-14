@@ -4,6 +4,8 @@ namespace App\Services;
 
 use App\Image;
 use Carbon\Carbon;
+use Twilio\Rest\Client;
+use Twilio\Jwt\ClientToken;
 
 
 class MasterService
@@ -41,22 +43,40 @@ class MasterService
     public function sendSms($SentTo, $message)
     {
 
-        $MESSAGE = $message;
-        $SENTTO = rawurlencode($SentTo);    
+        $accountSid = config('app.twilio')['TWILIO_ACCOUNT_SID'];
+        $authToken  = config('app.twilio')['TWILIO_AUTH_TOKEN'];
+        $appSid     = config('app.twilio')['TWILIO_APP_SID'];
+        $client = new Client($accountSid, $authToken);
+        try
+        {
+            $client->messages->create($SentTo,
+            array(
+            'from' => '+19282385151',
+            'body' => $message
+            )
+            );
+        }
+        catch (Exception $e)
+        {
+            echo "Error: " . $e->getMessage();
+        }
 
-        $CLIENTID = env('CLIENTID');
-        $APIKEY = env('APIKEY');
-        $SENDERID = env('SENDERID');
-        $agent = env('AGENT'); 
+        // $MESSAGE = $message;
+        // $SENTTO = rawurlencode($SentTo);    
 
-        $url = "http://textsmsapp.com/vendorsms/pushsms.aspx?clientid=$CLIENTID&apikey=$APIKEY&msisdn=$SENTTO&sid=$SENDERID&msg=$MESSAGE&fl=0&gwid=2";
-        $ch = \curl_init();
-        \curl_setopt($ch, CURLOPT_URL, $url);
-        \curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        \curl_setopt($ch, CURLOPT_USERAGENT, $agent);
-        $status = \curl_exec($ch);
-        \curl_close($ch);
+        // $CLIENTID = env('CLIENTID');
+        // $APIKEY = env('APIKEY');
+        // $SENDERID = env('SENDERID');
+        // $agent = env('AGENT'); 
+
+        // $url = "http://textsmsapp.com/vendorsms/pushsms.aspx?clientid=$CLIENTID&apikey=$APIKEY&msisdn=$SENTTO&sid=$SENDERID&msg=$MESSAGE&fl=0&gwid=2";
+        // $ch = \curl_init();
+        // \curl_setopt($ch, CURLOPT_URL, $url);
+        // \curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        // \curl_setopt($ch, CURLOPT_USERAGENT, $agent);
+        // $status = \curl_exec($ch);
+        // \curl_close($ch);
         
-        return $status;
+        // return $status;
     }
 }

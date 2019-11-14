@@ -63,7 +63,7 @@ class LoginService extends MasterService
        $user->save();
 
        $message = rawurlencode("Your one time password is ".$user->otp);
-       //$this->sendSms($user->mobile, $message);       
+       $this->sendSms($user->mobile, $message);       
      
        return $user; 
     }
