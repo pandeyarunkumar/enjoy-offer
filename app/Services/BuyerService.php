@@ -140,7 +140,11 @@ class BuyerService extends MasterService
     }
 
     public function getBanners(){
-      $banners = Banner::where('type', 'buyer')->get();
+      $banners = new \StdClass();
+      $first = Banner::where('type', 'buyer')->get();
+      $second = Banner::where('type', 'buyer2')->get();
+      $banners->first=$first;
+      $banners->second=$second;
       return $banners; 
   }
 }
