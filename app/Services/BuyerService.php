@@ -47,8 +47,8 @@ class BuyerService extends MasterService
        $res_user->mobile = $user->mobile;
        $res_user->profile_pic = $user->profile_pic;
 
-       $expireDate=Carbon::now()->addDays(2)->timestamp;
-       $res_user->exp = $expireDate;  
+      //  $expireDate=Carbon::now()->addDays(2)->timestamp;
+      //  $res_user->exp = $expireDate;  
 
        $jwt = JWT::encode($res_user, "jwtToken");        
        $res_user->jwtToken = $jwt;

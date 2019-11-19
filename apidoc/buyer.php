@@ -159,8 +159,40 @@
  *   "status": 1,
  *   "data": [
  *       {
- *           "id": 13,
- *           "name": "Test12345679455",
+ *           "id": 1,
+ *           "name": "name changed",
+ *           "postal_code": "TQ5 5Bl",
+ *           "logo": "http://localhost:8000/storage/images/enjoy-offer-image2019-11-10 11:51:235dc7f9bb4df11.png",
+ *           "cover_image": "http://localhost:8000/storage/images/enjoy-offer-image2019-11-10 11:51:235dc7f9bb71c02.png",
+ *           "address": "18  Guildry Street, GALMPTON",
+ *           "business_email": null,
+ *           "lat": 28.535517,
+ *           "long": 77.391029,
+ *           "is_active": 1,
+ *           "distance": 0,
+ *           "avg_rating": null,
+ *           "products": [
+ *               {
+ *                   "id": 10,
+ *                   "name": "test product",
+ *                   "slug": "test-product",
+ *                   "short_description": "this is a short description",
+ *                   "description": "test description",
+ *                   "cost_price": 12,
+ *                   "selling_price": 14,
+ *                   "compare_price": 24,
+ *                   "compare_text": "flat 10 rs off",
+ *                   "is_featured": 1,
+ *                   "featured_image": null,
+ *                   "is_published": 1,
+ *                   "published_at": null,
+ *                   "category": null
+ *               }
+ *           ]
+ *       },
+ *       {
+ *           "id": 3,
+ *           "name": "Test Store3",
  *           "postal_code": "TQ5 5BT",
  *           "logo": null,
  *           "cover_image": null,
@@ -169,48 +201,7 @@
  *           "lat": 28.535517,
  *           "long": 77.391029,
  *           "is_active": 1,
- *           "avg_rating": 4.5,
- *           "products": []
- *       },
- *       {
- *           "id": 12,
- *           "name": "Test12345679",
- *           "postal_code": "TQ5 5BT",
- *           "logo": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 18:22:48-5d98df7848886.jpeg",
- *           "cover_image": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 18:22:48-5d98df786ca10.png",
- *           "address": "17  Guildry Street, GALMPTON",
- *           "business_email": null,
- *           "lat": 28.535517,
- *           "long": 77.391029,
- *           "is_active": 1,
- *           "avg_rating": null,
- *           "products": []
- *       },
- *       {
- *           "id": 11,
- *           "name": "Test12345678",
- *           "postal_code": "TQ5 5BT",
- *           "logo": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 18:21:51-5d98df3f06eee.jpeg",
- *           "cover_image": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 18:21:51-5d98df3f2a91c.png",
- *           "address": "17  Guildry Street, GALMPTON",
- *           "business_email": null,
- *           "lat": 28.535517,
- *           "long": 77.391029,
- *           "is_active": 1,
- *           "avg_rating": null,
- *           "products": []
- *       },
- *       {
- *           "id": 10,
- *           "name": "Test1234567",
- *           "postal_code": "TQ5 5Bl",
- *           "logo": "http://localhost:8000/storage/images/enjoy-offer-image2019-11-02 10:48:535dbd5f1599766.png",
- *           "cover_image": "http://localhost:8000/storage/images/enjoy-offer-image2019-11-02 10:48:545dbd5f1605e1e.png",
- *           "address": "18  Guildry Street, GALMPTON",
- *           "business_email": null,
- *           "lat": 28.535517,
- *           "long": 77.391029,
- *           "is_active": 1,
+ *           "distance": 0,
  *           "avg_rating": null,
  *           "products": []
  *       },
@@ -225,6 +216,7 @@
  *           "lat": 28.535517,
  *           "long": 77.391029,
  *           "is_active": 1,
+ *           "distance": 0,
  *           "avg_rating": null,
  *           "products": [
  *               {
@@ -422,8 +414,53 @@
  *           ]
  *       },
  *       {
- *           "id": 3,
- *           "name": "Test Store3",
+ *           "id": 10,
+ *           "name": "Test1234567",
+ *           "postal_code": "TQ5 5Bl",
+ *           "logo": "http://localhost:8000/storage/images/enjoy-offer-image2019-11-02 10:48:535dbd5f1599766.png",
+ *           "cover_image": "http://localhost:8000/storage/images/enjoy-offer-image2019-11-02 10:48:545dbd5f1605e1e.png",
+ *           "address": "18  Guildry Street, GALMPTON",
+ *           "business_email": null,
+ *           "lat": 28.535517,
+ *           "long": 77.391029,
+ *           "is_active": 1,
+ *           "distance": 0,
+ *           "avg_rating": null,
+ *           "products": []
+ *       },
+ *       {
+ *           "id": 11,
+ *           "name": "Test12345678",
+ *           "postal_code": "TQ5 5BT",
+ *           "logo": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 18:21:51-5d98df3f06eee.jpeg",
+ *           "cover_image": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 18:21:51-5d98df3f2a91c.png",
+ *           "address": "17  Guildry Street, GALMPTON",
+ *           "business_email": null,
+ *           "lat": 28.535517,
+ *           "long": 77.391029,
+ *           "is_active": 1,
+ *           "distance": 0,
+ *           "avg_rating": null,
+ *           "products": []
+ *       },
+ *       {
+ *           "id": 12,
+ *           "name": "Test12345679",
+ *           "postal_code": "TQ5 5BT",
+ *           "logo": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 18:22:48-5d98df7848886.jpeg",
+ *           "cover_image": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 18:22:48-5d98df786ca10.png",
+ *           "address": "17  Guildry Street, GALMPTON",
+ *           "business_email": null,
+ *           "lat": 28.535517,
+ *           "long": 77.391029,
+ *           "is_active": 1,
+ *           "distance": 0,
+ *           "avg_rating": null,
+ *           "products": []
+ *       },
+ *       {
+ *           "id": 13,
+ *           "name": "Test12345679455",
  *           "postal_code": "TQ5 5BT",
  *           "logo": null,
  *           "cover_image": null,
@@ -432,54 +469,10 @@
  *           "lat": 28.535517,
  *           "long": 77.391029,
  *           "is_active": 1,
- *           "avg_rating": null,
+ *           "distance": 0,
+ *           "avg_rating": 4.5,
  *           "products": []
- *       },
- *       {
- *           "id": 2,
- *           "name": "The name has changed",
- *           "postal_code": "TQ5 5Bl",
- *           "logo": "http://localhost:8000/storage/images/enjoy-offer-image2019-11-13 19:00:095dcc52b992fda.png",
- *           "cover_image": "http://localhost:8000/storage/images/enjoy-offer-image2019-11-13 19:00:105dcc52ba14fd4.png",
- *           "address": "18  Guildry Street, GALMPTON",
- *           "business_email": null,
- *           "lat": 19.77188,
- *           "long": 25.979582,
- *           "is_active": 1,
- *           "avg_rating": null,
- *           "products": []
- *       },
- *       {
- *           "id": 1,
- *           "name": "name changed",
- *           "postal_code": "TQ5 5Bl",
- *           "logo": "http://localhost:8000/storage/images/enjoy-offer-image2019-11-10 11:51:235dc7f9bb4df11.png",
- *           "cover_image": "http://localhost:8000/storage/images/enjoy-offer-image2019-11-10 11:51:235dc7f9bb71c02.png",
- *           "address": "18  Guildry Street, GALMPTON",
- *           "business_email": null,
- *           "lat": 28.535517,
- *           "long": 77.391029,
- *           "is_active": 1,
- *           "avg_rating": null,
- *           "products": [
- *               {
- *                   "id": 10,
- *                   "name": "test product",
- *                   "slug": "test-product",
- *                   "short_description": "this is a short description",
- *                   "description": "test description",
- *                   "cost_price": 12,
- *                   "selling_price": 14,
- *                   "compare_price": 24,
- *                   "compare_text": "flat 10 rs off",
- *                   "is_featured": 1,
- *                   "featured_image": null,
- *                   "is_published": 1,
- *                   "published_at": null,
- *                   "category": null
- *               }
- *           ]
  *       }
  *   ]
- *   }
+ * }
  */
