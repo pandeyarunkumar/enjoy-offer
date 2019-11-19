@@ -306,4 +306,32 @@ class StoreController extends Controller
         return $this->respondWithSuccess($payments);
     }
 
+    public function suggestedProductsName(Request $request){
+
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return $this->respondWithValidationError($validator);
+        }
+
+        $Products = $this->storeService->suggestedProductsName($request);
+        return $this->respondWithSuccess($Products); 
+    }
+
+    public function imagesByProductName(Request $request){
+
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return $this->respondWithValidationError($validator);
+        }
+
+        $Products = $this->storeService->imagesByProductName($request);
+        return $this->respondWithSuccess($Products); 
+    }
+
 }

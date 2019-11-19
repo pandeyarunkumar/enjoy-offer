@@ -389,4 +389,27 @@ class StoreService extends MasterService
         return Payment::all();
     }
 
+    public function suggestedProductsName($request){
+        return Product::where('name', 'like', "%".$request->name."%")->pluck('name');        
+    }
+
+    public function imagesByProductName($request){
+
+        $products =  Product::where('name', $request->name)->get();  
+        $images = []; 
+        $res_images = [];
+
+        foreach($products as $key=>$product){
+                $images[] = $product->images;
+        }
+
+        foreach($images as $key => $image){
+            if($key<6){
+                $res_images[] = $image;
+            }
+        }
+
+         return $res_images;
+    }
+
 }

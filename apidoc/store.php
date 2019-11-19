@@ -1099,4 +1099,56 @@
  *   ]
  *   }
  */ 
+/**
+ * @api {get} seller/suggested-products-name?name=tes to get the suggestion of product name.
+ * @apiName getProductNames
+ * @apiGroup Store
+ *
+ * @apiSuccessExample Success-Response:
+ *     HTTP/1.1 200 OK
+ * {
+ *   "status": 1,
+ *   "data": [
+ *       "test",
+ *       "test2",
+ *       "test product"
+ *   ]
+ * }
+ */ 
+/**
+ * @api {get} seller/images-by-product-name?name=test to get the product images by product name.
+ * @apiName getProductImagesByName
+ * @apiGroup Store
+ *
+ * @apiSuccessExample Success-Response:
+ *     HTTP/1.1 200 OK
+ *{
+ *   "status": 1,
+ *   "data": [
+ *       [
+ *           {
+ *               "id": 69,
+ *               "url": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-06 16:30:25-5d9a16a1356b3.png",
+ *               "category_id": null
+ *           },
+ *           {
+ *               "id": 70,
+ *               "url": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-06 16:30:25-5d9a16a141559.png",
+ *               "category_id": null
+ *           },
+ *           {
+ *               "id": 52,
+ *               "url": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-06 12:50:01-5d99e2f913cee.png",
+ *               "category_id": null
+ *           },
+ *           {
+ *               "id": 53,
+ *               "url": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-06 12:50:55-5d99e32f3c60c.jpeg",
+ *               "category_id": null
+ *           }
+ *       ]
+ *   ]
+ * }
+ */ 
+
 

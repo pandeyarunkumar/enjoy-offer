@@ -419,6 +419,44 @@ define({ "api": [
   },
   {
     "type": "get",
+    "url": "seller/images-by-product-name?name=test",
+    "title": "to get the product images by product name.",
+    "name": "getProductImagesByName",
+    "group": "Store",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n{\n  \"status\": 1,\n  \"data\": [\n      [\n          {\n              \"id\": 69,\n              \"url\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-06 16:30:25-5d9a16a1356b3.png\",\n              \"category_id\": null\n          },\n          {\n              \"id\": 70,\n              \"url\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-06 16:30:25-5d9a16a141559.png\",\n              \"category_id\": null\n          },\n          {\n              \"id\": 52,\n              \"url\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-06 12:50:01-5d99e2f913cee.png\",\n              \"category_id\": null\n          },\n          {\n              \"id\": 53,\n              \"url\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-06 12:50:55-5d99e32f3c60c.jpeg\",\n              \"category_id\": null\n          }\n      ]\n  ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "apidoc/store.php",
+    "groupTitle": "Store"
+  },
+  {
+    "type": "get",
+    "url": "seller/suggested-products-name?name=tes",
+    "title": "to get the suggestion of product name.",
+    "name": "getProductNames",
+    "group": "Store",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n{\n  \"status\": 1,\n  \"data\": [\n      \"test\",\n      \"test2\",\n      \"test product\"\n  ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "apidoc/store.php",
+    "groupTitle": "Store"
+  },
+  {
+    "type": "get",
     "url": "get-products?store_id=9&search_item=test",
     "title": "to get all the products of the particular store.",
     "name": "getProducts",

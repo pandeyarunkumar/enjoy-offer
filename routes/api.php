@@ -48,7 +48,9 @@ Route::group(['middleware' => "authenticate"], function () {
     Route::post('seller/delete-product', 'StoreController@deleteProduct'); 
     Route::get('seller/search-products', 'StoreController@searchProducts'); 
     Route::get('seller/get-packages', 'StoreController@getPackages'); 
-    Route::get('seller/get-payments', 'StoreController@getPayments'); 
+    Route::get('seller/get-payments', 'StoreController@getPayments');
+    Route::get('seller/suggested-products-name', 'StoreController@suggestedProductsName'); 
+    Route::get('seller/images-by-product-name', 'StoreController@imagesByProductName'); 
 });
 
 Route::post('buyer/sign-in', 'BuyerController@signIn');
