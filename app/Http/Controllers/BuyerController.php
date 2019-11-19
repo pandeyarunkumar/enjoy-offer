@@ -73,7 +73,7 @@ class BuyerController extends Controller
         }
     }
 
-    public function productsNearBYMe(Request $request){
+    public function storesNearBYMe(Request $request){
         $validator = Validator::make($request->all(), [
             'lat' => 'required',
             'long' => 'required',
@@ -82,10 +82,10 @@ class BuyerController extends Controller
             return $this->respondWithValidationError($validator);
         }
 
-        $products = $this->buyerService->productsNearBYMe($request);
+        $stores = $this->buyerService->storesNearBYMe($request);
         
-        if($products){
-            return $this->respondWithSuccess($products);                    
+        if($stores){
+            return $this->respondWithSuccess($stores);                    
         }
     }
 

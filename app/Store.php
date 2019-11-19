@@ -36,4 +36,8 @@ class Store extends Model
     public function getAvgRatingAttribute(){
         return Review::where('store_id', $this->id)->avg('rating');
     }
+
+    public function products(){
+        return $this->hasMany(Product::class);
+    }
 }

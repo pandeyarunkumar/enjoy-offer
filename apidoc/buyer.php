@@ -148,3 +148,338 @@
  *   }
  *}
  */
+/**
+ * @api {get}  get-stores-near-by-me?lat=28.535517&long=77.391029 to get the stores near by me
+ * @apiName getStoresNearByme
+ * @apiGroup Buyer
+ *
+ * @apiSuccessExample Success-Response:
+ *     HTTP/1.1 200 OK
+ * {
+ *   "status": 1,
+ *   "data": [
+ *       {
+ *           "id": 13,
+ *           "name": "Test12345679455",
+ *           "postal_code": "TQ5 5BT",
+ *           "logo": null,
+ *           "cover_image": null,
+ *           "address": "17  Guildry Street, GALMPTON",
+ *           "business_email": null,
+ *           "lat": 28.535517,
+ *           "long": 77.391029,
+ *           "is_active": 1,
+ *           "avg_rating": 4.5,
+ *           "products": []
+ *       },
+ *       {
+ *           "id": 12,
+ *           "name": "Test12345679",
+ *           "postal_code": "TQ5 5BT",
+ *           "logo": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 18:22:48-5d98df7848886.jpeg",
+ *           "cover_image": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 18:22:48-5d98df786ca10.png",
+ *           "address": "17  Guildry Street, GALMPTON",
+ *           "business_email": null,
+ *           "lat": 28.535517,
+ *           "long": 77.391029,
+ *           "is_active": 1,
+ *           "avg_rating": null,
+ *           "products": []
+ *       },
+ *       {
+ *           "id": 11,
+ *           "name": "Test12345678",
+ *           "postal_code": "TQ5 5BT",
+ *           "logo": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 18:21:51-5d98df3f06eee.jpeg",
+ *           "cover_image": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 18:21:51-5d98df3f2a91c.png",
+ *           "address": "17  Guildry Street, GALMPTON",
+ *           "business_email": null,
+ *           "lat": 28.535517,
+ *           "long": 77.391029,
+ *           "is_active": 1,
+ *           "avg_rating": null,
+ *           "products": []
+ *       },
+ *       {
+ *           "id": 10,
+ *           "name": "Test1234567",
+ *           "postal_code": "TQ5 5Bl",
+ *           "logo": "http://localhost:8000/storage/images/enjoy-offer-image2019-11-02 10:48:535dbd5f1599766.png",
+ *           "cover_image": "http://localhost:8000/storage/images/enjoy-offer-image2019-11-02 10:48:545dbd5f1605e1e.png",
+ *           "address": "18  Guildry Street, GALMPTON",
+ *           "business_email": null,
+ *           "lat": 28.535517,
+ *           "long": 77.391029,
+ *           "is_active": 1,
+ *           "avg_rating": null,
+ *           "products": []
+ *       },
+ *       {
+ *           "id": 9,
+ *           "name": "Test123456",
+ *           "postal_code": "TQ5 5BT",
+ *           "logo": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 14:51:12-5d98ade02f3fa.jpeg",
+ *           "cover_image": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 14:51:12-5d98ade043dc6.png",
+ *           "address": "17  Guildry Street, GALMPTON",
+ *           "business_email": null,
+ *           "lat": 28.535517,
+ *           "long": 77.391029,
+ *           "is_active": 1,
+ *           "avg_rating": null,
+ *           "products": [
+ *               {
+ *                   "id": 1,
+ *                   "name": "test",
+ *                   "slug": "test",
+ *                   "short_description": "updated short description",
+ *                   "description": "updated description",
+ *                   "cost_price": 14,
+ *                   "selling_price": 16,
+ *                   "compare_price": 32,
+ *                   "compare_text": "flat 16 rs off",
+ *                   "is_featured": 1,
+ *                   "featured_image": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-06 12:50:00-5d99e2f8bb6be.png",
+ *                   "is_published": 0,
+ *                   "published_at": "2019-10-06 16:30:25",
+ *                   "category": {
+ *                       "id": 13,
+ *                       "slug": "car-sale",
+ *                       "name": "Car Sale",
+ *                       "icon": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 08:27:34-5d9853f65e4fc.png",
+ *                       "image": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 08:27:34-5d9853f6c9f61.png"
+ *                   }
+ *               },
+ *               {
+ *                   "id": 2,
+ *                   "name": "test2",
+ *                   "slug": "test2",
+ *                   "short_description": "this is a short description",
+ *                   "description": "dnwhgmdhjk",
+ *                   "cost_price": 12,
+ *                   "selling_price": 14,
+ *                   "compare_price": 24,
+ *                   "compare_text": "flat 10 rs off",
+ *                   "is_featured": 1,
+ *                   "featured_image": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-06 16:30:25-5d9a16a10666d.png",
+ *                   "is_published": 1,
+ *                   "published_at": "2019-10-06 16:30:25",
+ *                   "category": {
+ *                       "id": 13,
+ *                       "slug": "car-sale",
+ *                       "name": "Car Sale",
+ *                       "icon": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 08:27:34-5d9853f65e4fc.png",
+ *                       "image": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 08:27:34-5d9853f6c9f61.png"
+ *                   }
+ *               },
+ *               {
+ *                   "id": 3,
+ *                   "name": "ejdhjdhjhkjqjsk",
+ *                   "slug": "ejdhjdhjhkjqjsk",
+ *                   "short_description": "updated short description",
+ *                   "description": "updated description",
+ *                   "cost_price": 12,
+ *                   "selling_price": 14,
+ *                   "compare_price": 24,
+ *                   "compare_text": null,
+ *                   "is_featured": 1,
+ *                   "featured_image": null,
+ *                   "is_published": 1,
+ *                   "published_at": null,
+ *                   "category": {
+ *                       "id": 13,
+ *                       "slug": "car-sale",
+ *                       "name": "Car Sale",
+ *                       "icon": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 08:27:34-5d9853f65e4fc.png",
+ *                       "image": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 08:27:34-5d9853f6c9f61.png"
+ *                   }
+ *               },
+ *               {
+ *                   "id": 4,
+ *                   "name": "ejdhjdhjhkjqjsks",
+ *                   "slug": "ejdhjdhjhkjqjsks",
+ *                   "short_description": "updated short description",
+ *                   "description": "updated description",
+ *                   "cost_price": 12,
+ *                   "selling_price": 14,
+ *                   "compare_price": 24,
+ *                   "compare_text": null,
+ *                   "is_featured": 1,
+ *                   "featured_image": null,
+ *                   "is_published": 1,
+ *                   "published_at": null,
+ *                   "category": {
+ *                       "id": 13,
+ *                       "slug": "car-sale",
+ *                       "name": "Car Sale",
+ *                       "icon": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 08:27:34-5d9853f65e4fc.png",
+ *                       "image": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 08:27:34-5d9853f6c9f61.png"
+ *                   }
+ *               },
+ *               {
+ *                   "id": 5,
+ *                   "name": "ejdhjdhjhkj",
+ *                   "slug": "ejdhjdhjhkj",
+ *                   "short_description": "updated short description",
+ *                   "description": "updated description",
+ *                   "cost_price": 12,
+ *                   "selling_price": 14,
+ *                   "compare_price": 24,
+ *                   "compare_text": null,
+ *                   "is_featured": 1,
+ *                   "featured_image": null,
+ *                   "is_published": 1,
+ *                   "published_at": "2019-11-09 12:01:56",
+ *                   "category": {
+ *                       "id": 13,
+ *                       "slug": "car-sale",
+ *                       "name": "Car Sale",
+ *                       "icon": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 08:27:34-5d9853f65e4fc.png",
+ *                       "image": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 08:27:34-5d9853f6c9f61.png"
+ *                   }
+ *               },
+ *               {
+ *                   "id": 6,
+ *                   "name": "ejdhjdhjhk",
+ *                   "slug": "ejdhjdhjhk",
+ *                   "short_description": "updated short description",
+ *                   "description": "updated description",
+ *                   "cost_price": 12,
+ *                   "selling_price": 14,
+ *                   "compare_price": 24,
+ *                   "compare_text": null,
+ *                   "is_featured": 1,
+ *                   "featured_image": null,
+ *                   "is_published": 1,
+ *                   "published_at": null,
+ *                   "category": {
+ *                       "id": 13,
+ *                       "slug": "car-sale",
+ *                       "name": "Car Sale",
+ *                       "icon": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 08:27:34-5d9853f65e4fc.png",
+ *                       "image": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 08:27:34-5d9853f6c9f61.png"
+ *                   }
+ *               },
+ *               {
+ *                   "id": 7,
+ *                   "name": "ejdhjdhjh",
+ *                   "slug": "ejdhjdhjh",
+ *                   "short_description": "updated short description",
+ *                   "description": "updated description",
+ *                   "cost_price": 12,
+ *                   "selling_price": 14,
+ *                   "compare_price": 24,
+ *                   "compare_text": null,
+ *                   "is_featured": 1,
+ *                   "featured_image": null,
+ *                   "is_published": 1,
+ *                   "published_at": null,
+ *                   "category": null
+ *               },
+ *               {
+ *                   "id": 8,
+ *                   "name": "ejdhjdhj",
+ *                   "slug": "ejdhjdhj",
+ *                   "short_description": "updated short description",
+ *                   "description": "updated description",
+ *                   "cost_price": 12,
+ *                   "selling_price": 14,
+ *                   "compare_price": 24,
+ *                   "compare_text": null,
+ *                   "is_featured": 1,
+ *                   "featured_image": null,
+ *                   "is_published": 1,
+ *                   "published_at": null,
+ *                   "category": {
+ *                       "id": 18,
+ *                       "slug": "electronics",
+ *                       "name": "Electronics",
+ *                       "icon": null,
+ *                       "image": null
+ *                   }
+ *               },
+ *               {
+ *                   "id": 9,
+ *                   "name": "check product",
+ *                   "slug": "check-product",
+ *                   "short_description": "this is a short description",
+ *                   "description": "dnwhgmdhjk",
+ *                   "cost_price": 12,
+ *                   "selling_price": 14,
+ *                   "compare_price": 24,
+ *                   "compare_text": "flat 10 rs off",
+ *                   "is_featured": 1,
+ *                   "featured_image": null,
+ *                   "is_published": 1,
+ *                   "published_at": null,
+ *                   "category": {
+ *                       "id": 18,
+ *                       "slug": "electronics",
+ *                       "name": "Electronics",
+ *                       "icon": null,
+ *                       "image": null
+ *                   }
+ *               }
+ *           ]
+ *       },
+ *       {
+ *           "id": 3,
+ *           "name": "Test Store3",
+ *           "postal_code": "TQ5 5BT",
+ *           "logo": null,
+ *           "cover_image": null,
+ *           "address": "17  Guildry Street, GALMPTON",
+ *           "business_email": null,
+ *           "lat": 28.535517,
+ *           "long": 77.391029,
+ *           "is_active": 1,
+ *           "avg_rating": null,
+ *           "products": []
+ *       },
+ *       {
+ *           "id": 2,
+ *           "name": "The name has changed",
+ *           "postal_code": "TQ5 5Bl",
+ *           "logo": "http://localhost:8000/storage/images/enjoy-offer-image2019-11-13 19:00:095dcc52b992fda.png",
+ *           "cover_image": "http://localhost:8000/storage/images/enjoy-offer-image2019-11-13 19:00:105dcc52ba14fd4.png",
+ *           "address": "18  Guildry Street, GALMPTON",
+ *           "business_email": null,
+ *           "lat": 19.77188,
+ *           "long": 25.979582,
+ *           "is_active": 1,
+ *           "avg_rating": null,
+ *           "products": []
+ *       },
+ *       {
+ *           "id": 1,
+ *           "name": "name changed",
+ *           "postal_code": "TQ5 5Bl",
+ *           "logo": "http://localhost:8000/storage/images/enjoy-offer-image2019-11-10 11:51:235dc7f9bb4df11.png",
+ *           "cover_image": "http://localhost:8000/storage/images/enjoy-offer-image2019-11-10 11:51:235dc7f9bb71c02.png",
+ *           "address": "18  Guildry Street, GALMPTON",
+ *           "business_email": null,
+ *           "lat": 28.535517,
+ *           "long": 77.391029,
+ *           "is_active": 1,
+ *           "avg_rating": null,
+ *           "products": [
+ *               {
+ *                   "id": 10,
+ *                   "name": "test product",
+ *                   "slug": "test-product",
+ *                   "short_description": "this is a short description",
+ *                   "description": "test description",
+ *                   "cost_price": 12,
+ *                   "selling_price": 14,
+ *                   "compare_price": 24,
+ *                   "compare_text": "flat 10 rs off",
+ *                   "is_featured": 1,
+ *                   "featured_image": null,
+ *                   "is_published": 1,
+ *                   "published_at": null,
+ *                   "category": null
+ *               }
+ *           ]
+ *       }
+ *   ]
+ *   }
+ */

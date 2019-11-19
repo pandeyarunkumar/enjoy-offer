@@ -126,17 +126,44 @@ class BuyerService extends MasterService
        return $res_user;
     }
 
-    public function productsNearBYMe(Request $request){
+    public function storesNearBYMe(Request $request){
 
-      $latitude = $request->lat;
-      $longitude = $request->long;
+    $store_list = array();
+    $stores = Store::where('is_active', 1)->with(['products', 'products.category'])->get();
+    $latitude = $request->lat;
+    $longitude = $request->long;
+    $radius = 10;
 
-      $stores = Store::selectRaw('*, ( 6367 * acos( cos( radians( ? ) ) * cos( radians( lat ) ) * cos( radians( long ) - radians( ? ) ) + sin( radians( ? ) ) * sin( radians( lat ) ) ) ) AS distance', [$latitude, $longitude, $latitude])
-      ->having('distance', '<', 10)
-      ->orderBy('distance')
-      ->get();
+   if(count($stores) > 0){
+      foreach ($stores as $keyStore => $store) {
+        if($store->lat != null && $store != null )
+        {
+          $latFrom = $store->lat;
+          $lonFrom = $store->long;
+          $latTo = $latitude;
+          $lonTo = $longitude;
 
-      dd($stores);
+          $latDelta = $latTo - $latFrom;
+          $lonDelta = $lonTo - $lonFrom;
+
+          $angle = 2 * asin(sqrt(pow(sin($latDelta / 2), 2) +
+            cos($latFrom) * cos($latTo) * pow(sin($lonDelta / 2), 2)));
+          $distance = ($angle * 6371000) / 1000; // returns distance in kms
+
+            if($distance <= $radius){ 
+            $store->distance = $distance;
+            array_push($store_list, $store);
+            }
+         }
+      }
+   }
+   //sorting the store based on shortest distance
+    $store_list = array_values(array_sort($store_list, function ($value){
+    return $value->distance;
+    }));
+
+    return $store_list;
+    
     }
 
     public function getBanners(){
