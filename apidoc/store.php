@@ -1179,6 +1179,7 @@
  *       ]
  *   ]
  * }
+ */
  /**
  * @api {post}  seller/buy-package to buy a package.
  * @apiName buyPackage

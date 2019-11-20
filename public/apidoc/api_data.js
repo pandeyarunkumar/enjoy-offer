@@ -293,11 +293,6 @@ define({ "api": [
     "success": {
       "examples": [
         {
-          "title": "Success-Response:",
-          "content": "    HTTP/1.1 200 OK\n{\n  \"status\": 1,\n  \"data\": [\n      [\n          {\n              \"id\": 69,\n              \"url\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-06 16:30:25-5d9a16a1356b3.png\",\n              \"category_id\": null\n          },\n          {\n              \"id\": 70,\n              \"url\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-06 16:30:25-5d9a16a141559.png\",\n              \"category_id\": null\n          },\n          {\n              \"id\": 52,\n              \"url\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-06 12:50:01-5d99e2f913cee.png\",\n              \"category_id\": null\n          },\n          {\n              \"id\": 53,\n              \"url\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-06 12:50:55-5d99e32f3c60c.jpeg\",\n              \"category_id\": null\n          }\n      ]\n  ]\n}\n /**",
-          "type": "json"
-        },
-        {
           "title": "Request:",
           "content": "  HTTP/1.1 200 OK\n{\n    \"store_id\":1,\n    \"package_id\":1\n}",
           "type": "json"
@@ -438,6 +433,25 @@ define({ "api": [
         {
           "title": "Success-Response:",
           "content": "    HTTP/1.1 200 OK\n{\n  \"status\": 1,\n  \"data\": [\n      {\n          \"id\": 3,\n          \"transaction_id\": \"5DD58D00AD991\",\n          \"amount\": 0,\n          \"selected_package\": \"Basic\"\n      },\n      {\n          \"id\": 4,\n          \"transaction_id\": \"5DD58D372831A\",\n          \"amount\": 0,\n          \"selected_package\": \"Basic\"\n      }\n  ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "apidoc/store.php",
+    "groupTitle": "Store"
+  },
+  {
+    "type": "get",
+    "url": "seller/images-by-product-name?name=test",
+    "title": "to get the product images by product name.",
+    "name": "getProductImagesByName",
+    "group": "Store",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n{\n  \"status\": 1,\n  \"data\": [\n      [\n          {\n              \"id\": 69,\n              \"url\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-06 16:30:25-5d9a16a1356b3.png\",\n              \"category_id\": null\n          },\n          {\n              \"id\": 70,\n              \"url\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-06 16:30:25-5d9a16a141559.png\",\n              \"category_id\": null\n          },\n          {\n              \"id\": 52,\n              \"url\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-06 12:50:01-5d99e2f913cee.png\",\n              \"category_id\": null\n          },\n          {\n              \"id\": 53,\n              \"url\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-06 12:50:55-5d99e32f3c60c.jpeg\",\n              \"category_id\": null\n          }\n      ]\n  ]\n}",
           "type": "json"
         }
       ]
