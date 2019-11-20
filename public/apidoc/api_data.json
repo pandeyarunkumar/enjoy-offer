@@ -53,7 +53,7 @@
   },
   {
     "type": "get",
-    "url": "get-hot-sellers?lat=28.535517&long=77.391029?lat=28.535517&long=77.391029",
+    "url": "get-hot-sellers?lat=28.535517&long=77.391029",
     "title": "to get the hot sellers",
     "name": "getHotSellers",
     "group": "Buyer",

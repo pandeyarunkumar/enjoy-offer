@@ -149,7 +149,7 @@
  *}
  */
 /**
- * @api {get}  get-hot-sellers?lat=28.535517&long=77.391029?lat=28.535517&long=77.391029 to get the hot sellers
+ * @api {get}  get-hot-sellers?lat=28.535517&long=77.391029 to get the hot sellers
  * @apiName getHotSellers
  * @apiGroup Buyer
  *
