@@ -149,8 +149,8 @@
  *}
  */
 /**
- * @api {get}  get-stores-near-by-me?lat=28.535517&long=77.391029 to get the stores near by me
- * @apiName getStoresNearByme
+ * @api {get}  get-hot-sellers?lat=28.535517&long=77.391029?lat=28.535517&long=77.391029 to get the hot sellers
+ * @apiName getHotSellers
  * @apiGroup Buyer
  *
  * @apiSuccessExample Success-Response:
@@ -170,25 +170,7 @@
  *           "long": 77.391029,
  *           "is_active": 1,
  *           "distance": 0,
- *           "avg_rating": null,
- *           "products": [
- *               {
- *                   "id": 10,
- *                   "name": "test product",
- *                   "slug": "test-product",
- *                   "short_description": "this is a short description",
- *                   "description": "test description",
- *                   "cost_price": 12,
- *                   "selling_price": 14,
- *                   "compare_price": 24,
- *                   "compare_text": "flat 10 rs off",
- *                   "is_featured": 1,
- *                   "featured_image": null,
- *                   "is_published": 1,
- *                   "published_at": null,
- *                   "category": null
- *               }
- *           ]
+ *           "avg_rating": null
  *       },
  *       {
  *           "id": 3,
@@ -202,8 +184,7 @@
  *           "long": 77.391029,
  *           "is_active": 1,
  *           "distance": 0,
- *           "avg_rating": null,
- *           "products": []
+ *           "avg_rating": null
  *       },
  *       {
  *           "id": 9,
@@ -217,201 +198,7 @@
  *           "long": 77.391029,
  *           "is_active": 1,
  *           "distance": 0,
- *           "avg_rating": null,
- *           "products": [
- *               {
- *                   "id": 1,
- *                   "name": "test",
- *                   "slug": "test",
- *                   "short_description": "updated short description",
- *                   "description": "updated description",
- *                   "cost_price": 14,
- *                   "selling_price": 16,
- *                   "compare_price": 32,
- *                   "compare_text": "flat 16 rs off",
- *                   "is_featured": 1,
- *                   "featured_image": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-06 12:50:00-5d99e2f8bb6be.png",
- *                   "is_published": 0,
- *                   "published_at": "2019-10-06 16:30:25",
- *                   "category": {
- *                       "id": 13,
- *                       "slug": "car-sale",
- *                       "name": "Car Sale",
- *                       "icon": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 08:27:34-5d9853f65e4fc.png",
- *                       "image": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 08:27:34-5d9853f6c9f61.png"
- *                   }
- *               },
- *               {
- *                   "id": 2,
- *                   "name": "test2",
- *                   "slug": "test2",
- *                   "short_description": "this is a short description",
- *                   "description": "dnwhgmdhjk",
- *                   "cost_price": 12,
- *                   "selling_price": 14,
- *                   "compare_price": 24,
- *                   "compare_text": "flat 10 rs off",
- *                   "is_featured": 1,
- *                   "featured_image": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-06 16:30:25-5d9a16a10666d.png",
- *                   "is_published": 1,
- *                   "published_at": "2019-10-06 16:30:25",
- *                   "category": {
- *                       "id": 13,
- *                       "slug": "car-sale",
- *                       "name": "Car Sale",
- *                       "icon": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 08:27:34-5d9853f65e4fc.png",
- *                       "image": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 08:27:34-5d9853f6c9f61.png"
- *                   }
- *               },
- *               {
- *                   "id": 3,
- *                   "name": "ejdhjdhjhkjqjsk",
- *                   "slug": "ejdhjdhjhkjqjsk",
- *                   "short_description": "updated short description",
- *                   "description": "updated description",
- *                   "cost_price": 12,
- *                   "selling_price": 14,
- *                   "compare_price": 24,
- *                   "compare_text": null,
- *                   "is_featured": 1,
- *                   "featured_image": null,
- *                   "is_published": 1,
- *                   "published_at": null,
- *                   "category": {
- *                       "id": 13,
- *                       "slug": "car-sale",
- *                       "name": "Car Sale",
- *                       "icon": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 08:27:34-5d9853f65e4fc.png",
- *                       "image": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 08:27:34-5d9853f6c9f61.png"
- *                   }
- *               },
- *               {
- *                   "id": 4,
- *                   "name": "ejdhjdhjhkjqjsks",
- *                   "slug": "ejdhjdhjhkjqjsks",
- *                   "short_description": "updated short description",
- *                   "description": "updated description",
- *                   "cost_price": 12,
- *                   "selling_price": 14,
- *                   "compare_price": 24,
- *                   "compare_text": null,
- *                   "is_featured": 1,
- *                   "featured_image": null,
- *                   "is_published": 1,
- *                   "published_at": null,
- *                   "category": {
- *                       "id": 13,
- *                       "slug": "car-sale",
- *                       "name": "Car Sale",
- *                       "icon": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 08:27:34-5d9853f65e4fc.png",
- *                       "image": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 08:27:34-5d9853f6c9f61.png"
- *                   }
- *               },
- *               {
- *                   "id": 5,
- *                   "name": "ejdhjdhjhkj",
- *                   "slug": "ejdhjdhjhkj",
- *                   "short_description": "updated short description",
- *                   "description": "updated description",
- *                   "cost_price": 12,
- *                   "selling_price": 14,
- *                   "compare_price": 24,
- *                   "compare_text": null,
- *                   "is_featured": 1,
- *                   "featured_image": null,
- *                   "is_published": 1,
- *                   "published_at": "2019-11-09 12:01:56",
- *                   "category": {
- *                       "id": 13,
- *                       "slug": "car-sale",
- *                       "name": "Car Sale",
- *                       "icon": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 08:27:34-5d9853f65e4fc.png",
- *                       "image": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 08:27:34-5d9853f6c9f61.png"
- *                   }
- *               },
- *               {
- *                   "id": 6,
- *                   "name": "ejdhjdhjhk",
- *                   "slug": "ejdhjdhjhk",
- *                   "short_description": "updated short description",
- *                   "description": "updated description",
- *                   "cost_price": 12,
- *                   "selling_price": 14,
- *                   "compare_price": 24,
- *                   "compare_text": null,
- *                   "is_featured": 1,
- *                   "featured_image": null,
- *                   "is_published": 1,
- *                   "published_at": null,
- *                   "category": {
- *                       "id": 13,
- *                       "slug": "car-sale",
- *                       "name": "Car Sale",
- *                       "icon": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 08:27:34-5d9853f65e4fc.png",
- *                       "image": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-05 08:27:34-5d9853f6c9f61.png"
- *                   }
- *               },
- *               {
- *                   "id": 7,
- *                   "name": "ejdhjdhjh",
- *                   "slug": "ejdhjdhjh",
- *                   "short_description": "updated short description",
- *                   "description": "updated description",
- *                   "cost_price": 12,
- *                   "selling_price": 14,
- *                   "compare_price": 24,
- *                   "compare_text": null,
- *                   "is_featured": 1,
- *                   "featured_image": null,
- *                   "is_published": 1,
- *                   "published_at": null,
- *                   "category": null
- *               },
- *               {
- *                   "id": 8,
- *                   "name": "ejdhjdhj",
- *                   "slug": "ejdhjdhj",
- *                   "short_description": "updated short description",
- *                   "description": "updated description",
- *                   "cost_price": 12,
- *                   "selling_price": 14,
- *                   "compare_price": 24,
- *                   "compare_text": null,
- *                   "is_featured": 1,
- *                   "featured_image": null,
- *                   "is_published": 1,
- *                   "published_at": null,
- *                   "category": {
- *                       "id": 18,
- *                       "slug": "electronics",
- *                       "name": "Electronics",
- *                       "icon": null,
- *                       "image": null
- *                   }
- *               },
- *               {
- *                   "id": 9,
- *                   "name": "check product",
- *                   "slug": "check-product",
- *                   "short_description": "this is a short description",
- *                   "description": "dnwhgmdhjk",
- *                   "cost_price": 12,
- *                   "selling_price": 14,
- *                   "compare_price": 24,
- *                   "compare_text": "flat 10 rs off",
- *                   "is_featured": 1,
- *                   "featured_image": null,
- *                   "is_published": 1,
- *                   "published_at": null,
- *                   "category": {
- *                       "id": 18,
- *                       "slug": "electronics",
- *                       "name": "Electronics",
- *                       "icon": null,
- *                       "image": null
- *                   }
- *               }
- *           ]
+ *           "avg_rating": null
  *       },
  *       {
  *           "id": 10,
@@ -425,8 +212,7 @@
  *           "long": 77.391029,
  *           "is_active": 1,
  *           "distance": 0,
- *           "avg_rating": null,
- *           "products": []
+ *           "avg_rating": null
  *       },
  *       {
  *           "id": 11,
@@ -440,8 +226,7 @@
  *           "long": 77.391029,
  *           "is_active": 1,
  *           "distance": 0,
- *           "avg_rating": null,
- *           "products": []
+ *           "avg_rating": null
  *       },
  *       {
  *           "id": 12,
@@ -455,8 +240,7 @@
  *           "long": 77.391029,
  *           "is_active": 1,
  *           "distance": 0,
- *           "avg_rating": null,
- *           "products": []
+ *           "avg_rating": null
  *       },
  *       {
  *           "id": 13,
@@ -470,9 +254,8 @@
  *           "long": 77.391029,
  *           "is_active": 1,
  *           "distance": 0,
- *           "avg_rating": 4.5,
- *           "products": []
+ *           "avg_rating": 4.5
  *       }
  *   ]
- * }
+ *}
  */

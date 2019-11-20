@@ -129,7 +129,7 @@ class BuyerService extends MasterService
     public function storesNearBYMe(Request $request){
 
     $store_list = array();
-    $stores = Store::where('is_active', 1)->with(['products', 'products.category'])->get();
+    $stores = Store::where('is_active', 1)->get();
     $latitude = $request->lat;
     $longitude = $request->long;
     $radius = 10;

@@ -233,7 +233,7 @@ class StoreService extends MasterService
 
         $res_product = new \StdClass();
         $res_product->product_id = $product->id;
-        $res_product->Categoryimages = $this->getImages($request);
+        $res_product->Categoryimages = $this->imagesByProductName($product);
 
         return $res_product;
 
@@ -357,7 +357,8 @@ class StoreService extends MasterService
 
         $res_product = new \StdClass();
         $res_product->product_id = $product->id;
-        $res_product->Categoryimages = $this->getImages($request);
+        //$res_product->Categoryimages = $this->getImages($request);
+        $res_product->Categoryimages = $this->imagesByProductName($request);
 
         return $res_product;
     }
@@ -410,7 +411,7 @@ class StoreService extends MasterService
         }
 
         foreach($images as $key => $image){
-            if($key<6){
+            if($key<10){
                 $res_images[] = $image;
             }
         }
