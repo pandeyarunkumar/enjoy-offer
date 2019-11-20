@@ -299,9 +299,9 @@ class StoreController extends Controller
         return $this->respondWithSuccess($packages);
     }
 
-    public function getPayments(){
+    public function getPayments(Request $request){
 
-        $payments = $this->storeService->getPayments();
+        $payments = $this->storeService->getPayments($request);
 
         return $this->respondWithSuccess($payments);
     }
@@ -332,6 +332,24 @@ class StoreController extends Controller
 
         $Products = $this->storeService->imagesByProductName($request);
         return $this->respondWithSuccess($Products); 
+    }
+
+    public function buyPackage(Request $request){
+
+        $validator = Validator::make($request->all(), [
+            'store_id' => 'required',
+            'package_id' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return $this->respondWithValidationError($validator);
+        }
+
+        $status = $this->storeService->buyPackage($request);
+        
+        if($status){
+            return $this->respondWithSuccessMessage("Package added successfuly");                                       
+        }   
     }
 
 }

@@ -51,6 +51,7 @@ Route::group(['middleware' => "authenticate"], function () {
     Route::get('seller/get-payments', 'StoreController@getPayments');
     Route::get('seller/suggested-products-name', 'StoreController@suggestedProductsName'); 
     Route::get('seller/images-by-product-name', 'StoreController@imagesByProductName'); 
+    Route::post('seller/buy-package', 'StoreController@buyPackage'); 
 });
 
 Route::post('buyer/sign-in', 'BuyerController@signIn');

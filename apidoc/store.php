@@ -1111,17 +1111,23 @@
  *
  * @apiSuccessExample Success-Response:
  *     HTTP/1.1 200 OK
- *  {
- *  "status": 1,
+ * {
+ *   "status": 1,
  *   "data": [
  *       {
- *           "id": 1,
- *           "transaction_id": "ACRAF23DB3C4",
- *           "amount": 1000,
- *           "selected_package": "basic"
+ *           "id": 3,
+ *           "transaction_id": "5DD58D00AD991",
+ *           "amount": 0,
+ *           "selected_package": "Basic"
+ *       },
+ *       {
+ *           "id": 4,
+ *           "transaction_id": "5DD58D372831A",
+ *           "amount": 0,
+ *           "selected_package": "Basic"
  *       }
  *   ]
- *   }
+ * }
  */ 
 /**
  * @api {get} seller/suggested-products-name?name=tes to get the suggestion of product name.
@@ -1173,6 +1179,24 @@
  *       ]
  *   ]
  * }
+ /**
+ * @api {post}  seller/buy-package to buy a package.
+ * @apiName buyPackage
+ * @apiGroup Store
+ *
+ * @apiSuccessExample Request:
+ *     HTTP/1.1 200 OK
+ *   {
+ *       "store_id":1,
+ *       "package_id":1
+ *   }
+ *
+ * @apiSuccessExample Success-Response:
+ *     HTTP/1.1 200 OK
+ *{
+ *   "status": 1,
+ *   "message": "Package added successfuly"
+ *   }
  */ 
 
 

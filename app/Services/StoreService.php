@@ -392,8 +392,10 @@ class StoreService extends MasterService
         return Package::all();
     }
 
-    public function getPayments(){
-        return Payment::all();
+    public function getPayments($request){
+        $seller = $request->user;
+        $storeIds = $seller->stores()->pluck('id')->toArray();
+        return Payment::whereIn('store_id', $storeIds)->get();
     }
 
     public function suggestedProductsName($request){
@@ -417,6 +419,23 @@ class StoreService extends MasterService
         }
 
          return $res_images;
+    }
+
+    public function buyPackage($request){
+        $store = Store::where('id', $request->store_id)->first();
+        $store->package_id = $request->package_id;
+        $store->save();
+
+        $package = Package::find($request->package_id);
+
+        $payment = new Payment();
+        $payment->transaction_id = strtoupper(uniqid());
+        $payment->amount = $package->price;
+        $payment->selected_package = $package->name;
+        $payment->store_id = $store->id;
+        $payment->save();
+
+        return 1;
     }
 
 }
