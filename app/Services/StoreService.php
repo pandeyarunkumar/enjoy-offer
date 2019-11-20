@@ -229,7 +229,13 @@ class StoreService extends MasterService
             $product->images()->sync($request->image_ids);
         }
 
-        return $product;
+        //return $product;
+
+        $res_product = new \StdClass();
+        $res_product->product_id = $product->id;
+        $res_product->Categoryimages = $this->getImages($request);
+
+        return $res_product;
 
     }
 

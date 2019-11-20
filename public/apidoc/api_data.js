@@ -741,7 +741,7 @@ define({ "api": [
         },
         {
           "title": "Success-Response:",
-          "content": "    HTTP/1.1 200 OK\n{\n  \"status\": 1,\n  \"message\": \"Product updated successfuly\"\n  }",
+          "content": "    HTTP/1.1 200 OK\n{\n  \"status\": 1,\n  \"data\": {\n      \"product_id\": 8,\n      \"Categoryimages\": [\n          {\n              \"id\": 1,\n              \"url\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-02 14:23:39-5d94b2eb832c8.jpeg\",\n              \"category_id\": 18\n          },\n          {\n              \"id\": 2,\n              \"url\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-02 14:23:40-5d94b2ec2a91e.jpeg\",\n              \"category_id\": 18\n          },\n          {\n              \"id\": 3,\n              \"url\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-02 15:05:15-5d94bcab09af1.jpeg\",\n              \"category_id\": 18\n          },\n          {\n              \"id\": 4,\n              \"url\": \"http://localhost:8000/storage/images/enjoy-offer-image-2019-10-02 15:05:15-5d94bcab34fa5.jpeg\",\n              \"category_id\": 18\n          }\n      ]\n  }\n}",
           "type": "json"
         }
       ]

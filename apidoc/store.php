@@ -435,8 +435,32 @@
  *     HTTP/1.1 200 OK
  * {
  *   "status": 1,
- *   "message": "Product updated successfuly"
+ *   "data": {
+ *       "product_id": 8,
+ *       "Categoryimages": [
+ *           {
+ *               "id": 1,
+ *               "url": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-02 14:23:39-5d94b2eb832c8.jpeg",
+ *               "category_id": 18
+ *           },
+ *           {
+ *               "id": 2,
+ *               "url": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-02 14:23:40-5d94b2ec2a91e.jpeg",
+ *               "category_id": 18
+ *           },
+ *           {
+ *               "id": 3,
+ *               "url": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-02 15:05:15-5d94bcab09af1.jpeg",
+ *               "category_id": 18
+ *           },
+ *           {
+ *               "id": 4,
+ *               "url": "http://localhost:8000/storage/images/enjoy-offer-image-2019-10-02 15:05:15-5d94bcab34fa5.jpeg",
+ *               "category_id": 18
+ *           }
+ *       ]
  *   }
+ * }
  *
  * @apiErrorExample Error-Response:
  *     HTTP/1.1 200 ok
