@@ -171,6 +171,49 @@ define({ "api": [
     "groupTitle": "Home"
   },
   {
+    "type": "get",
+    "url": "get-faqs",
+    "title": "to get FAQ",
+    "name": "getFaqs",
+    "group": "Home",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n     \"status\": 1,\n  \"data\": [\n      {\n          \"id\": 1,\n          \"question\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry?\",\n          \"answer\": \"It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).\"\n      },\n      {\n          \"id\": 2,\n          \"question\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry?\",\n          \"answer\": \"It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).\"\n      },\n      {\n          \"id\": 3,\n          \"question\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry?\",\n          \"answer\": \"It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).\"\n      },\n      {\n          \"id\": 4,\n          \"question\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry?\",\n          \"answer\": \"It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).\"\n      }\n  ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "apidoc/home.php",
+    "groupTitle": "Home"
+  },
+  {
+    "type": "post",
+    "url": "raise-your-query",
+    "title": "raise your query.",
+    "name": "raiseYourQuery",
+    "group": "Home",
+    "success": {
+      "examples": [
+        {
+          "title": "Request:",
+          "content": "    HTTP/1.1 200 OK\n\t{\n\t\"name\":\"Arun Kumar Pandey\",\n\t\"mobile\":\"7379273205\",\n\t\"email\":\"pandeyarunoct@gmail.com\",\n\t\"query_msg\":\"Please ignore, just for testing\"\n }",
+          "type": "json"
+        },
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n{\n  \"status\": 1,\n  \"message\": \"We have recorded your query\"\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "apidoc/home.php",
+    "groupTitle": "Home"
+  },
+  {
     "type": "post",
     "url": "seller/generate-otp",
     "title": "to generate otp.",

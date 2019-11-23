@@ -6,6 +6,8 @@ use App\User;
 use App\Store;
 use App\Banner;
 use App\Product;
+use App\Faq;
+use App\Query;
 use Illuminate\Http\Request;
 use Firebase\JWT\JWT;
 use Carbon\Carbon;
@@ -174,4 +176,20 @@ class BuyerService extends MasterService
       $banners->second=$second;
       return $banners; 
   }
+
+  public function raiseYoureQuery(Request $request){
+   $q = new Query();
+   $q->name = $request->name;
+   $q->mobile = $request->mobile;
+   $q->email = $request->email;
+   $q->query = $request->query_msg;       
+   $q->save();
+
+   return $q;
+}
+
+public function getFaqs(){
+  return Faq::all();
+}
+
 }

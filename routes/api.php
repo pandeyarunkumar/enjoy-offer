@@ -59,6 +59,9 @@ Route::post('buyer/generate-otp', 'BuyerController@generateOtp');
 Route::post('buyer/sign-up', 'BuyerController@signUp');
 Route::get('get-hot-sellers', 'BuyerController@storesNearBYMe');
 Route::get('get-banners-for-buyer', 'BuyerController@getBanners');
+Route::post('raise-your-query', 'BuyerController@raiseYoureQuery');
+Route::get('get-faqs', 'BuyerController@getFaqs');
+
 Route::group(['middleware' => "checkBuyer"], function () {
     Route::post('buyer/update-profile', 'BuyerController@updateProfile');      
 });

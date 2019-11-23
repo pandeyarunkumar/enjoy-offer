@@ -95,4 +95,26 @@ class BuyerController extends Controller
 
         return $this->respondWithSuccess($banners);            
     }
+
+    public function raiseYoureQuery(Request $request){
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'mobile' => 'required',
+            'email'  => 'required',
+            'query_msg'  => 'required'
+        ]);
+        if ($validator->fails()) {
+            return $this->respondWithValidationError($validator);
+        }
+        $query = $this->buyerService->raiseYoureQuery($request);
+        return $this->respondWithSuccessMessage("We have recorded your query");
+        
+    }
+
+    public function getFaqs(){
+       
+        $faqs = $this->buyerService->getFaqs();
+
+        return $this->respondWithSuccess($faqs);            
+    }
 }
