@@ -30,6 +30,8 @@ class CreateProductsTable extends Migration
             $table->integer('featured_image')->nullable();
             $table->boolean('is_published')->default(false);
             $table->dateTime('published_at')->nullable();
+            $table->string('owned_by')->nullable();
+            $table->string('allow_to')->nullable();
             $table->timestamps();
         });
     }

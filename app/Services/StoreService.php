@@ -152,6 +152,8 @@ class StoreService extends MasterService
         $product->compare_text = $request->compare_text;
         $product->is_featured = $request->is_featured;
         $product->is_published = $request->is_published;
+        $product->owned_by = $request->owned_by;
+        $product->allow_to = $request->allow_to;        
 
         if($request->is_published){
             $product->published_at = Carbon::now();
@@ -203,6 +205,8 @@ class StoreService extends MasterService
         $product->compare_text = $request->compare_text;
         $product->is_featured = $request->is_featured;
         $product->is_published = 0;
+        $product->owned_by = $request->owned_by;
+        $product->allow_to = $request->allow_to; 
 
         if($request->featured_image_id){
             $product->featured_image = $request->featured_image_id;
@@ -352,6 +356,8 @@ class StoreService extends MasterService
         $product->compare_text = $request->compare_text;
         $product->is_featured = $request->is_featured;
         $product->is_published = $request->is_published;
+        $product->owned_by = $request->owned_by;
+        $product->allow_to = $request->allow_to; 
 
         $product->save();
 
