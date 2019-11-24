@@ -51,6 +51,7 @@
  *
  * @apiSuccessExample Success-Response:
  *     HTTP/1.1 200 OK
+ *   {
  *      "status": 1,
  *   "data": [
  *       {
@@ -75,4 +76,27 @@
  *       }
  *   ]
  *}
+ */
+/**
+ * @api {get}  get-tutorials to get tutorials
+ * @apiName getTutorilas
+ * @apiGroup Home
+ *
+ * @apiSuccessExample Success-Response:
+ *     HTTP/1.1 200 OK
+ *   {
+ *   "status": 1,
+ *   "data": [
+ *       {
+ *           "id": 1,
+ *           "heading": "How to add zoho mail to your current gmail account? (with subtitles)",
+ *           "video_link": "https://www.youtube.com/watch?v=6hitIgnmG-g&t=80s"
+ *       },
+ *       {
+ *           "id": 2,
+ *           "heading": "Diwali Celebration",
+ *           "video_link": "https://www.facebook.com/iffort/videos/1179429798933066/"
+ *       }
+ *   ]
+ * }
  */
