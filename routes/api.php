@@ -61,6 +61,7 @@ Route::get('get-hot-sellers', 'BuyerController@storesNearBYMe');
 Route::get('get-banners-for-buyer', 'BuyerController@getBanners');
 Route::post('raise-your-query', 'BuyerController@raiseYoureQuery');
 Route::get('get-faqs', 'BuyerController@getFaqs');
+Route::get('get-tutorials', 'BuyerController@getTutorials');
 
 Route::group(['middleware' => "checkBuyer"], function () {
     Route::post('buyer/update-profile', 'BuyerController@updateProfile');      

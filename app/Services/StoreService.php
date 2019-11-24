@@ -238,6 +238,7 @@ class StoreService extends MasterService
         $res_product = new \StdClass();
         $res_product->product_id = $product->id;
         $res_product->product_images = $this->imagesByProductName($product);
+        $res_product->is_select = false;
 
         return $res_product;
 
@@ -365,6 +366,7 @@ class StoreService extends MasterService
         $res_product->product_id = $product->id;
         //$res_product->product_images = $this->getImages($request);
         $res_product->product_images = $this->imagesByProductName($request);
+        $res_product->is_select = false;
 
         return $res_product;
     }

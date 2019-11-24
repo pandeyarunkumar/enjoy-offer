@@ -117,4 +117,11 @@ class BuyerController extends Controller
 
         return $this->respondWithSuccess($faqs);            
     }
+
+    public function getTutorials(){
+       
+        $tutorials = $this->buyerService->getTutorials();
+
+        return $this->respondWithSuccess($tutorials);            
+    }
 }

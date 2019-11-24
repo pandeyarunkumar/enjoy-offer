@@ -8,6 +8,7 @@ use App\Banner;
 use App\Product;
 use App\Faq;
 use App\Query;
+use App\Tutorial;
 use Illuminate\Http\Request;
 use Firebase\JWT\JWT;
 use Carbon\Carbon;
@@ -191,5 +192,9 @@ class BuyerService extends MasterService
 public function getFaqs(){
   return Faq::all();
 }
+
+public function getTutorials(){
+   return Tutorial::all();
+ }
 
 }
